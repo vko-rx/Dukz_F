@@ -1,0 +1,10 @@
+.line-color {
+    width: 40%;
+}
+
+.main-txt-container {
+    margin-top: 35px;
+    margin-left: 20px;
+    font-size: var(--bs-font-16px);
+    font-weight: var(--bs-font-regular);
+}
