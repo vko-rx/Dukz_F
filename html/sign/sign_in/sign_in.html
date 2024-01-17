@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duk'z</title>
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../../css/sign/sign_in.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="top-container">
+            <img src="../../../Image/icon/arrow-back.png">
+        </div>
+        <div class="txt-container">
+            환영합니다!<br><span style="font-size: 23px;">Duk'z</span> 와 여행을 즐겨보세요
+        </div>
+        <form action="" class="form-signin">
+            <input type="text" name="" id="id" placeholder="아이디 입력" onchange="checkInputs()">
+            <div class="container-pw">
+                <input type="password" name="" id="pw" placeholder="비밀번호 입력" onchange="checkInputs()">
+                <div class="eyes" onclick="togglePasswordVisibility()">
+                    <img id="eyeIcon" src="../../../Image/icon/eye/eye-close.png">
+                </div>
+            </div>
+
+            <button class="signin-btn disabled" id="signinBtn" disabled>로그인</button>
+        </form>
+        <div class="find-container">
+            <span class="find-id">아이디 찾기</span> &nbsp;|&nbsp; <span class="find-pw">비밀번호 찾기</span>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script src="../../../js/sign/pw_show_eyes.js"></script>
+<script src="../../../js/sign/check_input.js"></script>
