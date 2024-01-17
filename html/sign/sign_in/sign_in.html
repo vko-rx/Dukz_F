@@ -7,6 +7,8 @@
     <title>Duk'z</title>
     <link rel="stylesheet" href="../../../css/style.css">
     <link rel="stylesheet" href="../../../css/sign/sign_in.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 </head>
 
 <body>
@@ -26,7 +28,7 @@
                 </div>
             </div>
 
-            <button class="signin-btn disabled" id="signinBtn" disabled>로그인</button>
+            <button class="signin-btn disabled" id="signinBtn" onclick="submitLogin()" disabled>로그인</button>
         </div>
         <div class="find-container">
             <span class="find-id">아이디 찾기</span> &nbsp;|&nbsp; <span class="find-pw">비밀번호 찾기</span>
