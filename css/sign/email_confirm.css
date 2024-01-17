@@ -2,5 +2,49 @@
     width: 40%;
 }
 .main-txt-container {
-    
+    margin-top: 35px;
+    margin-left: 20px;
+    font-size: var(--bs-font-16px);
+    font-weight: var(--bs-font-regular);
+}
+.input-email-container {
+    margin: 55px 20px 0 20px;
+    position: relative;
+}
+#email {
+    width: calc(100% - 20px);
+}
+.double-chk-btn {
+    position: absolute;
+    left: calc(100% - 77px);
+    top: calc(50% - 12px);
+    border: 0.5px solid var(--bs-main-100);
+    border-radius: 12px;
+    font-size: var(--bs-font-11px);
+    color: var(--bs-white);
+    font-weight: var(--bs-font-regular);
+    background-color: var(--bs-main-100);
+    padding: 3px 10px;
+}
+.hidden-txt {
+    font-size: var(--bs-font-12px);
+    font-weight: var(--bs-font-medium);
+    margin-left: 20px;
+    margin-top: 8px;
+}
+
+.email-confirm-btn {
+    border-radius: 5px;
+    margin: 30px 20px 0 20px;
+    width: calc(100% - 42px);
+    padding: 10px 0;
+    background-color: var(--bs-main-100);
+    border: 0.5px solid var(--bs-main-100);
+    color: var(--bs-white);
+}
+
+.disabled {
+    background-color: var(--bs-white);
+    border: 0.5px solid var(--bs-black-34);
+    color: var(--bs-black-34);
 }

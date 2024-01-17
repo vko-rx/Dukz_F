@@ -18,6 +18,8 @@
     --bs-black: black;
     --bs-white: white;
 
+    --bs-red-1: #FF4B4B;
+
     /* font family */
     --bs-font-family-notoKr: 'Noto Sans KR', sans-serif;
 
@@ -35,6 +37,7 @@
 
     /* font size */
     --bs-font-10px: 10px;
+    --bs-font-11px: 11px;
     --bs-font-12px: 12px;
     --bs-font-13px: 13px;
     --bs-font-14px: 14px;
