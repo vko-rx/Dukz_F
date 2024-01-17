@@ -10,10 +10,12 @@ function checkCheckboxes() {
     for (let i = 0; i < checkboxes.length; i++) {
         if (!checkboxes[i].checked) {
             signupBtn.classList.add('disabled');
+            signupBtn.disabled = true;
             line_color.style.width = 0;
             return;
         }
     }
     signupBtn.classList.remove('disabled');
+    signupBtn.disabled = false;
     line_color.style.width = '20%';
 }
