@@ -14,33 +14,39 @@ inputEmail.addEventListener('input', function () {
     }
 });
 
-// 정규표현식으로 이메일 형식 확인
-function chkEmail() {
-    let regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
-    if (!regex.test(inputEmail.value)) {
-        hiddenTxt.innerHTML = "이메일 형식이 올바르지 않습니다";
-        hiddenTxt.style.color = "#FF4B4B";
-        addDisabled();
-    } else {
-        chkDouble();
-    }
-}
-
 function addDisabled() {
     emailConfirmBtn.setAttribute("disabled", "disabled");
     emailConfirmBtn.classList.add('disabled');
 }
 
 // 이메일 중복 체크
-function chkDouble() {
+function chkEmail() {
+    var email = document.getElementById("email").value;
+    let regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
 
-    // if (중복된 이메일이 있다면)
-    // hiddenTxt.innerHTML = "이미 사용 중인 이메일입니다";
-    // hiddenTxt.style.color = "#FF4B4B";
-    // addDisabled();
-    // else 
-    hiddenTxt.innerHTML = "사용 가능한 이메일입니다";
-    hiddenTxt.style.color = "#5C5C5C";
-    emailConfirmBtn.removeAttribute("disabled");
-    emailConfirmBtn.classList.remove('disabled');
+    axios
+        .post("http://localhost:3000/user/emailDuplicate", {
+            email: email,
+        })
+        .then((response) => {
+        if(!regex.test(inputEmail.value)){
+            hiddenTxt.innerHTML = "이메일 형식이 올바르지 않습니다";
+            hiddenTxt.style.color = "#FF4B4B";
+            addDisabled();
+        }
+        else if (response.data.isDuplicate) {
+            hiddenTxt.innerHTML = "이미 사용 중인 이메일입니다";
+            hiddenTxt.style.color = "#FF4B4B";
+            addDisabled();
+        }else {
+            hiddenTxt.innerHTML = "사용 가능한 이메일입니다";
+            hiddenTxt.style.color = "#5C5C5C";
+            emailConfirmBtn.removeAttribute("disabled");
+            emailConfirmBtn.classList.remove('disabled');
+        }
+      })
+      .catch((e) => {
+        console.error("Error during duplicate check:", e);
+        alert("에러가 발생했습니다.");
+    });
 }
