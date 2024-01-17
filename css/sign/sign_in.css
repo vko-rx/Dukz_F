@@ -1,7 +1,3 @@
-.top-container {
-    padding: 8px 0 8px 20px;
-}
-
 .txt-container {
     font-size: var(--bs-font-22px);
     font-weight: var(--bs-font-bold);

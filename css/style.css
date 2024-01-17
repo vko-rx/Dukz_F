@@ -9,9 +9,12 @@
     --bs-main-20: #FEEECE;
     --bs-main-100: #F8AC0B;
 
+    --bs-black-5: #F2F2F2;
     --bs-black-25: #C3BFBF;
     --bs-black-34: #A8A8A8;
+    --bs-black-50: #808080;
     --bs-black-64: #5C5C5C;
+    --bs-black-87: #212121;
     --bs-black: black;
     --bs-white: white;
 
@@ -22,7 +25,7 @@
     --bs-font-thin: 100;
     --bs-font-extralight: 200;
     /* --bs-font-light: 300; */
-    --bs-font-regular: 400;
+    --bs-font-regular: 500;
     /* Figma 폰트에 맞추면 너무 굵어짐 -> 초기 디자인에 초점 맞추기 */
     --bs-font-medium: 300;   
     --bs-font-semibold: 600;
@@ -31,7 +34,9 @@
     --bs-font-black: 900;
 
     /* font size */
+    --bs-font-10px: 10px;
     --bs-font-12px: 12px;
+    --bs-font-13px: 13px;
     --bs-font-14px: 14px;
     --bs-font-16px: 16px;
     --bs-font-18px: 18px;
@@ -48,7 +53,8 @@ html, body {
     height: 100%;
 }
 a {
-
+    color: var(--bs-black);
+    text-decoration: none;
 }
 
 /* input */
@@ -74,4 +80,43 @@ input::placeholder {
 }
 .fontColor-main {
     color: var(--bs-main-100);
+}
+
+input[type=checkbox] {
+    display:none;
+}
+input[type=checkbox] + label { 
+    cursor: pointer; 
+    color: var(--bs-black-50);
+    padding-left: 25px; 
+    background-repeat: no-repeat;
+    background-image: url('../Image/icon/check/uncheck.png');
+}
+input[type=checkbox]:checked + label {
+    color: var(--bs-black);
+    background-image: url('../Image/icon/check/check.png');
+}
+.chkbox-label {
+    height: 17px;
+    display: flex;
+    align-items: center;
+}
+
+
+/* containers */
+.back-container {
+    height: 40px;
+}
+.back-img {
+    align-items: center;
+    padding: 8px 0 8px 20px;
+}
+
+/* line */
+.line {
+    height: 0.5px;
+    background-color: var(--bs-black-5);
+}
+.line-color {
+    background-color: var(--bs-main-100);
 }

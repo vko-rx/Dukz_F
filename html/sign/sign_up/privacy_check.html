@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duk'z</title>
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../../css/sign/privacy_check.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="back-container" onclick="location.href='../sign_start.html'">
+            <img class="back-img" src="../../../Image/icon/arrow-back.png">
+        </div>
+        <div class="line-color line"></div>
+        <div class="line-deColor line"></div>
+        <div class="main-txt-container">
+            Duk’z 의 개인정보 수집 약관에<br>동의해주세요.
+        </div>
+        <div class="chk-all-container">
+            <input type="checkbox" name="chk-part" class="chkbox" id="chk-all" onchange="selectAll(this); checkCheckboxes()"> <label class="chkbox-label" for="chk-all" id="label-all">전체 동의하기 (선택 정보 포함)</label>
+        </div>
+        <input type="checkbox" name="chk-part" class="chkbox" id="chk-1" onchange="checkCheckboxes()"> <label class="chkbox-label inside" for="chk-1">[필수] 만12세 이상입니다</label>
+        <input type="checkbox" name="chk-part" class="chkbox" id="chk-2" onchange="checkCheckboxes()"> <label class="chkbox-label inside" for="chk-2">[필수] 이용약관 동의 <a href="#" class="privacy-look">보기</a></label>
+        <input type="checkbox" name="chk-part" class="chkbox" id="chk-3" onchange="checkCheckboxes()"> <label class="chkbox-label inside" for="chk-3">[필수] 개인정보 수집 및 이용 동의 <a href="#" class="privacy-look">보기</a></label>
+        <input type="checkbox" name="chk-part" class="chkbox" id="chk-4" onchange="checkCheckboxes()"> <label class="chkbox-label inside" for="chk-4">[선택] 마케팅 목적의 개인정보 수집 및 이용 동의 <a href="#" class="privacy-look">보기</a></label>
+        <input type="checkbox" name="chk-part" class="chkbox" id="chk-5" onchange="checkCheckboxes()"> <label class="chkbox-label inside" for="chk-5">[선택] 광고성 정보 수신 동의</label>
+        
+        <div class="signup-container">
+            <button class="signup-btn disabled">동의하고 가입하기</button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script src="../../../js/sign/check_all.js"></script>
+<script src="../../../js/sign/check_checkbox.js"></script>
