@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container-inside {
+    text-align: center;
+}
+
+.txt-main {
+    font-size: var(--bs-font-16px);
+    font-weight: var(--bs-font-bold);
+    margin-top: 36px;
+}
+
+.fontColor-main {
+    font-size: var(--bs-font-18px);
+}
+
+.button-group > * {
+    font-size: var(--bs-font-14px);
+    font-weight: var(--bs-font-medium);
+    color: var(--bs-white);
+    width: 223px;
+    height: 40px;
+}
+
+.signin-btn {
+    background-color: var(--bs-main-100);
+    margin-top: 140px;
+}
+
+.signup-btn {
+    background-color: var(--bs-black-25);
+    margin-top: 10px;
+}
