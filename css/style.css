@@ -9,6 +9,7 @@
     --bs-main-20: #FEEECE;
     --bs-main-100: #F8AC0B;
 
+    --bs-black-4: #f4f4f4;
     --bs-black-5: #F2F2F2;
     --bs-black-25: #C3BFBF;
     --bs-black-34: #A8A8A8;
@@ -26,7 +27,7 @@
     /* font weight */
     --bs-font-thin: 100;
     --bs-font-extralight: 200;
-    /* --bs-font-light: 300; */
+    --bs-font-light: 400;
     --bs-font-regular: 500;
     /* Figma 폰트에 맞추면 너무 굵어짐 -> 초기 디자인에 초점 맞추기 */
     --bs-font-medium: 300;   

@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Duk'z</title>
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../../css/sign/input_profile.css">
 </head>
+
 <body>
-    
+    <div class="container">
+        <div class="back-container" onclick="location.href='./input_nick.html'">
+            <img class="back-img" src="../../../Image/icon/arrow-back.png">
+        </div>
+        <div class="line-color line"></div>
+        <div class="line-deColor line"></div>
+        <div class="main-txt-container">
+            프로필 사진을 정해주세요.
+        </div>
+
+        <div class="img-container" onclick="modalVisible();">
+            <img id="profile-img" src="../../../Image/profile/profile_img_before.png">
+        </div>
+
+        <button class="next-btn disabled" disabled onclick="location.href='./input_birth.html'">다음</button>
+
+
+        <div class="modal-container">
+            <button class="img-btn" id="default" onclick="chkToNext(); useDefault();">기본 이미지 사용</button>
+            <button class="img-btn" id="take-picture" onclick="chkToNext();">사진 찍기</button>
+            <button class="img-btn" id="bring-gallery" onclick="chkToNext();">갤러리에서 가져오기</button>
+        </div>
+    </div>
 </body>
+
 </html>
+
+<script src="../../../js/sign/profile_img_change.js"></script>

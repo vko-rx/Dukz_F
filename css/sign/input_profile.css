@@ -1,0 +1,65 @@
+.line-color {
+    width: 80%;
+}
+.main-txt-container {
+    margin: 35px 0 35px 20px;
+    font-size: var(--bs-font-16px);
+    font-weight: var(--bs-font-regular);
+}
+.img-container {
+    text-align: center;
+}
+#profile-img {
+    
+    border: 1px solid var(--bs-black-4);
+    border-radius: 100px;
+    width: 178px;
+    height: 178px;
+}
+#input-img {
+
+}
+
+/* modal */
+.modal-container {
+    visibility: hidden;
+    margin: 0 20px;
+    border-radius: 12px;
+    display: flex;
+    flex: 1;
+    overflow: auto;
+    flex-direction: column;
+    box-shadow: 0px 0px 5px 5px var(--bs-black-4);
+    background-color: var(--bs-black-4);
+    position: fixed;
+    bottom: 40px;
+    width: calc(100% - 40px);
+}
+.img-btn {
+    background-color: var(--bs-white);
+    height: 40px;
+    color: var(--bs-black-87);
+    font-size: var(--bs-font-14px);
+    font-weight: var(--bs-font-light);
+}
+.img-btn:active {
+    background-color: var(--bs-main-20);
+}
+#take-picture,
+#default {
+    margin-bottom: 2px;
+}
+
+.next-btn {
+    border: none;
+    margin: 40px 20px 0 20px;
+    width: calc(100% - 40px);
+    height: 40px;
+    background-color: var(--bs-main-100);
+    color: var(--bs-white);
+}
+.disabled {
+    background-color: var(--bs-white);
+    border: 0.5px solid var(--bs-black-34);
+    color: var(--bs-black-34);
+}
