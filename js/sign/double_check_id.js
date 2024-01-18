@@ -20,20 +20,29 @@ function BtnDisabled(obj) {
     obj.classList.add('disabled');
 }
 
-// 중복확인 눌렀을 경우 -> 이메일 중복 체크
+// 중복확인 눌렀을 경우 -> 아이디 중복 체크
 function chkId() {
-    // if (중복된 아이디가 있을 경우)
-    // hiddenTxt.innerHTML = "이미 사용하고 있는 아이디입니다";
-    // hiddenTxt.style.color = "#FF4B4B";
-    // BtnDisabled(nextBtn);
+    var userid = document.getElementById("input-id").value;
 
-    // else 
-    hiddenTxt.innerHTML = "사용 가능한 아이디입니다";
-    hiddenTxt.style.color = "#5C5C5C";
-    BtnAbled(nextBtn);
-
-    // ifelse문 바깥
-    BtnDisabled(doublechkBtn);
-
-
+    axios
+    .post("http://localhost:3000/user/checkDuplicate", {
+            userid: userid,
+        })
+        .then((response) => {
+        if (response.data.isDuplicate) {
+            hiddenTxt.innerHTML = "이미 사용하고 있는 아이디입니다";
+            hiddenTxt.style.color = "#FF4B4B";
+            BtnDisabled(nextBtn);
+        }else {
+            hiddenTxt.innerHTML = "사용 가능한 아이디입니다";
+            hiddenTxt.style.color = "#5C5C5C";
+            BtnAbled(nextBtn);
+        }
+        // ifelse문 바깥
+        BtnDisabled(doublechkBtn);
+      })
+      .catch((e) => {
+        console.error("Error during duplicate check:", e);
+        alert("에러가 발생했습니다.");
+    });
 }
