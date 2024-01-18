@@ -6,6 +6,7 @@
     <title>Duk'z</title>
     <link rel="stylesheet" href="../../../css/style.css">
     <link rel="stylesheet" href="../../../css/sign/input_nick.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -19,7 +20,7 @@
         </div>
 
         <input type="text" id="input-nick" placeholder="닉네임 입력" oninput="chkToNext(this)">
-        <button class="next-btn disabled" disabled onclick="location.href='./input_profile.html'">다음</button>
+        <button class="next-btn disabled" disabled onclick="submit()">다음</button>
     </div>
 </body>
 </html>
