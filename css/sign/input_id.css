@@ -1,0 +1,48 @@
+.line-color {
+    width: 60%;
+}
+.main-txt-container {
+    margin-top: 35px;
+    margin-left: 20px;
+    font-size: var(--bs-font-16px);
+    font-weight: var(--bs-font-regular);
+}
+.id-container{
+    margin: 24px 20px 0 20px;
+    position: relative;
+}
+.double-chk-btn {
+    position: absolute;
+    left: calc(100% - 77px);
+    top: calc(50% - 12px);
+    border: 0.5px solid var(--bs-main-100);
+    border-radius: 12px;
+    font-size: var(--bs-font-11px);
+    color: var(--bs-white);
+    font-weight: var(--bs-font-regular);
+    background-color: var(--bs-main-100);
+    padding: 3px 10px;
+}
+
+#input-id {
+    width: calc(100% - 20px);
+}
+.next-btn {
+    border: none;
+    margin: 40px 20px 0 20px;
+    width: calc(100% - 40px);
+    height: 40px;
+    background-color: var(--bs-main-100);
+    color: var(--bs-white);
+}
+.hidden-txt {
+    margin-top: 8px;
+    font-size: var(--bs-font-10px);
+    font-weight: var(--bs-font-regular);
+    margin-left: 20px;
+}
+.disabled {
+    background-color: var(--bs-white);
+    border: 0.5px solid var(--bs-black-34);
+    color: var(--bs-black-34);
+}

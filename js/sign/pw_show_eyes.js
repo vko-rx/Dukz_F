@@ -1,4 +1,4 @@
-function togglePasswordVisibility() {
+function togglePasswordVisibility(obj) {
     var passwordInput = document.getElementById("pw");
     var eyeIcon = document.getElementById("eyeIcon");
 

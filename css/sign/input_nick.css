@@ -1,0 +1,26 @@
+.line-color {
+    width: 60%;
+}
+.main-txt-container {
+    margin: 35px 0 24px 20px;
+    font-size: var(--bs-font-16px);
+    font-weight: var(--bs-font-regular);
+}
+#input-nick {
+    margin: 0 20px;
+    width: calc(100% - 60px);
+}
+
+.next-btn {
+    border: none;
+    margin: 40px 20px 0 20px;
+    width: calc(100% - 40px);
+    height: 40px;
+    background-color: var(--bs-main-100);
+    color: var(--bs-white);
+}
+.disabled {
+    background-color: var(--bs-white);
+    border: 0.5px solid var(--bs-black-34);
+    color: var(--bs-black-34);
+}

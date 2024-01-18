@@ -45,5 +45,22 @@ function authVerify() {
         console.error("Error during auth code check:", e);
         alert("에러가 발생했습니다.");
       });
-    
+}
+
+function submit(){
+
+    axios
+    .post("http://localhost:3000/user/signup", { 
+        email: email,
+      })
+      .then((response) => {
+        console.log("Registration response:", response.data);
+        if (response.data.message === "User registered successfully") {
+            location.href='./input_id.html';
+        }
+      })
+      .catch((e) => {
+        console.error("Error during registration:", e);
+        alert("에러가 발생했습니다.")
+      });
 }
