@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duk'z</title>
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../../css/sign/input_nick.css">
+</head>
+<body>
+    <div class="container">
+        <div class="back-container" onclick="location.href='./input_pw.html'">
+            <img class="back-img" src="../../../Image/icon/arrow-back.png">
+        </div>
+        <div class="line-color line"></div>
+        <div class="line-deColor line"></div>
+        <div class="main-txt-container">
+            닉네임을 입력해주세요.
+        </div>
+
+        <input type="text" id="input-nick" placeholder="닉네임 입력" oninput="chkToNext(this)">
+        <button class="next-btn disabled" disabled onclick="location.href='./input_profile.html'">다음</button>
+    </div>
+</body>
+</html>
+
+<script src="../../../js/sign/next_btn.js"></script>
