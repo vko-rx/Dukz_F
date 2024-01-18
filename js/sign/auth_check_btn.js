@@ -17,16 +17,33 @@ function authRequestBtnDisabled() {
     authRequestBtn.classList.add('disabled');
 }
 
+const email = localStorage.getItem('email');
+document.getElementById('email-txt').innerHTML = email;
+
 // 인증하기 버튼 눌렀을 경우
 function authVerify() {
-    // if (인증 코드가 다르면)
-    // hiddenTxtDiv.innerHTML = "인증되지 않았습니다";
-    // hiddenTxtDiv.style.color = "#FF4B4B";
-    // else 
-    hiddenTxtDiv.innerHTML = "인증되었습니다";
-    hiddenTxtDiv.style.color = "#5C5C5C";
-    nextBtn.removeAttribute("disabled");
-    nextBtn.classList.remove('disabled');
-    authRequestBtnDisabled();
+    var authCode = document.getElementById("authcode").value;
 
+    axios
+      .post("http://localhost:3000/user/checkAuthCode", {
+        email: email,
+        code: authCode,
+      })
+      .then((response) => {
+        if (response.status === 200 && response.data.message === '인증번호가 확인되었습니다.') {
+            hiddenTxtDiv.innerHTML = "인증되었습니다";
+            hiddenTxtDiv.style.color = "#5C5C5C";
+            nextBtn.removeAttribute("disabled");
+            nextBtn.classList.remove('disabled');
+            authRequestBtnDisabled();
+        } else {
+          hiddenTxtDiv.innerHTML = "인증코드가 일치하지 않습니다. 다시 확인해주세요.";
+          hiddenTxtDiv.style.color = "#FF4B4B";
+        }
+      })
+      .catch((e) => {
+        console.error("Error during auth code check:", e);
+        alert("에러가 발생했습니다.");
+      });
+    
 }
