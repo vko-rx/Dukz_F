@@ -20,9 +20,11 @@ function BtnDisabled(obj) {
     obj.classList.add('disabled');
 }
 
+
 // 중복확인 눌렀을 경우 -> 아이디 중복 체크
 function chkId() {
     var userid = document.getElementById("input-id").value;
+
 
     axios
     .post("http://localhost:3000/user/checkDuplicate", {
@@ -45,4 +47,25 @@ function chkId() {
         console.error("Error during duplicate check:", e);
         alert("에러가 발생했습니다.");
     });
+}
+
+function submit(){
+    const email = localStorage.getItem('email');
+    var userid = document.getElementById("input-id").value;
+
+    axios
+    .post("http://localhost:3000/user/signup2", { 
+        userid: userid,
+        email: email,
+      })
+      .then((response) => {
+        console.log("Registration response:", response.data);
+        if (response.data.message === "User registered successfully") {
+            location.href = './input_pw.html';
+        }
+      })
+      .catch((e) => {
+        console.error("Error during registration:", e);
+        alert("에러가 발생했습니다.")
+      });
 }
