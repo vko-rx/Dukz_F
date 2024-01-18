@@ -58,6 +58,28 @@ function chkToNext() {
         nextBtn.classList.add('disabled');
     }
 }
+
+function submit(){
+    const email = localStorage.getItem('email');
+    var pw = document.getElementById("pw").value;
+
+    axios
+    .post("http://localhost:3000/user/signup3", { 
+        pw: pw,
+        email: email,
+      })
+      .then((response) => {
+        console.log("Registration response:", response.data);
+        if (response.data.message === "User registered successfully") {
+            location.href='./input_nick.html';
+        }
+      })
+      .catch((e) => {
+        console.error("Error during registration:", e);
+        alert("에러가 발생했습니다.")
+      });
+}
+
 function chkOk(obj) {
     obj.style.color = "#5C5C5C";
 }
