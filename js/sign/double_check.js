@@ -25,7 +25,7 @@ function chkEmail() {
     let regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
 
     axios
-        .post("http://localhost:3000/user/emailDuplicate", {
+    .post("http://localhost:3000/user/emailDuplicate", {
             email: email,
         })
         .then((response) => {
@@ -46,6 +46,26 @@ function chkEmail() {
         }
       })
       .catch((e) => {
+        console.error("Error during duplicate check:", e);
+        alert("에러가 발생했습니다.");
+    });
+}
+
+// 이메일 인증번호 보내는 함수
+function emailsubmit() {
+    var email = document.getElementById("email").value;
+
+    // LocalStorage에 이메일 저장
+    localStorage.setItem('email', email);
+  
+    axios
+    .post("http://localhost:3000/user/certificate", {
+        email: email,
+    })
+    .then((response) => {
+        location.href = './auth_request.html';
+    })
+    .catch((e) => {
         console.error("Error during duplicate check:", e);
         alert("에러가 발생했습니다.");
     });
