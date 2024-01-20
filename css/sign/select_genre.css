@@ -2,7 +2,7 @@
     width: 100%;
 }
 .main-txt-container {
-    margin: 35px 0 35px 20px;
+    margin: 35px 0 55px 20px;
     font-size: var(--bs-font-16px);
     font-weight: var(--bs-font-regular);
 }
@@ -28,4 +28,32 @@
 .next-btn {
     position: fixed;
     bottom: 40px;
+}
+
+/* modal */
+.modal-container {
+    display: none;
+    padding: 50px 20px 16px 20px;
+    background-color: var(--bs-white);
+    border-radius: 20px;
+    width: calc(100% - 180px);
+    height: 254px;
+    text-align: center;
+}
+
+.modal-container .goto-signIn {
+    position: absolute;
+}
+.txt-container {
+    margin-top: 8px;
+    font-size: var(--bs-font-14px);
+    color: var(--bs-black-87);
+    font-weight: var(--bs-font-regular);
+}
+.goto-signIn {
+    bottom: 16px;
+    right: 32px;
+    color: var(--bs-main-100);
+    font-weight: var(--bs-font-regular);
+    font-size: var(--bs-font-12px);
 }
