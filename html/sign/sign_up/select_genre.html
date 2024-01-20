@@ -19,47 +19,50 @@
             <span id="name">사용자 닉네임</span>님이 좋아하는<br>장르를 선택해주세요. <span class="sub-txt">(1개 이상)</span>
         </div>
 
-        <div class="genre-container">
-            <div class="idol sel-genre-container">
-                <img src="../../../Image/select_genre/un_selected/idol.png">
+        <div class="genre-container" onclick="chkBtnAble()">
+            <div class="idol sel-genre-container" onclick="selectCheck(this)">
+                <img class="genre-img" src="../../../Image/select_genre/un_selected/idol.png">
                 <div class="genre-name">아이돌</div>
             </div>
-            <div class="anime sel-genre-container">
-                <img src="../../../Image/select_genre/un_selected/anime.png">
+            <div class="anime sel-genre-container" onclick="selectCheck(this)">
+                <img class="genre-img"src="../../../Image/select_genre/un_selected/anime.png">
                 <div class="genre-name">애니메이션</div>
             </div>
-            <div class="actor sel-genre-container">
-                <img src="../../../Image/select_genre/un_selected/actor.png">
+            <div class="actor sel-genre-container" onclick="selectCheck(this)">
+                <img class="genre-img"src="../../../Image/select_genre/un_selected/actor.png">
                 <div class="genre-name">배우</div>
             </div>
-            <div class="vocaloid sel-genre-container">
-                <img src="../../../Image/select_genre/un_selected/vocaloid.png">
+            <div class="vocaloid sel-genre-container" onclick="selectCheck(this)">
+                <img class="genre-img"src="../../../Image/select_genre/un_selected/vocaloid.png">
                 <div class="genre-name">보컬로이드</div>
             </div>
-            <div class="game sel-genre-container">
-                <img src="../../../Image/select_genre/un_selected/game.png">
+            <div class="game sel-genre-container" onclick="selectCheck(this)">
+                <img class="genre-img"src="../../../Image/select_genre/un_selected/game.png">
                 <div class="genre-name">게임</div>
             </div>
-            <div class="movie sel-genre-container">
-                <img src="../../../Image/select_genre/un_selected/movie.png">
+            <div class="movie sel-genre-container" onclick="selectCheck(this)">
+                <img class="genre-img"src="../../../Image/select_genre/un_selected/movie.png">
                 <div class="genre-name">영화</div>
             </div>
-            <div class="food sel-genre-container">
-                <img src="../../../Image/select_genre/un_selected/food.png">
+            <div class="food sel-genre-container" onclick="selectCheck(this)">
+                <img class="genre-img"src="../../../Image/select_genre/un_selected/food.png">
                 <div class="genre-name">음식</div>
             </div>
-            <div class="music sel-genre-container">
-                <img src="../../../Image/select_genre/un_selected/music.png">
+            <div class="music sel-genre-container" onclick="selectCheck(this)">
+                <img class="genre-img"src="../../../Image/select_genre/un_selected/music.png">
                 <div class="genre-name">음악</div>
             </div>
-            <div class="fashion sel-genre-container">
-                <img src="../../../Image/select_genre/un_selected/fashion.png">
+            <div class="fashion sel-genre-container" onclick="selectCheck(this)">
+                <img class="genre-img"src="../../../Image/select_genre/un_selected/fashion.png">
                 <div class="genre-name">패션</div>
             </div>
         </div>
 
-        <button class="chk-btn">확인</button>
+        <button class="next-btn disabled" disabled>확인</button>
     </div>
     
 </body>
 </html>
+
+<script src="../../../js/sign/select_genre.js"></script>
+<script src="../../../js/sign/sign_check_btn.js"></script>

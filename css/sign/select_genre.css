@@ -25,10 +25,7 @@
     font-size: var(--bs-font-13px);
     font-weight: var(--bs-font-regular);
 }
-.chk-btn {
+.next-btn {
     position: fixed;
     bottom: 40px;
-    height: 40px;
-    margin: 0 20px;
-    width: calc(100% - 40px);
 }
