@@ -2,7 +2,7 @@ let hiddenTxt = document.getElementsByClassName('hidden-txt')[0];
 let hiddenChkTxt = document.getElementsByClassName('hidden-chk-txt')[0];
 let pwDiv = document.getElementById('pw');
 let pwChkDiv = document.getElementsByClassName('pw')[0];
-let nextBtn = document.getElementsByClassName('next-Btn')[0];
+let nextBtn = document.getElementsByClassName('next-btn')[0];
 
 let letterCaseChk = document.getElementById('letter-case-chk');
 let numberChk = document.getElementById('number-chk');

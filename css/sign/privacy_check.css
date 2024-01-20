@@ -52,6 +52,7 @@
 
 .disabled {
     background-color: var(--bs-main-20);
+    border: none;
 }
 .line-color {
     width: 0;
