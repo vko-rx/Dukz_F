@@ -16,7 +16,6 @@ function submitLogin() {
     var id = document.getElementById("id").value;
     var pw = document.getElementById("pw").value;
   
-      // 클라이언트 로그인 후
     axios
     .post("http://localhost:3000/user/login", {
       userid: id,
@@ -28,8 +27,8 @@ function submitLogin() {
       localStorage.setItem("token", token);
       localStorage.setItem("userid", id);
   
-      alert("로그인 되었습니다");
-  
+      location.href='http://localhost:5500/html/home.html'
+3
     })
     .catch((error) => {
       if (error.response && error.response.status === 401) {      
