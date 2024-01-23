@@ -1,5 +1,5 @@
 body {
-    padding-bottom: 120px;
+    padding-bottom: 95px;
 }
 .top-container {
     padding: 8px 20px 8px 0;
@@ -212,4 +212,35 @@ body {
     font-size: var(--bs-font-11px);
     font-weight: var(--bs-font-regular);
     color: var(--bs-black-64);
+}
+
+
+/* show plan */
+.plan-add {
+    margin-left: 20px;
+}
+.plan-slide {
+    padding: 0 0;
+}
+.plan-slide:nth-child(2) {
+    margin-left: -28vw;
+}
+.plan-container {  
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.plan-img {
+    width: 135px;
+    height: 143px;
+    border-radius: 10px;
+    filter: brightness(80%);
+    position: relative;
+}
+.plan-txt {
+    position: absolute;
+    font-size: var(--bs-font-13px);
+    color: var(--bs-white);
+    font-weight: var(--bs-font-semibold);
 }
