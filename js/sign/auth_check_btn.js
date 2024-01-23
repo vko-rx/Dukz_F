@@ -20,7 +20,6 @@ function authRequestBtnDisabled() {
 const email = localStorage.getItem('email');
 document.getElementById('email-txt').innerHTML = email;
 
-// 인증하기 버튼 눌렀을 경우
 function authVerify() {
     var authCode = document.getElementById("authcode").value;
 

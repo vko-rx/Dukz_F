@@ -13,3 +13,27 @@ function chkToNext() {
         nextBtn.classList.add('disabled');
     }
 }
+
+function submit(){
+    const email = localStorage.getItem('email');
+    var year = document.getElementById("year").value;
+    var month = document.getElementById("month").value;
+    var day = document.getElementById("day").value;
+
+
+    axios
+    .post("http://localhost:3000/user/signup6", { 
+        email: email,
+        birth: year+month+day
+      })
+      .then((response) => {
+        console.log("Registration response:", response.data);
+        if (response.data.message === "User registered successfully") {
+            location.href='select_genre.html';
+        }
+      })
+      .catch((e) => {
+        console.error("Error during registration:", e);
+        alert("에러가 발생했습니다.")
+      });
+}

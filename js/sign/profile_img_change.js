@@ -14,12 +14,15 @@ function chkToNext() {
     nextBtn.classList.remove('disabled');
 }
 
+function displayUploadedImage(imageUrl) {
+    profileImg.src = `http://localhost:3000${imageUrl}`;
+}
+
 function uploadImage() {
     const formData = new FormData(document.getElementById('uploadForm'));
-    const email = localStorage.getItem('email');
+    formData.append('email', localStorage.getItem('email'));
 
     axios.post('http://localhost:3000/user/signup5', formData, {
-        email : email,
         headers: {
             'Content-Type': 'multipart/form-data',
         },
@@ -27,17 +30,34 @@ function uploadImage() {
     .then(response => {
         console.log('Image upload response:', response.data);
 
+        const resultElement = document.getElementById('result');
+
         if (response.data.success) {
             const imageUrl = response.data.image_url;
-            console.log('Image URL:', imageUrl);
-            document.getElementById('result').innerHTML = 'Image uploaded successfully. Image URL: ' + imageUrl;
-            // location.href='./input_birth.html';
+            
+            displayUploadedImage(imageUrl);
+            
+            location.href = './input_birth.html';
         } else {
             console.error('Image upload failed:', response.data.message);
-            document.getElementById('result').innerHTML = 'Image upload failed: ' + response.data.message;
+            resultElement.innerHTML = 'Image upload failed: ' + response.data.message;
         }
     })
     .catch(error => {
         console.error('Error during image upload:', error);
     });
+}
+
+function showSelectedImage() {
+    const input = document.getElementById('gallery-picker');
+    const img = document.getElementById('profile-img');
+
+    const file = input.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
 }

@@ -25,7 +25,6 @@ function BtnDisabled(obj) {
 function chkId() {
     var userid = document.getElementById("input-id").value;
 
-
     axios
     .post("http://localhost:3000/user/checkDuplicate", {
             userid: userid,
@@ -40,7 +39,6 @@ function chkId() {
             hiddenTxt.style.color = "#5C5C5C";
             BtnAbled(nextBtn);
         }
-        // ifelse문 바깥
         BtnDisabled(doublechkBtn);
       })
       .catch((e) => {
