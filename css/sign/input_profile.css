@@ -45,3 +45,8 @@
 #default {
     margin-bottom: 2px;
 }
+#bring-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
