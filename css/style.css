@@ -52,6 +52,9 @@
     --bs-font-22px: 22px;
     --bs-font-60px: 60px;
 
+    /* swipe custom */
+    --swiper-theme-color: var(--bs-black-64);
+
 }
 
 * {
