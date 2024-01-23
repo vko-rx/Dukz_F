@@ -6,6 +6,7 @@
     <title>Duk'z</title>
     <link rel="stylesheet" href="../../../css/style.css">
     <link rel="stylesheet" href="../../../css/sign/select_genre.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
 
@@ -20,45 +21,45 @@
         </div>
 
         <div class="genre-container" onclick="chkBtnAble()">
-            <div class="idol sel-genre-container" onclick="selectCheck(this)">
+            <div class="idol sel-genre-container" id="1" onclick="selectCheck(this); selectedCheck(this);">
                 <img class="genre-img" src="../../../Image/select_genre/un_selected/idol.png">
                 <div class="genre-name">아이돌</div>
             </div>
-            <div class="anime sel-genre-container" onclick="selectCheck(this)">
+            <div class="anime sel-genre-container" id="2" onclick="selectCheck(this); selectedCheck(this);">
                 <img class="genre-img"src="../../../Image/select_genre/un_selected/anime.png">
                 <div class="genre-name">애니메이션</div>
             </div>
-            <div class="actor sel-genre-container" onclick="selectCheck(this)">
+            <div class="actor sel-genre-container" id="3" onclick="selectCheck(this); selectedCheck(this);">
                 <img class="genre-img"src="../../../Image/select_genre/un_selected/actor.png">
                 <div class="genre-name">배우</div>
             </div>
-            <div class="vocaloid sel-genre-container" onclick="selectCheck(this)">
+            <div class="vocaloid sel-genre-container" id="4" onclick="selectCheck(this); selectedCheck(this);">
                 <img class="genre-img"src="../../../Image/select_genre/un_selected/vocaloid.png">
                 <div class="genre-name">보컬로이드</div>
             </div>
-            <div class="game sel-genre-container" onclick="selectCheck(this)">
+            <div class="game sel-genre-container" id="5" onclick="selectCheck(this); selectedCheck(this);">
                 <img class="genre-img"src="../../../Image/select_genre/un_selected/game.png">
                 <div class="genre-name">게임</div>
             </div>
-            <div class="movie sel-genre-container" onclick="selectCheck(this)">
+            <div class="movie sel-genre-container" id="6" onclick="selectCheck(this); selectedCheck(this);">
                 <img class="genre-img"src="../../../Image/select_genre/un_selected/movie.png">
                 <div class="genre-name">영화</div>
             </div>
-            <div class="food sel-genre-container" onclick="selectCheck(this)">
+            <div class="food sel-genre-container" id="7" onclick="selectCheck(this); selectedCheck(this);">
                 <img class="genre-img"src="../../../Image/select_genre/un_selected/food.png">
                 <div class="genre-name">음식</div>
             </div>
-            <div class="music sel-genre-container" onclick="selectCheck(this)">
+            <div class="music sel-genre-container" id="8" onclick="selectCheck(this); selectedCheck(this);">
                 <img class="genre-img"src="../../../Image/select_genre/un_selected/music.png">
                 <div class="genre-name">음악</div>
             </div>
-            <div class="fashion sel-genre-container" onclick="selectCheck(this)">
+            <div class="fashion sel-genre-container" id="9" onclick="selectCheck(this); selectedCheck(this);">
                 <img class="genre-img"src="../../../Image/select_genre/un_selected/fashion.png">
                 <div class="genre-name">패션</div>
             </div>
         </div>
 
-        <button class="next-btn disabled" disabled onclick="modal();">확인</button>
+        <button class="next-btn disabled" disabled onclick="modal(); submit();">확인</button>
     </div>
 
     <div class="modal-container">
