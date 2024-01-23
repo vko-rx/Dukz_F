@@ -1,0 +1,113 @@
+.top-container {
+    padding: 8px 20px 8px 0;
+    display: flex;
+    width: calc(100% - 20px);
+    justify-content: right;
+}
+.top-container > * {
+    margin-left: 10px;
+}
+.hot-slide-container {
+    height: 310px;
+    width: 250px;
+    border-radius: 18px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15), 0 0 20px 0 rgba(0, 0, 0, 0.1);
+}
+.main-txt-container {
+    margin-top: 10px;
+    font-size: var(--bs-font-22px);
+    color: var(--bs-black-87);
+    font-weight: var(--bs-font-semibold);
+}
+.sub-txt-container {
+    font-size: var(--bs-font-14px);
+    color: var(--bs-black-64);
+    font-weight: var(--bs-font-medium);
+}
+.main-txt-container,
+.sub-txt-container {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.swiper {
+    margin-top: 18px;
+}
+.main-content-container {
+    display: flex;
+    height: calc(55px - 18px);
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.05);
+    padding: 10px 9px;
+}
+.profile-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 100px;
+    margin-right: 5px;
+}
+.main-content-txt-container {
+    width: 170px;
+}
+.nick-txt {
+    color: var(--bs-main-100);
+    font-size: var(--bs-font-8px);
+    font-weight: var(--bs-font-regular);
+}
+.title-txt {
+    font-size: var(--bs-font-12px);
+    font-weight: var(--bs-font-regular);
+    color: var(--bs-black-87);
+}
+.date-txt {
+    font-size: var(--bs-font-7px);
+    font-weight: var(--bs-font-regular);
+    color: var(--bs-black-34);
+}
+.bookmark-img {
+    display: flex;
+    align-items: center;
+}
+
+/* card - info */
+.info-img-container {
+    text-align: center;
+    margin-top: 12px;
+}
+.info-img {
+    border-radius: 8px;
+    width: 220px;
+    height: 140px;
+}
+.info-txt-container {
+    margin: 3px 15px 0 15px;
+    font-size: var(--bs-font-12px);
+    color: var(--bs-black-87);
+    font-weight: var(--bs-font-regular);
+}
+.info-txt {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+    width: 185px;
+}
+.line-container {
+    display: flex;
+    align-items: center;
+}
+.a-map {
+    color: var(--bs-blue-87);
+    font-weight: var(--bs-font-regular);
+    font-size: var(--bs-font-9px);
+}
+.sub-txt {
+    margin-left: 10px;
+}
+.hashtag-container {
+    font-size: var(--bs-font-10px);
+    font-weight: var(--bs-font-light);
+    color: var(--bs-main-100);
+    margin: 8px 18px 0 18px;
+}
+.hashtag-container > span {
+    margin-right: 5px;
+}

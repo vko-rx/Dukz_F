@@ -1,11 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Duk'z</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <!-- swipe -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script> -->
 </head>
+
 <body>
-    
+
+    <div class="container">
+        <div class="top-container">
+            <img src="../Image/icon/topbar/heart.png">
+            <img src="../Image/icon/topbar/bookmark.png">
+            <img src="../Image/icon/topbar/search.png">
+        </div>
+        <div class="hot-container">
+            <div class="main-txt-container">
+                <span class="user-nick">우끼끼</span>님 안녕하세요!
+            </div>
+            <div class="sub-txt-container">
+                <span class="user-nick">우끼끼</span>님의 관심사에서 핫한 정보를 모아봤어요
+            </div>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="hot-slide-container">
+                            <div class="main-content-container">
+                                <!-- 이미지, 글 등은 서버에서 수정 -->
+                                <img class="profile-img" src="../Image/temp/genre_1.png">
+                                <div class="main-content-txt-container">
+                                    <div class="nick-txt">농놀</div>
+                                    <div class="title-txt">슬램덩크 성지순례 갔다 옴</div>
+                                    <div class="date-txt">2024.01.02</div>
+                                </div>
+                                <div class="bookmark-img"><img src="../Image/icon/card_icon/bookmark/un_check.png"></div>
+                            </div>
+                            <div class="main-content-info-container">
+                                <div class="info-img-container">
+                                    <img class="info-img" src="../Image/temp/genre_1.png">
+                                </div>
+                                <div class="info-txt-container">
+                                    <div class="line-container">
+                                        <div class="pin-container info-txt">
+                                            <img class="sub-img" src="../Image/icon/card_icon/pin.png">
+                                            <span class="sub-txt">가마쿠라, 에노시마</span>
+                                        </div>
+                                        <a class="a-map" href="#">구글맵</a>
+                                    </div>
+                                    <div class="time-container info-txt">
+                                        <img class="sub-img" src="../Image/icon/card_icon/time.png">
+                                        <span class="sub-txt">12:00~21:00</span>
+                                    </div>
+                                    <div class="money-container info-txt">
+                                        <img class="sub-img" src="../Image/icon/card_icon/yen.png">
+                                        <span class="sub-txt">110円~</span>
+                                    </div>
+                                </div>
+                                <div class="hashtag-container">
+                                    <!-- 임시 -->
+                                    <span>#슬램덩크</span>
+                                    <span>#농놀</span>
+                                    <span>#애니메이션</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-pagination"></div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="nav-container">
+        <div class="home-container nav-sub-container" onclick="location.href='./home.html'">
+            <img class="nav-img" src="../Image/navbar/selected/home.png">
+            <div class="nav-text selected">홈</div>
+        </div>
+        <div class="travel-diary-container nav-sub-container" onclick="location.href='./travel_diary.html'">
+            <img class="nav-img" src="../Image/navbar/un_selected/travel_diary.png">
+            <div class="nav-text">여행일지</div>
+        </div>
+        <div class="travel-plan-container nav-sub-container" onclick="location.href='./travel_plan.html'">
+            <img class="nav-img" src="../Image/navbar/un_selected/travel_plan.png">
+            <div class="nav-text">여행일정</div>
+        </div>
+        <div class="my-page-container nav-sub-container" onclick="location.href='./my_page.html'">
+            <img class="nav-img" src="../Image/navbar/un_selected/my_page.png">
+            <div class="nav-text">마이페이지</div>
+        </div>
+    </div>
 </body>
+
 </html>
+
+<!-- <script src="../js/home/swipe.js"></script> -->
