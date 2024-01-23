@@ -2,7 +2,7 @@ new Swiper('.swiper', {
     direction: 'horizontal', // 슬라이드 진행 방향, 기본값 horizontal(가로)
     loop: false, // 반복재생 여부
     slidesPerView: 1, // 한번에 보여줄 슬라이드 개수
-    spaceBetween: -90, // 슬라이드 사이 여백
+    spaceBetween: -80, // 슬라이드 사이 여백
     centeredSlides: true, // 1번 슬라이드가 가운데 보이기
     pagination: {
         el: ".swiper-pagination",

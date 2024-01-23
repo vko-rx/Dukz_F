@@ -117,8 +117,20 @@
 
 /* hot place */
 .title-txt-container {
-    margin: 40px 20px;
+    margin: 40px 20px 15px 20px;
     font-size: var(--bs-font-22px);
     color: var(--bs-black-87);
     font-weight: var(--bs-font-bold);
+}
+.place-container {
+    display: flex;
+    margin: 0 20px;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1), 0 0 20px 0 rgba(0, 0, 0, 0.05);
+}
+.place-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 8px;
 }
