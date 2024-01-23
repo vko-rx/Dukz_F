@@ -45,6 +45,7 @@
     --bs-font-10px: 10px;
     --bs-font-11px: 11px;
     --bs-font-12px: 12px;
+    --bs-font-12-5px: 12.5px;
     --bs-font-13px: 13px;
     --bs-font-14px: 14px;
     --bs-font-16px: 16px;
@@ -68,6 +69,7 @@ body {
     width: 100%;
     height: 100%;
     background-color: var(--bs-white);
+    overflow-x: hidden;
 }
 
 body {
@@ -81,6 +83,9 @@ body {
 a {
     color: var(--bs-black);
     text-decoration: none;
+}
+img {
+    object-fit: cover;
 }
 
 /* input */
