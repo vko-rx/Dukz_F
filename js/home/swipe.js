@@ -14,3 +14,23 @@ new Swiper('.swiper2', {
   centeredSlides: false, // 1번 슬라이드가 가운데 보이기
   freeMode: true,
 });
+
+function getName() {
+    const userid = localStorage.getItem("userid");
+  
+    axios
+    .post("http://localhost:3000/user/getName", {
+        userid : userid  
+    })
+    .then((response) => {
+        const name = response.data.name;
+        console.log(name);
+  
+        document.getElementById('user-nick').innerHTML = name;
+    })
+    .catch((e) => {
+        console.log(e);
+    });
+  }
+  
+  getName();
