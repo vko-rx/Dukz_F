@@ -54,3 +54,39 @@ Element.prototype.setStyle = function(styles) {
     for (var k in styles) this.style[k] = styles[k];
     return this;
 };
+
+let selectedGenres = [];
+
+function selectedCheck(selectedGenre){
+    const selectedGenreId = selectedGenre.id;
+
+    const index = selectedGenres.indexOf(selectedGenreId);
+
+    if (index === -1) {
+        selectedGenres.push(selectedGenreId);
+    } else {
+        selectedGenres.splice(index, 1);
+    }
+}
+
+function submit(){
+    const email = localStorage.getItem('email');
+
+    axios
+    .post("http://localhost:3000/user/signup7", { 
+        email: email,
+        genres: selectedGenres
+      })
+      .then((response) => {
+        console.log("Registration response:", response.data);
+        if (response.data.message === "User registered successfully") {
+            location.href='./input_profile.html'
+        }
+      })
+      .catch((e) => {
+        console.error("Error during registration:", e);
+        alert("에러가 발생했습니다.")
+      });
+
+    console.log("Selected Genre IDs:", selectedGenres);
+}
