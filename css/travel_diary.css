@@ -83,7 +83,7 @@ body {
 
 .nothing-txt {
     font-weight: var(--bs-font-light);
-    font-size: var(--bs-font-16px);
+    font-size: var(--bs-font-14px);
     color: var(--bs-main-100);
 }
 
