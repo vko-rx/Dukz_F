@@ -7,10 +7,13 @@
 :root {
     /* color */
     --bs-main-20: #FEEECE;
+    --bs-main-40: #FCDE9D;
+    --bs-main-60: #FBCD6D; 
     --bs-main-100: #F8AC0B;
 
     --bs-black-4: #f4f4f4;
     --bs-black-5: #F2F2F2;
+    --bs-black-10: #DADADA;
     --bs-black-25: #C3BFBF;
     --bs-black-34: #A8A8A8;
     --bs-black-50: #808080;

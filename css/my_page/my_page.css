@@ -1,0 +1,115 @@
+.user-profile-container {
+    display: flex;
+    height: calc(90px - 40px);
+    width: fit-content;
+    padding: 20px 20px;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.profile-img {
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--bs-black-4);
+    border-radius: 100px;
+}
+
+.profile-txt {
+    font-weight: var(--bs-font-bold);
+    font-size: var(--bs-font-18px);
+    margin: 0 10px;
+}
+
+.profile-edit {
+    width: 24px;
+    height: 24px;
+}
+
+.info-container {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid var(--bs-black-5);
+}
+
+.info-txt {
+    font-size: var(--bs-font-16px);
+    color: var(--bs-black-87);
+    font-weight: var(--bs-font-light);
+}
+
+.next-img {
+    width: 15px;
+    height: 15px;
+}
+
+.between-container {
+    display: flex;
+    align-items: center;
+}
+
+.fill-img {
+    margin-right: 5px;
+}
+
+/* toogle button */
+.switch {
+    --button-width: 40px;
+    --button-height: 20px;
+    --toggle-diameter: 20px;
+    --button-toggle-offset: calc((var(--button-height) - var(--toggle-diameter)) / 2);
+    --toggle-shadow-offset: 10px;
+    --toggle-wider: 3em;
+    --color-grey: var(--bs-black-5);
+    --color-green: var(--bs-main-40);
+}
+
+.slider {
+    margin-top: 5px;
+    display: inline-block;
+    width: var(--button-width);
+    height: var(--button-height);
+    background-color: var(--color-grey);
+    border-radius: calc(var(--button-height) / 2);
+    position: relative;
+    transition: 0.3s all ease-in-out;
+    border: 1px solid var(--bs-black-10);
+}
+
+.slider::after {
+    content: "";
+    display: inline-block;
+    width: var(--toggle-diameter);
+    height: var(--toggle-diameter);
+    background-color: var(--bs-white);
+    border-radius: calc(var(--toggle-diameter) / 2);
+    position: absolute;
+    top: var(--button-toggle-offset);
+    transform: translateX(var(--button-toggle-offset));
+    box-shadow: var(--toggle-shadow-offset) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+    transition: 0.3s all ease-in-out;
+}
+
+.switch input[type="checkbox"]:checked+.slider {
+    background-color: var(--color-green);
+    border: 1px solid var(--bs-main-60);
+}
+
+.switch input[type="checkbox"]:checked+.slider::after {
+    transform: translateX(calc(var(--button-width) - var(--toggle-diameter) - var(--button-toggle-offset)));
+    box-shadow: calc(var(--toggle-shadow-offset) * -1) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+}
+
+.switch input[type="checkbox"] {
+    display: none;
+}
+
+.switch input[type="checkbox"]:active+.slider::after {
+    width: var(--toggle-wider);
+}
+
+.switch input[type="checkbox"]:checked:active+.slider::after {
+    transform: translateX(calc(var(--button-width) - var(--toggle-wider) - var(--button-toggle-offset)));
+}
