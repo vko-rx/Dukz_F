@@ -34,4 +34,6 @@ function getName() {
     .catch((e) => {
         console.log(e);
     });
-  }
+}
+
+getName();
