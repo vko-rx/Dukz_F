@@ -17,6 +17,7 @@ new Swiper('.swiper2', {
 
 function getName() {
     const userid = localStorage.getItem("userid");
+    const usernick = document.getElementsByClassName('user-nick');
   
     axios
     .post("http://localhost:3000/user/getName", {
@@ -25,12 +26,12 @@ function getName() {
     .then((response) => {
         const name = response.data.name;
         console.log(name);
-  
-        document.getElementById('user-nick').innerHTML = name;
+
+        for (let i in usernick) {
+            usernick[i].innerHTML = name;
+        }
     })
     .catch((e) => {
         console.log(e);
     });
   }
-  
-  getName();
