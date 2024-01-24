@@ -8,7 +8,6 @@ function getName() {
     })
     .then((response) => {
         const name = response.data.name;
-        console.log(name);
 
         for (let i in usernick) {
             usernick[i].innerHTML = name;
@@ -31,7 +30,6 @@ function getProfileImage() {
       })
       .then((response) => {
         const imageUrl = response.data.imageUrl;
-        console.log(imageUrl);
   
         profileImage.src = `http://localhost:3000${imageUrl}`;
       })
