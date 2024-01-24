@@ -1,5 +1,5 @@
 body {
-    height: 750px;
+    height: 780px;
     overflow: hidden;
 }
 .top-container,
@@ -40,6 +40,30 @@ body {
     font-size: var(--bs-font-22px);
     color: var(--bs-black-87);
 }
+.swiper-slide {
+    position: relative;
+}
+.slide-img:not(.add-img) {
+    width: 110px;
+    height: 110px;
+    border-radius: 7px;
+    filter: brightness(80%);
+    margin-top: 5px;
+}
+.slide-txt {
+    position: absolute;
+    left: calc(50vw - 90px);
+    top: 90px;
+    color: var(--bs-white);
+    font-size: var(--bs-font-14px);
+    font-weight: var(--bs-font-regular);
+    width: calc(77px);
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 
 /* radio */
 .plan-radio-group {
@@ -79,7 +103,6 @@ body {
 .grid-img {
     width:100%;
     height:100%;
-    object-fit: cover;
     position: absolute;
     filter: brightness(80%);
 }
