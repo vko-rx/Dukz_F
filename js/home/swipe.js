@@ -16,23 +16,3 @@ new Swiper('.swiper', {
     allowTouchMove: true, // (false-스와이핑안됨)버튼으로만 슬라이드 조작이 가능
 
 });
-
-function getName() {
-  const userid = localStorage.getItem("userid");
-
-  axios
-  .post("http://localhost:3000/user/getName", {
-      userid : userid  
-  })
-  .then((response) => {
-      const name = response.data.name;
-      console.log(name);
-
-      document.getElementById('user-nick').innerHTML = name;
-  })
-  .catch((e) => {
-      console.log(e);
-  });
-}
-
-getName();
