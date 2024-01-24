@@ -27,7 +27,7 @@ function submitLogin() {
       localStorage.setItem("token", token);
       localStorage.setItem("userid", id);
   
-      location.href='http://localhost:5500/html/home.html'
+      location.href='http://localhost:5500/html/home/home.html'
 3
     })
     .catch((error) => {
