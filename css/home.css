@@ -77,6 +77,10 @@ body {
     display: flex;
     align-items: center;
 }
+.bookmark-img-tag {
+    width: 18px;
+    height: 18px;
+}
 
 /* card - info */
 .info-img-container {
