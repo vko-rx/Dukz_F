@@ -35,5 +35,3 @@ function getName() {
         console.log(e);
     });
   }
-  
-  getName();
