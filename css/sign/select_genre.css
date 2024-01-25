@@ -42,7 +42,7 @@
     padding: 18px 20px 16px 20px;
     background-color: var(--bs-white);
     border-radius: 20px;
-    width: calc(100% - 180px);
+    width: calc(100% - 80px);
     height: 280px;
     text-align: center;
 }
