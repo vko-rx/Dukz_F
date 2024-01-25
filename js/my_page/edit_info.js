@@ -7,17 +7,6 @@ const editChkTxt = document.getElementsByClassName('edit-chk-txt')[0];
 const editComplite = document.getElementsByClassName('edit-complite')[0];
 
 
-function chktoCanEdit() {
-    if (hiddenDiv.classList.contains('hidden')) {
-        // 비밀번호 입력 전
-        removeHidden(hiddenDiv);
-        addDisabled(editBtn);
-    } else { // 입력 후
-        removeHidden(editComplite);
-    }
-}
-
-
 function removeHidden(obj) {
     obj.classList.remove('hidden');
 }

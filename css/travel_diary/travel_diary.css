@@ -184,6 +184,11 @@ body {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+.heart-btn,
+.bookmark-btn {
+    width: 20px;
+    height: 20px;
+}
 
 
 .plan-more {
