@@ -107,11 +107,19 @@ body {
     filter: brightness(80%);
 }
 .grid-txt {
-    padding: 5px 10px;
     position: absolute;
+    bottom: 10px;
+    left: 10px;
     color: var(--bs-white);
-    font-weight: var(--bs-font-semibold);
     font-size: var(--bs-font-14px);
+    font-weight: var(--bs-font-regular);
+    width: 90%;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
 }
 .plan-more {
     margin-top: 10px;

@@ -10,10 +10,43 @@
 <body>
 
     <div class="container">
-        <div class="back-container" onclick="location.href='./my_info.html'">
-            <img class="back-img" src="../../Image/icon/arrow-back.png">
+        <div class="back-container">
+            <img class="back-img" src="../../Image/icon/arrow-back.png" onclick="location.href='./travel_plan.html'">
+            <img class="sort-img" src="../../Image/icon/sort.png" onclick="modalVisible();">
+        </div>
+        <div class="plan-grid-container">
+            <div class="grid-item">
+                <img class="grid-img" src="../../Image/temp/genre_1.png">
+                <span class="grid-txt">슬램덩크 굿즈</span>
+            </div>
+            <div class="grid-item">
+                <img class="grid-img" src="../../Image/temp/genre_1.png">
+                <span class="grid-txt">슬램덩크 굿즈</span>
+            </div>
+            <div class="grid-item">
+                <img class="grid-img" src="../../Image/temp/genre_1.png">
+                <span class="grid-txt">슬램덩크 굿즈</span>
+            </div>
+            <div class="grid-item">
+                <img class="grid-img" src="../../Image/temp/genre_1.png">
+                <span class="grid-txt">슬램덩크 굿즈</span>
+            </div>
         </div>
     </div>
-    
+
+    <!-- modal -->
+    <div class="modal-container">
+        <div class="all sort-div">
+            전체
+        </div>
+        <div class="idol sort-div">
+            아이돌
+        </div>
+        <div class="idol sort-div">
+            애니메이션
+        </div>
+    </div>
 </body>
 </html>
+
+<script src="../../js/travel_plan/sort.js"></script>
