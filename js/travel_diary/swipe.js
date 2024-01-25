@@ -1,4 +1,5 @@
 new Swiper('.diary-swiper', {
+    slidesPerView: 1, // 한번에 보여줄 슬라이드 개수
     spaceBetween: 10, // 슬라이드 사이 여백
     pagination: {
         el: ".swiper-pagination",
