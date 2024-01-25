@@ -3,7 +3,7 @@ function getName() {
     const usernick = document.getElementsByClassName('user-nick');
   
     axios
-    .post("http://localhost:3000/user/getName", {
+    .post("http://13.208.214.110:3000/user/getName", {
         userid : userid  
     })
     .then((response) => {
@@ -25,13 +25,13 @@ function getProfileImage() {
     const profileImage = document.getElementById('profile-image');
   
     axios
-      .post("http://localhost:3000/user/getUrl", {
+      .post("http://13.208.214.110:3000/user/getUrl", {
         userid: userid
       })
       .then((response) => {
         const imageUrl = response.data.imageUrl;
   
-        profileImage.src = `http://localhost:3000${imageUrl}`;
+        profileImage.src = `http://13.208.214.110:3000${imageUrl}`;
       })
       .catch((e) => {
         console.log(e);

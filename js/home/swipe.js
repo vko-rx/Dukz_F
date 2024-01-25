@@ -20,7 +20,7 @@ function getName() {
     const usernick = document.getElementsByClassName('user-nick');
   
     axios
-    .post("http://localhost:3000/user/getName", {
+    .post("http://13.208.214.110:3000/user/getName", {
         userid : userid  
     })
     .then((response) => {
@@ -48,16 +48,16 @@ function getCardNews() {
   }
   
   axios
-    .get("http://localhost:3000/user/getCardNews")
+    .get("http://13.208.214.110:3000/user/getCardNews")
     .then((response) => {
       const cardNews = response.data.cardNews;
       const userInfo = response.data.userInfo;
       
-      document.getElementById("profileImage").src = `http://localhost:3000${userInfo.profileImage}`;
+      document.getElementById("profileImage").src = `http://13.208.214.110:3000${userInfo.profileImage}`;
       document.getElementById("nickname").textContent = userInfo.nickname;
       document.getElementById("cardNewsTitle").textContent = cardNews.title;
       document.getElementById("cardNewsDate").textContent = formatDate(cardNews.createDate);
-      document.getElementById("cardNewsImage").src = `http://localhost:3000${cardNews.image_url}`;
+      document.getElementById("cardNewsImage").src = `http://13.208.214.110:3000${cardNews.image_url}`;
       document.getElementById("cardNewsLocation").textContent = cardNews.place;
       // document.getElementById("googleMapLink").href = cardNews.googleMapLink;
       document.getElementById("cardNewsTime").textContent = cardNews.open_time + "~" + cardNews.close_time;
