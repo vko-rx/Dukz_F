@@ -57,3 +57,23 @@ button.disabled {
     width: 0;
     height: 0;
 }
+
+.genre-container {
+    margin: 0 20px 0 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 22px;
+    column-gap: 8px;
+    text-align: center;
+}
+.sel-genre-container {
+    width: 100%;
+}
+.genre-img {
+    width: 100%;
+}
+.genre-name {
+    color: var(--bs-black);
+    font-size: var(--bs-font-13px);
+    font-weight: var(--bs-font-regular);
+}
