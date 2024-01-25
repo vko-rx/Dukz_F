@@ -17,7 +17,7 @@ function submitLogin() {
     var pw = document.getElementById("pw").value;
   
     axios
-    .post("http://localhost:3000/user/login", {
+    .post("http://13.208.214.110:3000/user/login", {
       userid: id,
       pw: pw,
     })
@@ -27,7 +27,7 @@ function submitLogin() {
       localStorage.setItem("token", token);
       localStorage.setItem("userid", id);
   
-      location.href='http://localhost:5500/html/home/home.html'
+      location.href='../../home/home.html';
 3
     })
     .catch((error) => {

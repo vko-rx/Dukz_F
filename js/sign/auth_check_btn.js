@@ -24,7 +24,7 @@ function authVerify() {
     var authCode = document.getElementById("authcode").value;
 
     axios
-      .post("http://localhost:3000/user/checkAuthCode", {
+      .post("http://13.208.214.110:3000/user/checkAuthCode", {
         email: email,
         code: authCode,
       })
@@ -49,7 +49,7 @@ function authVerify() {
 function submit(){
 
     axios
-    .post("http://localhost:3000/user/signup", { 
+    .post("http://13.208.214.110:3000/user/signup", { 
         email: email,
       })
       .then((response) => {

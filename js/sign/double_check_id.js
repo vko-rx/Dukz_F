@@ -26,7 +26,7 @@ function chkId() {
     var userid = document.getElementById("input-id").value;
 
     axios
-    .post("http://localhost:3000/user/checkDuplicate", {
+    .post("http://13.208.214.110:3000/user/checkDuplicate", {
             userid: userid,
         })
         .then((response) => {
@@ -52,7 +52,7 @@ function submit(){
     var userid = document.getElementById("input-id").value;
 
     axios
-    .post("http://localhost:3000/user/signup2", { 
+    .post("http://13.208.214.110:3000/user/signup2", { 
         userid: userid,
         email: email,
       })

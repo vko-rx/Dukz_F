@@ -15,14 +15,14 @@ function chkToNext() {
 }
 
 function displayUploadedImage(imageUrl) {
-    profileImg.src = `http://localhost:3000${imageUrl}`;
+    profileImg.src = `http://13.208.214.110:3000${imageUrl}`;
 }
 
 function uploadImage() {
     const formData = new FormData(document.getElementById('uploadForm'));
     formData.append('email', localStorage.getItem('email'));
 
-    axios.post('http://localhost:3000/user/signup5', formData, {
+    axios.post('http://13.208.214.110:3000/user/signup5', formData, {
         headers: {
             'Content-Type': 'multipart/form-data',
         },
