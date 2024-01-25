@@ -28,11 +28,11 @@
         <button class="next-btn disabled" disabled onclick="uploadImage()">다음</button>
 
         <div class="modal-container">
-            <button class="img-btn" id="default" onclick="chkToNext(); useDefault();">기본 이미지 사용</button>
-            <button class="img-btn" id="take-picture" onclick="chkToNext();">사진 찍기</button>
+            <button class="img-btn" id="default" onclick="useDefault();">기본 이미지 사용</button>
+            <button class="img-btn" id="take-picture">사진 찍기</button>
             <form class="img-btn" id="uploadForm" enctype="multipart/form-data">
                 <label for="gallery-picker" class="img-btn" id="bring-gallery">갤러리에서 가져오기</label>
-                <input type="file" id="gallery-picker" name="profile_image" accept="image/*" style="display: none;" required onchange="showSelectedImage()" onclick="chkToNext();">
+                <input type="file" id="gallery-picker" name="profile_image" accept="image/*" style="display: none;" required onchange="showSelectedImage()">
             </form>
         </div>
     </div>

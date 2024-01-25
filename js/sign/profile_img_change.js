@@ -61,3 +61,13 @@ function showSelectedImage() {
         reader.readAsDataURL(file);
     }
 }
+
+var img = document.querySelector("#profile-img"),
+observer = new MutationObserver((changes) => {
+  changes.forEach(change => {
+      if(change.attributeName.includes('src')){
+        chkToNext();
+      }
+  });
+});
+observer.observe(img, {attributes : true});
