@@ -6,12 +6,13 @@
     <title>Duk'z</title>
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/my_page/my_page.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
 
     <div class="container">
         <div class="user-profile-container">
-            <img class="profile-img" src="../../Image/profile/profile_img_default.png">
+            <img id="profile-image" class="profile-img" src="../../Image/profile/profile_img_default.png">
             <div class="profile-txt"><span class="user-nick">우끼끼</span>님</div>
             <img class="profile-edit" src="../../Image/icon/my_page/pen.png" onclick="location.href='./edit_profile.html'">
         </div>
@@ -83,3 +84,5 @@
     </div>
 </body>
 </html>
+
+<script src="../../js/sign/my_page.js"></script>
