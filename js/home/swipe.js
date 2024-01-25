@@ -36,7 +36,6 @@ function getName() {
 }
 
 function getCardNews() {
-
   function formatDate(dateString) {
     const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
     const dateObject = new Date(dateString);
@@ -46,22 +45,31 @@ function getCardNews() {
   
     return formattedDate;
   }
-  
+
   axios
     .get("http://13.208.214.110:3000/user/getCardNews")
     .then((response) => {
       const cardNews = response.data.cardNews;
       const userInfo = response.data.userInfo;
-      
+      const hashtags = response.data.hashtags;
+
       document.getElementById("profileImage").src = `http://13.208.214.110:3000${userInfo.profileImage}`;
       document.getElementById("nickname").textContent = userInfo.nickname;
       document.getElementById("cardNewsTitle").textContent = cardNews.title;
       document.getElementById("cardNewsDate").textContent = formatDate(cardNews.createDate);
       document.getElementById("cardNewsImage").src = `http://13.208.214.110:3000${cardNews.image_url}`;
       document.getElementById("cardNewsLocation").textContent = cardNews.place;
-      // document.getElementById("googleMapLink").href = cardNews.googleMapLink;
       document.getElementById("cardNewsTime").textContent = cardNews.open_time + "~" + cardNews.close_time;
       document.getElementById("cardNewsPrice").textContent = cardNews.price;
+
+      const hashtagContainer = document.querySelector(".hashtag-container");
+      hashtagContainer.innerHTML = "";
+
+      hashtags.forEach((tag) => {
+        const spanTag = document.createElement("span");
+        spanTag.textContent = `#${tag}`;
+        hashtagContainer.appendChild(spanTag);
+      });
 
       console.log("Card News:", cardNews);
       console.log("User Info:", userInfo);
