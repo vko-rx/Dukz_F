@@ -1,0 +1,58 @@
+.main-txt-container {
+    color: var(--bs-black-87);
+    font-size: var(--bs-font-22px);
+    font-weight: var(--bs-font-bold);
+    margin: 20px 20px;
+}
+
+.input-container,
+.edit-chk-container {
+    margin: 0 20px 0 20px;
+    position: relative;
+}
+
+.input-txt,
+.chk-txt {
+    width: calc(100% - 20px);
+}
+
+.edit-btn {
+    position: absolute;
+    left: calc(100% - 77px);
+    top: calc(50% - 12px);
+    border: 0.5px solid var(--bs-main-100);
+    border-radius: 12px;
+    font-size: var(--bs-font-11px);
+    color: var(--bs-white);
+    font-weight: var(--bs-font-regular);
+    background-color: var(--bs-main-100);
+    padding: 3px 10px;
+}
+
+button.disabled {
+    background-color: var(--bs-white);
+    color: var(--bs-main-100);
+}
+
+.edit-chk-container {
+    margin-top: 20px;
+}
+
+.edit-chk-txt,
+.edit-complite {
+    margin: 3px 20px;
+    font-size: var(--bs-font-10px);
+    font-weight: var(--bs-font-regular);
+}
+.edit-complite {
+    color: var(--bs-black-64);
+}
+.edit-chk-txt {
+    color: var(--bs-red-1);
+}
+.hidden-txt {
+    visibility: hidden;
+    margin: 0 0;
+    width: 0;
+    height: 0;
+}
