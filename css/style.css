@@ -170,11 +170,13 @@ input[type=radio]:checked + label {
 
 /* containers */
 .back-container {
+    display: flex;
     height: 40px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .back-img {
-    align-items: center;
     padding: 8px 0 8px 15px;
 }
 
