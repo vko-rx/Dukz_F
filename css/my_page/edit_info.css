@@ -59,7 +59,7 @@ button.disabled {
 }
 
 .genre-container {
-    margin: 0 20px 0 20px;
+    margin: 60px 20px 0 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     row-gap: 22px;
