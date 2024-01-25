@@ -7,6 +7,7 @@
     <title>Duk'z</title>
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/my_page/edit_info.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -25,7 +26,7 @@
         <div class="hidden">
             <div class="hidden edit-complite"></div>
             <div class="edit-chk-container">
-                <input type="text" class="chk-txt id" placeholder="비밀번호를 입력해주세요" oninput="chkTxt()">
+                <input type="text" class="chk-txt id" id="pw" placeholder="비밀번호를 입력해주세요" oninput="chkTxt()">
             </div>
             <div class="edit-chk-txt">정확한 비밀번호를 입력해야 아이디를 수정할 수 있습니다</div>
         </div>
