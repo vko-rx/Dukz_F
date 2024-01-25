@@ -16,7 +16,8 @@
     width: calc(100% - 20px);
 }
 
-.edit-btn {
+.edit-btn,
+.code-chk-btn {
     position: absolute;
     left: calc(100% - 77px);
     top: calc(50% - 12px);
