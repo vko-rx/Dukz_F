@@ -9,6 +9,15 @@ function chkTxt() {
         codeChkBtn.classList.add('disabled');
     }
 }
+function chktoCanEdit() {
+    if (hiddenDiv.classList.contains('hidden')) {
+        // 비밀번호 입력 전
+        removeHidden(hiddenDiv);
+        addDisabled(editBtn);
+    } else { // 입력 후
+        removeHidden(editComplite);
+    }
+}
 function chktoDouble() {
     // 중복된 이메일이 없으면
     editComplite.innerHTML = '중복 확인 완료. 이메일이 변경되었습니다';
