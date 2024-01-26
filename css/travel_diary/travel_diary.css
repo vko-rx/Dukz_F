@@ -160,6 +160,7 @@ body {
     color: var(--bs-black-87);
     font-size: var(--bs-font-14px);
     font-weight: var(--bs-font-regular);
+    margin-top: 5px;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 1;
