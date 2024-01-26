@@ -25,7 +25,7 @@
             </div>
             <div class="title-container">
                 <div class="title">사히투어-나가이 공원</div>
-                <img src="../../Image/icon/heart/un_fill.png">
+                <img src="../../Image/icon/heart/un_fill.png" onclick="chkHeartFill(this)">
             </div>
 
             <div class="card-container">
@@ -37,7 +37,7 @@
                             <span class="map-txt">구글맵</span>
                         </div>
                     </div>
-                    <img class="bookmark-img" src="../../Image/icon/bookmark/un_fill.png">
+                    <img class="bookmark-img" src="../../Image/icon/bookmark/un_fill.png" onclick="chkBookMarkFill(this)">
                 </div>
                 <div class="tempDiv">
                     <img class="tempImg" src="../../Image/temp/place_1.png">
@@ -89,6 +89,13 @@
                 2024.01.18
             </div>
         </div>
+
+        <div class="comment-container">
+            <div class="comment-title">댓글</div>
+            <div class="write-comment">
+                <input class="input-comment" type="text" placeholder="댓글을 입력해주세요">
+            </div>
+        </div>
     </div>
 
 </body>
@@ -97,3 +104,4 @@
 
 
 <script src="../../js/travel_diary/swipe.js"></script>
+<script src="../../js/travel_diary/check.js"></script>

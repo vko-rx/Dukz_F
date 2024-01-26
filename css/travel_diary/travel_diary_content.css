@@ -110,3 +110,18 @@ body {
     font-size: var(--bs-font-10px);
     font-weight: var(--bs-font-regular);
 }
+
+
+/* 댓글 */
+.comment-container {
+    margin: 10px 20px 40px 20px;
+}
+.comment-title {
+    margin-bottom: 5px;
+    font-size: var(--bs-font-16px);
+    font-weight: var(--bs-font-semibold);
+    color: var(--bs-black-87);
+}
+.input-comment {
+    width: calc(100% - 20px);
+}

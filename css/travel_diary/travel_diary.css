@@ -140,7 +140,7 @@ body {
     height: 126px;
     border-radius: 8px 8px 0 0;
     position: relative;
-    filter: brightness(70%);
+    filter: brightness(95%);
 }
 .check-container {
     position: absolute;
@@ -160,6 +160,11 @@ body {
     color: var(--bs-black-87);
     font-size: var(--bs-font-14px);
     font-weight: var(--bs-font-regular);
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 .diary-content {
     margin-top: 2px;
