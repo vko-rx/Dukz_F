@@ -49,30 +49,61 @@ function getCardNews() {
   axios
     .get("http://13.208.214.110:3000/user/getCardNews")
     .then((response) => {
-      const cardNews = response.data.cardNews;
-      const userInfo = response.data.userInfo;
-      const hashtags = response.data.hashtags;
-
-      document.getElementById("profileImage").src = `http://13.208.214.110:3000${userInfo.profileImage}`;
-      document.getElementById("nickname").textContent = userInfo.nickname;
-      document.getElementById("cardNewsTitle").textContent = cardNews.title;
-      document.getElementById("cardNewsDate").textContent = formatDate(cardNews.createDate);
-      document.getElementById("cardNewsImage").src = `http://13.208.214.110:3000${cardNews.image_url}`;
-      document.getElementById("cardNewsLocation").textContent = cardNews.place;
-      document.getElementById("cardNewsTime").textContent = cardNews.open_time + "~" + cardNews.close_time;
-      document.getElementById("cardNewsPrice").textContent = cardNews.price;
+      const firstCardNews = response.data[0];
+      const secondCardNews = response.data[1];
+      const thirdCardNews = response.data[2];
 
       const hashtagContainer = document.querySelector(".hashtag-container");
       hashtagContainer.innerHTML = "";
-
-      hashtags.forEach((tag) => {
+      firstCardNews.hashtags.forEach((tag) => {
         const spanTag = document.createElement("span");
         spanTag.textContent = `#${tag}`;
         hashtagContainer.appendChild(spanTag);
       });
 
-      console.log("Card News:", cardNews);
-      console.log("User Info:", userInfo);
+      const hashtagContainer2 = document.querySelector(".hashtag-container-2");
+      hashtagContainer2.innerHTML = "";
+      secondCardNews.hashtags.forEach((tag) => {
+        const spanTag = document.createElement("span");
+        spanTag.textContent = `#${tag}`;
+        hashtagContainer2.appendChild(spanTag);
+      });
+
+      const hashtagContainer3 = document.querySelector(".hashtag-container-3");
+      hashtagContainer3.innerHTML = "";
+      thirdCardNews.hashtags.forEach((tag) => {
+        const spanTag = document.createElement("span");
+        spanTag.textContent = `#${tag}`;
+        hashtagContainer3.appendChild(spanTag);
+      });
+
+      document.getElementById("profileImage").src = `http://13.208.214.110:3000${firstCardNews.userInfo.profileImage}`;
+      document.getElementById("nickname").textContent = firstCardNews.userInfo.nickname;
+      document.getElementById("cardNewsTitle").textContent = firstCardNews.cardNews.title;
+      document.getElementById("cardNewsDate").textContent = formatDate( firstCardNews.cardNews.createDate);
+      document.getElementById("cardNewsImage").src = `http://13.208.214.110:3000${ firstCardNews.cardNews.image_url}`;
+      document.getElementById("cardNewsLocation").textContent =  firstCardNews.cardNews.place;
+      document.getElementById("cardNewsTime").textContent =  firstCardNews.cardNews.open_time + "~" +  firstCardNews.cardNews.close_time;
+      document.getElementById("cardNewsPrice").textContent =  firstCardNews.cardNews.price;
+
+      document.getElementById("profileImage2").src = `http://13.208.214.110:3000${secondCardNews.userInfo.profileImage}`;
+      document.getElementById("nickname2").textContent = secondCardNews.userInfo.nickname;
+      document.getElementById("cardNewsTitle2").textContent = secondCardNews.cardNews.title;
+      document.getElementById("cardNewsDate2").textContent = formatDate(secondCardNews.cardNews.createDate);
+      document.getElementById("cardNewsImage2").src = `http://13.208.214.110:3000${secondCardNews.cardNews.image_url}`;
+      document.getElementById("cardNewsLocation2").textContent = secondCardNews.cardNews.place;
+      document.getElementById("cardNewsTime2").textContent = secondCardNews.cardNews.open_time + "~" + secondCardNews.cardNews.close_time;
+      document.getElementById("cardNewsPrice2").textContent = secondCardNews.cardNews.price;
+
+      document.getElementById("profileImage3").src = `http://13.208.214.110:3000${thirdCardNews.userInfo.profileImage}`;
+      document.getElementById("nickname3").textContent = thirdCardNews.userInfo.nickname;
+      document.getElementById("cardNewsTitle3").textContent = thirdCardNews.cardNews.title;
+      document.getElementById("cardNewsDate3").textContent = formatDate(thirdCardNews.cardNews.createDate);
+      document.getElementById("cardNewsImage3").src = `http://13.208.214.110:3000${thirdCardNews.cardNews.image_url}`;
+      document.getElementById("cardNewsLocation3").textContent = thirdCardNews.cardNews.place;
+      document.getElementById("cardNewsTime3").textContent = thirdCardNews.cardNews.open_time + "~" + thirdCardNews.cardNews.close_time;
+      document.getElementById("cardNewsPrice3").textContent = thirdCardNews.cardNews.price;
+
     })
     .catch((error) => {
       console.error(error);

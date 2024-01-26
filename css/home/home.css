@@ -124,14 +124,14 @@ body {
     margin-left: 10px;
 }
 
-.hashtag-container {
+.hashtag-container, .hashtag-container-2, .hashtag-container-3 {
     font-size: var(--bs-font-10px);
     font-weight: var(--bs-font-light);
     color: var(--bs-main-100);
     margin: 8px 18px 0 18px;
 }
 
-.hashtag-container span {
+.hashtag-container span, .hashtag-container-2 span, .hashtag-container-3 span {
     margin-right: 5px;
 }
 
