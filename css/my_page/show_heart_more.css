@@ -53,7 +53,7 @@
 }
 .diary-title {
     color: var(--bs-black-87);
-    font-size: var(--bs-font-14px);
+    font-size: var(--bs-font-13px);
     font-weight: var(--bs-font-regular);
     text-overflow: ellipsis;
     display: -webkit-box;
