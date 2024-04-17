@@ -22,7 +22,7 @@ function submit(){
 
 
     axios
-    .post("http://13.208.214.110:3000/user/signup6", { 
+    .post("http://15.152.40.225:3000/user/signup6", { 
         email: email,
         birth: year+month+day
       })

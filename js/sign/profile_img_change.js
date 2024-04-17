@@ -15,14 +15,16 @@ function chkToNext() {
 }
 
 function displayUploadedImage(imageUrl) {
-    profileImg.src = `http://13.208.214.110:3000${imageUrl}`;
+    profileImg.src = `http://15.152.40.225:3000${imageUrl}`;
 }
 
 function uploadImage() {
     const formData = new FormData(document.getElementById('uploadForm'));
-    formData.append('userid', localStorage.getItem('userid'));
+    const email = localStorage.getItem('email');
+    formData.append('email', localStorage.getItem('email'));
 
-    axios.post('http://13.208.214.110:3000/user/changeUserImage', formData, {
+    axios.post('http://15.152.40.225:3000/user/signup5', formData, {
+        email : email,
         headers: {
             'Content-Type': 'multipart/form-data',
         },
@@ -34,17 +36,19 @@ function uploadImage() {
 
         if (response.data.success) {
             const imageUrl = response.data.image_url;
-            
+            console.log('Image URL:', imageUrl);
+            document.getElementById('result').innerHTML = 'Image uploaded successfully. Image URL: ' + imageUrl;
+            // location.href='./input_birth.html';
+
             displayUploadedImage(imageUrl);
-            
+
+            location.href = './input_birth.html';
         } else {
             console.error('Image upload failed:', response.data.message);
+            document.getElementById('result').innerHTML = 'Image upload failed: ' + response.data.message;
             resultElement.innerHTML = 'Image upload failed: ' + response.data.message;
         }
     })
-    .catch(error => {
-        console.error('Error during image upload:', error);
-    });
 }
 
 function showSelectedImage() {

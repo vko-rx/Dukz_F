@@ -25,7 +25,7 @@ function chkEmail() {
     let regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
 
     axios
-    .post("http://13.208.214.110:3000/user/emailDuplicate", {
+    .post("http://15.152.40.225:3000/user/emailDuplicate", {
             email: email,
         })
         .then((response) => {
@@ -59,7 +59,7 @@ function emailsubmit() {
     localStorage.setItem('email', email);
   
     axios
-    .post("http://13.208.214.110:3000/user/certificate", {
+    .post("http://15.152.40.225:3000/user/certificate", {
         email: email,
     })
     .then((response) => {

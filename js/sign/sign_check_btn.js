@@ -73,7 +73,7 @@ function submit(){
     const email = localStorage.getItem('email');
 
     axios
-    .post("http://13.208.214.110:3000/user/signup7", { 
+    .post("http://15.152.40.225:3000/user/signup7", { 
         email: email,
         genres: selectedGenres
       })
