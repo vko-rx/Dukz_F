@@ -1,0 +1,31 @@
+.main-txt-container {
+    color: var(--bs-black-87);
+    font-size: var(--bs-font-22px);
+    font-weight: var(--bs-font-bold);
+    margin: 20px 20px 30px 20px;
+}
+.show-container {
+    margin: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+.category-container {  
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.category-img {
+    width: 100%;
+    border-radius: 10px;
+    filter: brightness(80%);
+    position: relative;
+    aspect-ratio: 1/1;
+}
+.category-txt {
+    position: absolute;
+    font-size: var(--bs-font-14px);
+    color: var(--bs-white);
+    font-weight: var(--bs-font-semibold);
+}

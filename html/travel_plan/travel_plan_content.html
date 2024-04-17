@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duk'z</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/trabel_plan/travel_plan_content.css">
+</head>
+<body>
+    <div class="container">
+        <div class="back-container" onclick="location.href='./plan_more.html'">
+            <img class="back-img" src="../../Image/icon/arrow-back.png" onclick="location.href='./travel_plan.html'">
+            <div class="title-txt back-txt">나고야 여행</div>
+        </div>
+        <div class="content-container">
+            <div class="main-txt-container">
+                <span class="title-txt">나고야 여행</span>에 관한<br>
+                우끼끼님의 일정이에요
+            </div>
+            <div class="schedule-date">
+                <div class="date-container">
+                    <div class="date-txt date-here" onclick="dateChange(this)">1</div>
+                    <div class="date-txt" onclick="dateChange(this)">2</div>
+                    <div class="date-txt" onclick="dateChange(this)">3</div>
+                </div>
+                <div class="schedule-txt"><span class="now-date">1</span>일차 일정</div>
+            </div>
+            <div class="schedule-container">
+                <div class="schedule-sub-container">
+                    <div class="circle"></div>
+                    <div class="time">09:00~12:00</div>
+                    <div class="place-card">
+                        <div class="card-title-container">
+                            <div class="card-title">후쿠이 휴게소</div>
+                            <img src="../../Image/icon/map.png">
+                        </div>
+                        <img class="card-place-img" src="../../Image/temp/Rectangle 51 (1).png">
+                    </div>
+                </div>
+                <div class="schedule-sub-container">
+                    <div class="circle"></div>
+                    <div class="time">12:00~14:20</div>
+                    <div class="place-card">
+                        <div class="card-title-container">
+                            <div class="card-title">시라카와</div>
+                            <img src="../../Image/icon/map.png">
+                        </div>
+                        <img class="card-place-img" src="../../Image/temp/Rectangle 51 (2).png">
+                    </div>
+                    
+                </div>
+                <div class="schedule-sub-container not-complite-schedule">
+                    <div class="circle not-complite"></div>
+                    <div class="time">15:00~17:00</div>
+                    <div class="place-card">
+                        <div class="card-title-container">
+                            <div class="card-title">피요링</div>
+                            <img src="../../Image/icon/map.png">
+                        </div>
+                        <img class="card-place-img" src="../../Image/temp/Rectangle 51 (3).png">
+                    </div>
+                </div>
+                <div class="schedule-sub-container not-complite-schedule end">
+                    <div class="circle not-complite"></div>
+                    <div class="time">20:00</div>
+                    <div class="place-card">
+                        <div class="card-title-container">
+                            <div class="card-title">숙소</div>
+                            <img src="../../Image/icon/map.png">
+                        </div>
+                        <img class="card-place-img" src="../../Image/temp/Rectangle 51 (4).png">
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+</body>
+</html>
+
+<script src="../../js/travel_plan/date.js"></script>

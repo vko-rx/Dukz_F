@@ -1,0 +1,130 @@
+body {
+    height: 780px;
+    overflow: hidden;
+}
+.top-container,
+.make-plan-container {
+    background-color: var(--bs-main-20);
+}
+
+.make-plan-container {
+    height: calc(200px - 10px);
+    border-radius: 0 0 40px 40px;
+    padding: 0 20px 10px 20px;
+}
+
+.main-txt-container {
+    color: var(--bs-main-100);
+    font-weight: var(--bs-font-bold);
+    font-size: var(--bs-font-22px);
+    margin-bottom: -10px;
+}
+.swiper-container {
+    position: relative;
+}
+.swiper-pagination {
+    position: absolute;
+    top: 130px;
+}
+
+.swiper-wrapper {
+    text-align: center;
+}
+
+.show-plan-container {
+    margin: 20px 20px 0 20px;
+}
+
+.sub-txt-container {
+    font-weight: var(--bs-font-bold);
+    font-size: var(--bs-font-22px);
+    color: var(--bs-black-87);
+}
+.swiper-slide {
+    position: relative;
+}
+.slide-img:not(.add-img) {
+    width: 110px;
+    height: 110px;
+    border-radius: 7px;
+    filter: brightness(80%);
+    margin-top: 5px;
+}
+.slide-txt {
+    position: absolute;
+    left: calc(50vw - 90px);
+    top: 90px;
+    color: var(--bs-white);
+    font-size: var(--bs-font-14px);
+    font-weight: var(--bs-font-regular);
+    width: calc(77px);
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* radio */
+.plan-radio-group {
+    display: flex;
+    margin-top: 10px;
+}
+
+.plan-radio-group > * {
+    margin-right: 5px;
+}
+
+/* 작성한 일지가 없을 때 */
+.nothing-container {
+    margin-top: 65px;
+    text-align: center;
+}
+
+.nothing-txt {
+    font-weight: var(--bs-font-light);
+    font-size: var(--bs-font-14px);
+    color: var(--bs-main-100);
+}
+
+/* 있을 때 */
+.plan-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+}
+.grid-item {
+    border-radius: 10px;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    position: relative;
+}
+.grid-img {
+    width:100%;
+    height:100%;
+    position: absolute;
+    filter: brightness(80%);
+}
+.grid-txt {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: var(--bs-white);
+    font-size: var(--bs-font-14px);
+    font-weight: var(--bs-font-regular);
+    width: 90%;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+}
+.plan-more {
+    margin-top: 10px;
+    color: var(--bs-black-64);
+    font-weight: var(--bs-font-regular);
+    font-size: var(--bs-font-11px);
+    float: right;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duk'z</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/my_page/edit_profile.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="back-container" onclick="location.href='./my_page.html'">
+            <img class="back-img" src="../../Image/icon/arrow-back.png">
+        </div>
+        <div id="uploadedImageContainer">
+            <div class="img-container" onclick="modalVisible();">
+                <div class="img-join-container">
+                    <img id="profile-edit-img" src="../../Image/icon/my_page/camera.png">
+                    <img id="profile-img" src="../../Image/profile/profile_img_before.png">
+                </div>
+            </div>
+
+            <input type="text" class="input-name" value="우끼끼" oninput="chkToEdit()" placeholder="닉네임을 입력해주세요">
+
+            <button class="next-btn disabled" disabled onclick="uploadImage()">확인</button>
+
+            <div class="modal-container">
+                <button class="img-btn" id="default" onclick="useDefaultEdit();">기본 이미지 사용</button>
+                <button class="img-btn" id="take-picture">사진 찍기</button>
+                <form class="img-btn" id="uploadForm" enctype="multipart/form-data">
+                    <label for="gallery-picker" class="img-btn" id="bring-gallery">갤러리에서 가져오기</label>
+                    <input type="file" id="gallery-picker" name="profile_image" accept="image/*" style="display: none;"
+                        required onchange="showSelectedImage()">
+                </form>
+            </div>
+        </div>
+        <div id="result"></div>
+</body>
+
+</html>
+
+<script src="../../js/sign/profile_img_change.js"></script>
+<script src="../../js/my_page/profile_chk_edit.js"></script>

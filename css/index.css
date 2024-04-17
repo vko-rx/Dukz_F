@@ -1,0 +1,12 @@
+body {
+    background-color: var(--bs-main-100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.title {
+    font-size: var(--bs-font-60px);
+    font-weight: var(--bs-font-bold);
+    color: var(--bs-white);
+}

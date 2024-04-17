@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duk'z</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/my_page/edit_info.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="back-container" onclick="location.href='./my_info.html'">
+            <img class="back-img" src="../../Image/icon/arrow-back.png">
+        </div>
+        <div class="main-txt-container">
+            비밀번호
+        </div>
+        <div class="input-container">
+            <input type="text" class="input-txt id disabled" disabled value="mirim1212">
+            <button class="edit-btn" onclick="chktoCanEdit()">수정하기</button>
+        </div>
+        <div class="hidden">
+            <div class="hidden edit-complite">비밀번호가 성공적으로 수정되었습니다</div>
+            <div class="edit-chk-container">
+                <input type="text" class="chk-txt id" placeholder="비밀번호를 입력해주세요" oninput="chkTxt()">
+            </div>
+            <div class="edit-chk-txt">이메일을 확인해야 비밀번호를 수정할 수 있습니다</div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script src="../../js/my_page/edit_info.js"></script>
+<script src="../../js/my_page/edit_pw.js"></script>

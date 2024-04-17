@@ -1,0 +1,105 @@
+.back-container {
+    position: relative;
+}
+.back-txt {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    color: var(--bs-black-87);
+    font-size: var(--bs-font-16px);
+    font-weight: var(--bs-font-light);
+}
+.content-container {
+    margin: 15px 20px 20px 20px;
+    color: var(--bs-black-87);
+}
+.main-txt-container {
+    font-size: var(--bs-font-22px);
+    font-weight: var(--bs-font-semibold);
+}
+.date-container {
+    display: flex;
+    margin-top: 25px;
+}
+.date-txt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid var(--bs-black-34);
+    width: 40px;
+    height: 40px;
+    color: var(--bs-black-34);
+    font-size: var(--bs-font-22px);
+    font-weight: var(--bs-font-semibold);
+    margin-right: 8px;
+}
+.date-here {
+    background-color: var(--bs-main-60);
+    color: var(--bs-white);
+    border: 1px solid var(--bs-main-60);
+}
+
+.schedule-txt {
+    font-size: var(--bs-font-14px);
+    font-weight: var(--bs-font-light);
+    color: var(--bs-black-50);
+    float: right;
+}
+
+.schedule-container {
+    margin-left: 5px;
+    margin-top: 40px;
+}
+.schedule-sub-container.end {
+    border: none;
+}
+.schedule-sub-container:not(.end) > .place-card {
+    margin-bottom: 40px;
+}
+.schedule-sub-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    border-left: 1px solid var(--bs-main-80);
+}
+.not-complite-schedule {
+    border-left: 1px solid var(--bs-black-10);    
+}
+.time {
+    font-size: var(--bs-font-12px);
+    font-weight: var(--bs-font-regular);
+    margin-left: 10px;
+}
+.place-card {
+    border: 1px solid var(--bs-black-10);
+    border-radius: 10px;
+    width: 65%;
+}
+.card-title-container {
+    padding: 4px 8px;
+    width: calc(100% - 16px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card-title {
+    font-size: var(--bs-font-14px);
+}
+.card-place-img {
+    /* object-fit: none; */
+    border-radius: 0 0 10px 10px;
+    height: 90px;
+    width: 100%;
+}
+.circle {
+    position: absolute;
+    left: -6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    background-color: var(--bs-main-80);
+}
+.not-complite {
+    background-color: var(--bs-black-25);
+}

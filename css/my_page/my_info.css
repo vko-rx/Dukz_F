@@ -1,0 +1,24 @@
+.main-txt-container {
+    color: var(--bs-black-87);
+    font-size: var(--bs-font-22px);
+    font-weight: var(--bs-font-bold);
+    margin: 20px 20px;
+}
+.info-container {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid var(--bs-black-5);
+}
+.info-txt {
+    font-size: var(--bs-font-14px);
+    color: var(--bs-black-87);
+    font-weight: var(--bs-font-light);
+}
+
+.next-img {
+    width: 15px;
+    height: 15px;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duk'z</title>
+    <!-- swipe -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/trabel_plan/travel_plan.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="top-container">
+            <img class="top-heart" src="../../Image/icon/heart/un_fill.png" onclick="location.href='../my_page/show_heart.html'">
+            <img class="top-bookmark" src="../../Image/icon/bookmark/un_fill.png" onclick="location.href='../my_page/show_bookmark.html'">
+            <img class="top-search" src="../../Image/icon/search.png">
+        </div>
+        <div class="make-plan-container">
+            <div class="main-txt-container">
+                당신의 일정을 만들어보세요!
+            </div>
+            <div class="show-plan-container">
+                <div class="swiper-container plan-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide plan-add">
+                            <img class="slide-img add-img" src="../../Image/contents/travel_plan_add.png">
+                        </div>
+                        <div class="swiper-slide" onclick="location.href='./travel_plan_content.html'">
+                            <img class="slide-img" src="../../Image/temp/Rectangle 31.png">
+                            <div class="slide-txt">나고야 여행</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="slide-img" src="../../Image/temp/Rectangle 30.png">
+                            <div class="slide-txt">트레저 추천 여행지</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+        <div class="show-plan-container">
+            <div class="sub-txt-container">
+                <span class="user-nick">우끼끼</span>님의 일정을<br>모아봤어요
+            </div>
+            <div class="plan-radio-group">
+                <div class="form_radio_btn">
+                    <input id="radio-1" type="radio" name="category" checked>
+                    <label for="radio-1">전체</label>
+                </div>
+                <div class="form_radio_btn">
+                    <input id="radio-2" type="radio" name="category">
+                    <label for="radio-2">아이돌</label>
+                </div>
+                <div class="form_radio_btn">
+                    <input id="radio-3" type="radio" name="category">
+                    <label for="radio-3">애니메이션</label>
+                </div>
+            </div>
+            <!-- 작성한 일지가 없을 경우 hidden 추가, 있을 경우 hidden 삭제 -->
+            <div class="nothing-container hidden">
+                <img src="../../Image/dukduk/sad.png">
+                <div class="nothing-txt">
+                    작성한 일정이 없어요<br>
+                    일정을 추가하러 가볼까요?
+                </div>
+            </div>
+            
+            <!-- 작성한 일지가 없을 경우 hidden 추가, 있을 경우 hidden 삭제 -->
+            <div class="plan-grid-container">
+                <div class="grid-item" onclick="location.href='./travel_plan_content.html'">
+                    <img class="grid-img" src="../../Image/temp/Rectangle 31.png">
+                    <span class="grid-txt">나고야 여행</span>
+                </div>
+                <div class="grid-item">
+                    <img class="grid-img" src="../../Image/temp/Rectangle 30.png">
+                    <span class="grid-txt">트레저 추천 여행지</span>
+                </div>
+                <div class="grid-item">
+                    <img class="grid-img" src="../../Image/temp/Rectangle 33.png">
+                    <span class="grid-txt">슬램덩크 성지순례</span>
+                </div>
+                <div class="grid-item">
+                    <img class="grid-img" src="../../Image/temp/Rectangle 32 (2).png">
+                    <span class="grid-txt">슬램덩크 굿즈</span>
+                </div>
+            </div>
+            <div class="plan-more" onclick="location.href = './plan_more.html'">
+                더보기
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-container">
+        <div class="home-container nav-sub-container" onclick="location.href='../home/home.html'">
+            <img class="nav-img" src="../../Image/navbar/un_selected/home.png">
+            <div class="nav-text">홈</div>
+        </div>
+        <div class="travel-diary-container nav-sub-container"
+            onclick="location.href='../travel_diary/travel_diary.html'">
+            <img class="nav-img" src="../../Image/navbar/un_selected/travel_diary.png">
+            <div class="nav-text">여행일지</div>
+        </div>
+        <div class="travel-plan-container nav-sub-container" onclick="location.href='../travel_plan/travel_plan.html'">
+            <img class="nav-img" src="../../Image/navbar/selected/travel_plan.png">
+            <div class="nav-text selected">여행일정</div>
+        </div>
+        <div class="my-page-container nav-sub-container" onclick="location.href='../my_page/my_page.html'">
+            <img class="nav-img" src="../../Image/navbar/un_selected/my_page.png">
+            <div class="nav-text">마이페이지</div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script src="../../js/travel_plan/swipe.js"></script>
+<script src="../../js/travel_plan/plan_show.js"></script>

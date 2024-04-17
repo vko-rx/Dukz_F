@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duk'z</title>
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../../css/sign/input_birth.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="back-container" onclick="location.href='./input_profile.html'">
+            <img class="back-img" src="../../../Image/icon/arrow-back.png">
+        </div>
+        <div class="line-color line"></div>
+        <div class="line-deColor line"></div>
+        <div class="main-txt-container">
+            생년월일을 입력해주세요.
+        </div>
+
+        <div class="input-birth-container">
+            <span class="birth-txt">년도</span>
+            <input type="number" class="input-birth" id="year" placeholder="ex&#41; 2006" oninput="chkToNext()">
+            <span class="birth-txt">월</span> 
+            <input type="number" class="input-birth" id="month" placeholder="ex&#41; 6" oninput="chkToNext()"> 
+            <span class="birth-txt">일</span>
+            <input type="number" class="input-birth" id="day" placeholder="ex&#41; 1" oninput="chkToNext()"> 
+        </div>
+
+        <button class="next-btn disabled" disabled onclick="submit()">다음</button>
+    </div>
+    
+</body>
+</html>
+
+<script src="../../../js/sign/next_btn_birth.js"></script>

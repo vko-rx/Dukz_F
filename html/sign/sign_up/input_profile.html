@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Duk'z</title>
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../../css/sign/input_profile.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
+
 <body>
-    
+    <div class="container">
+        <div class="back-container" onclick="location.href='./input_nick.html'">
+            <img class="back-img" src="../../../Image/icon/arrow-back.png">
+        </div>
+        <div class="line-color line"></div>
+        <div class="line-deColor line"></div>
+        <div class="main-txt-container">
+            프로필 사진을 정해주세요.
+        </div>
+        <div id="uploadedImageContainer">
+        <div class="img-container" onclick="modalVisible();">
+            <img id="profile-img" src="../../../Image/profile/profile_img_before.png">
+        </div>
+
+        <button class="next-btn disabled" disabled onclick="uploadImage()">다음</button>
+
+        <div class="modal-container">
+            <button class="img-btn" id="default" onclick="useDefault();">기본 이미지 사용</button>
+            <button class="img-btn" id="take-picture">사진 찍기</button>
+            <form class="img-btn" id="uploadForm" enctype="multipart/form-data">
+                <label for="gallery-picker" class="img-btn" id="bring-gallery">갤러리에서 가져오기</label>
+                <input type="file" id="gallery-picker" name="profile_image" accept="image/*" style="display: none;" required onchange="showSelectedImage()">
+            </form>
+        </div>
+    </div>
+    <div id="result"></div>
 </body>
+
 </html>
+
+<script src="../../../js/sign/profile_img_change.js"></script>

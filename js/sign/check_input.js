@@ -16,9 +16,8 @@ function submitLogin() {
     var id = document.getElementById("id").value;
     var pw = document.getElementById("pw").value;
   
-      // 클라이언트 로그인 후
     axios
-    .post("http://localhost:3000/user/login", {
+    .post("http://13.208.214.110:3000/user/login", {
       userid: id,
       pw: pw,
     })
@@ -28,8 +27,8 @@ function submitLogin() {
       localStorage.setItem("token", token);
       localStorage.setItem("userid", id);
   
-      alert("로그인 되었습니다");
-  
+      location.href='../../home/home.html';
+3
     })
     .catch((error) => {
       if (error.response && error.response.status === 401) {      
