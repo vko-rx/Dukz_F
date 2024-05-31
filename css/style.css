@@ -169,6 +169,22 @@ input[type=radio]:checked + label {
     border: 0.8px solid var(--bs-main-100);
 }
 
+select {
+    width: calc(100% - 40px);
+    margin: 0 20px;
+    padding: 10px 15px;
+    border: 0.5px var(--bs-black-34) solid;
+    border-radius: 5px;
+    color: var(--bs-black-34);
+}
+select:focus {
+    color: var(--bs-black);
+}
+
+textarea {
+    resize: none;
+}
+
 
 /* containers */
 .back-container {

@@ -1,0 +1,35 @@
+.container {
+    padding: 0 20px;
+}
+.upload-container {
+    margin-top: 27px;
+    text-align: right;
+}
+#upload {
+    color: var(--bs-main-100);
+    font-size: var(--bs-font-12px);
+}
+
+.title-container {
+    color: var(--bs-black-87);
+    font-size: var(--bs-font-22px);
+    font-weight: var(--bs-font-semibold);
+}
+#input-title {
+    border: none;
+    color: var(--bs-black-87);
+    font-size: var(--bs-font-22px);
+    font-weight: var(--bs-font-semibold);
+}
+
+#input-content {
+    font-size: var(--bs-font-14px);
+    font-weight: var(--bs-font-reqular);
+    color: var(--bs-black-87);
+    width: 100%;
+    height: fit-content;
+    border: none;
+}
+#input-content:focus {
+    outline: none;
+}
