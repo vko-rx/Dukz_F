@@ -31,10 +31,6 @@
     font-size: var(--bs-font-13px);
     font-weight: var(--bs-font-regular);
 }
-.next-btn {
-    position: fixed;
-    bottom: 40px;
-}
 
 /* modal */
 .modal-container {
