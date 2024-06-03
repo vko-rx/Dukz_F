@@ -1,8 +1,12 @@
+.container {
+    text-align: center;
+}
 .title {
     margin: 40px 20px 0px 20px;
     font-size: var(--bs-font-22px);
     font-weight: var(--bs-font-semibold);
+    text-align: left;
 }
-#region-select {
-    margin-top: 36px;
+.title {
+    margin-bottom: 36px;
 }

@@ -1,0 +1,45 @@
+.container {
+    text-align: center;
+}
+.title {
+    margin: 20px 20px 0px 20px;
+    font-size: var(--bs-font-22px);
+    font-weight: var(--bs-font-semibold);
+    text-align: left;
+}
+
+.upload-container {
+    text-align: right;
+}
+#upload {
+    color: var(--bs-main-100);
+    font-size: var(--bs-font-12px);
+    font-weight: var(--bs-font-medium);
+}
+
+/* radio group */
+.radio-container {
+    display: flex;
+    column-gap: 1vw;
+    justify-content: center;
+}
+.radio-group input[type="radio"] {
+    display: none;
+}
+
+.radio-group input[type="radio"] + span {
+    display: inline-block;
+    padding: 2px 8px;
+    border: 1px solid var(--bs-main-100);
+    border-radius: 100px;
+    background-color: var(--bs-white);
+    text-align: center;
+    cursor: pointer;
+    color: var(--bs-main-100);
+    font-size: var(--bs-font-12px);
+}
+
+.radio-group input[type="radio"]:checked + span {
+    background-color: var(--bs-main-100);
+    color: var(--bs-white);
+}
