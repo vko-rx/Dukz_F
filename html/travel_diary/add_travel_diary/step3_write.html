@@ -17,9 +17,9 @@
                 <a href="#" id="upload">발행하기</a>
             </div>일지를 기록해주세요!
         </div>
-        <div class="radio-container">
+        <div class="input-container">
             <label class="radio-group">
-                <input type="radio" name="input" value="text">
+                <input type="radio" name="input" value="text" checked>
                 <span>글자</span>
             </label>
             <label class="radio-group">
@@ -38,6 +38,39 @@
                 <input type="radio" name="input" value="align">
                 <span>일정 가져오기</span>
             </label>
+        </div>
+        <div class="font-size-container">
+            <label class="size-group">
+                <input type="radio" name="size" value="title" checked>
+                <span>제목</span>
+            </label>
+            <label class="size-group">
+                <input type="radio" name="size" value="sub-title">
+                <span>부제목</span>
+            </label>
+            <label class="size-group">
+                <input type="radio" name="size" value="content">
+                <span>본문</span>
+            </label>
+        </div>
+        <div class="content-container">
+            <div class="left-container">
+                <label class="left-group">
+                    <input type="radio" name="font" value="t" checked>
+                    <span>T</span>
+                </label>
+                <label class="left-group">
+                    <input type="radio" name="font" value="1">
+                    <span>1</span>
+                </label>
+                <label class="left-group">
+                    <input type="radio" name="font" value="+">
+                    <span>+</span>
+                </label>
+            </div>
+            <div class="right-container">
+
+            </div>
         </div>
     </div>
 </body>
