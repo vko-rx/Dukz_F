@@ -22,7 +22,7 @@
     font-weight: var(--bs-font-semibold);
 }
 
-#input-content {
+.input-content {
     font-size: var(--bs-font-14px);
     font-weight: var(--bs-font-reqular);
     color: var(--bs-black-87);
@@ -30,6 +30,6 @@
     height: fit-content;
     border: none;
 }
-#input-content:focus {
+.input-content:focus {
     outline: none;
 }

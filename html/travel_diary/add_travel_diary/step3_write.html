@@ -17,7 +17,7 @@
                 <a href="#" id="upload">발행하기</a>
             </div>일지를 기록해주세요!
         </div>
-        <div class="input-container">
+        <div class="input-container" onchange="input_onchange()">
             <label class="radio-group">
                 <input type="radio" name="input" value="text" checked>
                 <span>글자</span>
@@ -31,25 +31,25 @@
                 <span>정렬</span>
             </label>
             <label class="radio-group">
-                <input type="radio" name="input" value="align">
+                <input type="radio" name="input" value="create-plan">
                 <span>일정 만들기</span>
             </label>
             <label class="radio-group">
-                <input type="radio" name="input" value="align">
+                <input type="radio" name="input" value="import-plan">
                 <span>일정 가져오기</span>
             </label>
         </div>
-        <div class="font-size-container">
+        <div class="sub-input-container">
             <label class="size-group">
-                <input type="radio" name="size" value="title" checked>
+                <input type="radio" name="sub-input" value="title" checked>
                 <span>제목</span>
             </label>
             <label class="size-group">
-                <input type="radio" name="size" value="sub-title">
+                <input type="radio" name="sub-input" value="sub-title">
                 <span>부제목</span>
             </label>
             <label class="size-group">
-                <input type="radio" name="size" value="content">
+                <input type="radio" name="sub-input" value="content">
                 <span>본문</span>
             </label>
         </div>
@@ -76,3 +76,8 @@
 </body>
 
 </html>
+
+
+<script src="../../../js/travel_diary/textarea_resize.js"></script>
+<script src="../../../js/travel_diary/add_travel_diary/input_onchange.js"></script>
+<script src="../../../js/travel_diary/add_travel_diary/sub_input_onchange.js"></script>
