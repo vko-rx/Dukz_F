@@ -1,5 +1,10 @@
 const subInputDiv = document.getElementsByClassName('sub-input-container')[0];
 
+
+const textDiv = document.getElementsByClassName('text-container')[0];
+const imageDiv = document.getElementsByClassName('image-container')[0];
+const alignDiv = document.getElementsByClassName('align-container')[0];
+
 const input_onchange = () => {
 
     const inputValue = document.querySelector('input[name="input"]:checked').value;
@@ -14,16 +19,22 @@ const input_onchange = () => {
 }
 
 const text_onchange = () => {
-    subInputDiv.innerHTML = "<label class='size-group'><input type='radio' name='sub-input' value='title' checked><span>제목</span></label><label class='size-group'><input type='radio' name='sub-input' value='title'><span>부제목</span></label><label class='size-group'><input type='radio' name='sub-input' value='title'><span>본문</span></label>"
-    // subInputDiv.onchange = text_sub_onchange();
+    textDiv.classList.remove('hidden');
+    imageDiv.classList.add('hidden');
+    alignDiv.classList.add('hidden');
 }
 
 const image_onchange = () => {
-    subInputDiv.innerHTML = "<label class='size-group'><input type='radio' name='sub-input' value='camera'><span><img src='../../../Image/icon/camera/camera.svg'></span></label><label class='size-group'><input type='radio' name='sub-input' value='image'><span><img src='../../../Image/icon/camera/image.svg'></span></label>"
+    imageDiv.classList.remove('hidden');
+    textDiv.classList.add('hidden');
+    alignDiv.classList.add('hidden');
+    
 }
 
 const align_onchange = () => {
-    subInputDiv.innerHTML = "<label class='size-group'><input type='radio' name='sub-input' value='left' checked><span><img src='../../../Image/icon/align/left.svg'></span></label><label class='size-group'><input type='radio' name='sub-input' value='center'><span><img src='../../../Image/icon/align/center.svg'></span></label><label class='size-group'><input type='radio' name='sub-input' value='right'><span><img src='../../../Image/icon/align/right.svg'></span></label>"
+    alignDiv.classList.remove('hidden');
+    textDiv.classList.add('hidden');
+    imageDiv.classList.add('hidden');
 }
 
 const create_plan_onchange = () => {
