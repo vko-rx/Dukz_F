@@ -30,6 +30,3 @@
     height: fit-content;
     border: none;
 }
-.input-content:focus {
-    outline: none;
-}

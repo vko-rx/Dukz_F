@@ -186,7 +186,9 @@ select:focus {
 textarea {
     resize: none;
 }
-
+textarea:focus { 
+    outline:none; 
+}
 
 /* containers */
 .back-container {

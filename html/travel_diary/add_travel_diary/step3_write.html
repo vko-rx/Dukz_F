@@ -40,36 +40,46 @@
             </label>
         </div>
         <div class="sub-input-container">
-            <label class="size-group">
-                <input type="radio" name="sub-input" value="title" checked>
-                <span>제목</span>
-            </label>
-            <label class="size-group">
-                <input type="radio" name="sub-input" value="sub-title">
-                <span>부제목</span>
-            </label>
-            <label class="size-group">
-                <input type="radio" name="sub-input" value="content">
-                <span>본문</span>
-            </label>
-        </div>
-        <div class="content-container">
-            <div class="left-container">
-                <label class="left-group">
-                    <input type="radio" name="font" value="t" checked>
-                    <span>T</span>
+            <div class="text-container" onchange="textOnChange()">
+                <label class="size-group">
+                    <input type="radio" name="sub-input-text" value="title" checked>
+                    <span>제목</span>
                 </label>
-                <label class="left-group">
-                    <input type="radio" name="font" value="1">
-                    <span>1</span>
+                <label class="size-group">
+                    <input type="radio" name="sub-input-text" value="sub-title">
+                    <span>부제목</span>
                 </label>
-                <label class="left-group">
-                    <input type="radio" name="font" value="+">
-                    <span>+</span>
+                <label class="size-group">
+                    <input type="radio" name="sub-input-text" value="content">
+                    <span>본문</span>
                 </label>
             </div>
+            <div class="image-container hidden">
+                <label class='size-group'>
+                    <button class="image-btn"><img src='../../../Image/icon/camera/camera.svg'></button>
+                </label>
+                <label class='size-group'>
+                    <button class="image-btn"><img src='../../../Image/icon/camera/image.svg'></button>
+                </label>
+            </div>
+            <div class="align-container hidden" onchange="alignOnChange()">
+                <label class='size-group'>
+                    <input type='radio' name='sub-input-align' value='left' checked>
+                    <span><img src='../../../Image/icon/align/left.svg'></span>
+                </label>
+                <label class='size-group'>
+                    <input type='radio' name='sub-input-align' value='center'>
+                    <span><img src='../../../Image/icon/align/center.svg'></span>
+                </label>
+                <label class='size-group'>
+                    <input type='radio' name='sub-input-align' value='right'>
+                    <span><img src='../../../Image/icon/align/right.svg'></span>
+                </label>
+            </div>
+        </div>
+        <div class="content-container">
             <div class="right-container">
-
+                <textarea class="title-txt input-content" placeholder="제목을 입력해주세요"></textarea>
             </div>
         </div>
     </div>
@@ -78,6 +88,6 @@
 </html>
 
 
-<script src="../../../js/travel_diary/textarea_resize.js"></script>
 <script src="../../../js/travel_diary/add_travel_diary/input_onchange.js"></script>
 <script src="../../../js/travel_diary/add_travel_diary/sub_input_onchange.js"></script>
+<script src="../../../js/travel_diary/textarea_resize.js"></script>
