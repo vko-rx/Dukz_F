@@ -20,9 +20,8 @@
 /* input group */
 .input-container {
     display: flex;
-    column-gap: 1vw;
-    justify-content: center;
-    margin: 10px 0;
+    justify-content: space-between;
+    margin: 10px 20px;
 }
 .radio-group input[type="radio"] {
     display: none;
@@ -30,7 +29,7 @@
 
 .radio-group input[type="radio"] + span {
     display: inline-block;
-    padding: 2px 8px;
+    padding: 2px 7px;
     border: 1px solid var(--bs-main-100);
     border-radius: 100px;
     background-color: var(--bs-white);
@@ -45,8 +44,8 @@
     color: var(--bs-white);
 }
 
-/* fontsize group */
-.font-size-container {
+/* subInput group */
+.sub-input-container > div{
     border-top: 1px solid var(--bs-black-10);
     border-bottom: 1px solid var(--bs-black-10);
     font-size: var(--bs-font-14px);
@@ -56,40 +55,45 @@
     display: flex;
     margin-bottom: 10px;
 }
-.size-group input[type="radio"] + span {
-    display: inline-block;
+.size-group {
     padding: 10px 18px ;
 }
-.size-group input[type="radio"]:checked + span {
+.size-group input[type="radio"] + span {
+    display: inline-block;
+}
+.size-group:has(input[type="radio"]:checked + span) {
     background-color: var(--bs-main-20);
     font-weight: var(--bs-font-bold);
 }
 
-/* left-container */
-.left-container {
-    margin-left: 20px;
-    width: 40px;
+.image-btn {
+    background-color: var(--bs-white);
 }
-.left-group input[type="radio"] + span {
-    width: 40px;
-    height: 40px;
-    border: 1px solid var(--bs-black-25);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    font-weight: var(--bs-font-bold);
-    color: var(--bs-black-34);
-    margin-bottom: 10px;
+.size-group:has(.image-btn:active) {
+    background-color: var(--bs-main-20);
 }
-.left-group:nth-child(1), .left-group:nth-child(3) {
-    font-size: var(--bs-font-25px);
+.image-btn:active {
+    background-color: var(--bs-main-20);
 }
-.left-group:nth-child(2) {
-    font-size: var(--bs-font-23px);
+
+
+/* content-container */
+.content-container {
+    margin: 0px 20px;
 }
-.left-group input[type="radio"]:checked + span {
-    background-color: var(--bs-main-60);
-    color: var(--bs-white);
+
+/* 글자 */
+.input-content {
     border: none;
+    width: 100%;
+}
+.title-txt {
+    font-size: var(--bs-font-22px);
+    font-weight: var(--bs-font-semibold);
+}
+.sub-title-txt {
+    font-size: var(--bs-font-18px);
+}
+.content {
+    font-size: var(--bs-font-14px);
 }
