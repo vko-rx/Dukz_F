@@ -15,7 +15,7 @@ function chkToNext() {
 }
 
 function displayUploadedImage(imageUrl) {
-    profileImg.src = `http://15.152.40.225:3000${imageUrl}`;
+    profileImg.src = `http://52.78.117.62:3000${imageUrl}`;
 }
 
 function uploadImage() {
@@ -23,7 +23,7 @@ function uploadImage() {
     const email = localStorage.getItem('email');
     formData.append('email', localStorage.getItem('email'));
 
-    axios.post('http://15.152.40.225:3000/user/signup5', formData, {
+    axios.post('http://52.78.117.62:3000/user/signup5', formData, {
         email : email,
         headers: {
             'Content-Type': 'multipart/form-data',
@@ -38,7 +38,6 @@ function uploadImage() {
             const imageUrl = response.data.image_url;
             console.log('Image URL:', imageUrl);
             document.getElementById('result').innerHTML = 'Image uploaded successfully. Image URL: ' + imageUrl;
-            // location.href='./input_birth.html';
 
             displayUploadedImage(imageUrl);
 

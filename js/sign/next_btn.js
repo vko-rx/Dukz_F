@@ -15,7 +15,7 @@ function submit(){
     var name = document.getElementById("input-nick").value;
 
     axios
-    .post("http://15.152.40.225:3000/user/signup4", { 
+    .post("http://52.78.117.62:3000/user/signup4", { 
         email: email,
         name: name,
       })

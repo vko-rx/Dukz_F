@@ -24,7 +24,7 @@ function authVerify() {
     var authCode = document.getElementById("authcode").value;
 
     axios
-      .post("http://15.152.40.225:3000/user/checkAuthCode", {
+      .post("http://52.78.117.62:3000/user/checkAuthCode", {
         email: email,
         code: authCode,
       })
@@ -49,7 +49,7 @@ function authVerify() {
 function submit(){
 
     axios
-    .post("http://15.152.40.225:3000/user/signup", { 
+    .post("http://52.78.117.62:3000/user/signup", { 
         email: email,
       })
       .then((response) => {
