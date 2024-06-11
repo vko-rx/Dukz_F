@@ -56,11 +56,11 @@
             </div>
             <div class="image-container hidden">
                 <label class='size-group'>
-                    <input type="file" id="image-upload-1" accept="image/*" style="display: none;" onchange="previewImage(event, 'image-preview-1')">
+                    <input type="file" id="image-upload-1" accept="image/*" style="display: none;" onchange="imageOnchange(event)">
                     <button class="image-btn" onclick="document.getElementById('image-upload-1').click();"><img src='../../../Image/icon/camera/camera.svg'></button>
                 </label>
                 <label class='size-group'>
-                    <input type="file" id="image-upload-2" accept="image/*" style="display: none;" onchange="previewImage(event, 'image-preview-2')">
+                    <input type="file" id="image-upload-2" accept="image/*" style="display: none;" onchange="imageOnchange(event)">
                     <button class="image-btn" onclick="document.getElementById('image-upload-2').click();"><img src='../../../Image/icon/camera/image.svg'></button>
                 </label>
             </div>
@@ -87,14 +87,12 @@
         <div class="image-preview-container" id="image-preview-container" style="display:none;">
             <img id="image-preview-1" src="#" alt="Image Preview 1" style="max-width: 100%;">
         </div>
-        <div class="image-preview-container" id="image-preview-container-2" style="display:none;">
-            <img id="image-preview-2" src="#" alt="Image Preview 2" style="max-width: 100%;">
-        </div>
     </div>
-
-    <script src="../../../js/travel_diary/add_travel_diary/input_onchange.js"></script>
-    <script src="../../../js/travel_diary/add_travel_diary/sub_input_onchange.js"></script>
-    <script src="../../../js/travel_diary/textarea_resize.js"></script>
 </body>
 
 </html>
+
+
+<script src="../../../js/travel_diary/add_travel_diary/input_onchange.js"></script>
+<script src="../../../js/travel_diary/add_travel_diary/sub_input_onchange.js"></script>
+<script src="../../../js/travel_diary/textarea_resize.js"></script>
