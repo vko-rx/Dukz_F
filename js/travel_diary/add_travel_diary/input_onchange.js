@@ -3,7 +3,6 @@ const imageDiv = document.getElementsByClassName('image-container')[0];
 const alignDiv = document.getElementsByClassName('align-container')[0];
 
 const input_onchange = () => {
-
     const inputValue = document.querySelector('input[name="input"]:checked').value;
 
     switch(inputValue) {
@@ -25,7 +24,6 @@ const image_onchange = () => {
     imageDiv.classList.remove('hidden');
     textDiv.classList.add('hidden');
     alignDiv.classList.add('hidden');
-    
 }
 
 const align_onchange = () => {
@@ -38,4 +36,3 @@ const create_plan_onchange = () => {
 }
 
 const import_plan_onchange = () => {
-}

@@ -20,8 +20,8 @@ function getName() {
     const usernick = document.getElementsByClassName('user-nick');
   
     axios
-    .post("http://13.208.214.110:3000/user/getName", {
-        userid : userid  
+    .post("http://52.78.117.62:3000/user/getName", {
+        userid
     })
     .then((response) => {
         const name = response.data.name;
@@ -47,7 +47,7 @@ function getCardNews() {
   }
 
   axios
-    .get("http://13.208.214.110:3000/user/getCardNews")
+    .get("http://52.78.117.62:3000/user/getCardNews")
     .then((response) => {
       const firstCardNews = response.data[0];
       const secondCardNews = response.data[1];
@@ -77,29 +77,29 @@ function getCardNews() {
         hashtagContainer3.appendChild(spanTag);
       });
 
-      document.getElementById("profileImage").src = `http://13.208.214.110:3000${firstCardNews.userInfo.profileImage}`;
+      document.getElementById("profileImage").src = `http://52.78.117.62:3000${firstCardNews.userInfo.profileImage}`;
       document.getElementById("nickname").textContent = firstCardNews.userInfo.nickname;
       document.getElementById("cardNewsTitle").textContent = firstCardNews.cardNews.title;
       document.getElementById("cardNewsDate").textContent = formatDate( firstCardNews.cardNews.createDate);
-      document.getElementById("cardNewsImage").src = `http://13.208.214.110:3000${ firstCardNews.cardNews.image_url}`;
+      document.getElementById("cardNewsImage").src = `http://52.78.117.62:3000${ firstCardNews.cardNews.image_url}`;
       document.getElementById("cardNewsLocation").textContent =  firstCardNews.cardNews.place;
       document.getElementById("cardNewsTime").textContent =  firstCardNews.cardNews.open_time + "~" +  firstCardNews.cardNews.close_time;
       document.getElementById("cardNewsPrice").textContent =  firstCardNews.cardNews.price;
 
-      document.getElementById("profileImage2").src = `http://13.208.214.110:3000${secondCardNews.userInfo.profileImage}`;
+      document.getElementById("profileImage2").src = `http://52.78.117.62:3000${secondCardNews.userInfo.profileImage}`;
       document.getElementById("nickname2").textContent = secondCardNews.userInfo.nickname;
       document.getElementById("cardNewsTitle2").textContent = secondCardNews.cardNews.title;
       document.getElementById("cardNewsDate2").textContent = formatDate(secondCardNews.cardNews.createDate);
-      document.getElementById("cardNewsImage2").src = `http://13.208.214.110:3000${secondCardNews.cardNews.image_url}`;
+      document.getElementById("cardNewsImage2").src = `http://52.78.117.62:3000${secondCardNews.cardNews.image_url}`;
       document.getElementById("cardNewsLocation2").textContent = secondCardNews.cardNews.place;
       document.getElementById("cardNewsTime2").textContent = secondCardNews.cardNews.open_time + "~" + secondCardNews.cardNews.close_time;
       document.getElementById("cardNewsPrice2").textContent = secondCardNews.cardNews.price;
 
-      document.getElementById("profileImage3").src = `http://13.208.214.110:3000${thirdCardNews.userInfo.profileImage}`;
+      document.getElementById("profileImage3").src = `http://52.78.117.62:3000${thirdCardNews.userInfo.profileImage}`;
       document.getElementById("nickname3").textContent = thirdCardNews.userInfo.nickname;
       document.getElementById("cardNewsTitle3").textContent = thirdCardNews.cardNews.title;
       document.getElementById("cardNewsDate3").textContent = formatDate(thirdCardNews.cardNews.createDate);
-      document.getElementById("cardNewsImage3").src = `http://13.208.214.110:3000${thirdCardNews.cardNews.image_url}`;
+      document.getElementById("cardNewsImage3").src = `http://52.78.117.62:3000${thirdCardNews.cardNews.image_url}`;
       document.getElementById("cardNewsLocation3").textContent = thirdCardNews.cardNews.place;
       document.getElementById("cardNewsTime3").textContent = thirdCardNews.cardNews.open_time + "~" + thirdCardNews.cardNews.close_time;
       document.getElementById("cardNewsPrice3").textContent = thirdCardNews.cardNews.price;
