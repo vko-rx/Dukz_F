@@ -21,7 +21,7 @@
         
         <div class="input-container" onchange="input_onchange()">
             <label class="radio-group">
-                <input type="radio" name="input" value="text" checked>
+                <input type="radio" name="input" value="text" id="make-title" checked>
                 <span>제목 만들기</span>
             </label>
             <label class="radio-group">
@@ -42,7 +42,7 @@
             </div>
             <div class="make-plan-container hidden">
                 <label class='size-group'>
-                    <button class="image-btn">시간</button>
+                    <button class="image-btn" id="openModalBtn">시간</button>
                 </label>
                 <label class='size-group'>
                     <button class="image-btn">카드뉴스</button>
@@ -75,10 +75,28 @@
             </div>
         </div>
     </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>시간 선택</h2>
+            <div class="time-picker">
+                <select id="hours"></select> :
+                <select id="minutes"></select>
+                <select id="ampm">
+                    <option value="AM">AM</option>
+                    <option value="PM">PM</option>
+                </select>
+            </div>
+            <button id="saveBtn">Save</button>
+        </div>
+
+    </div>
 </body>
 
 </html>
 
 <script src="../../js/travel_diary/textarea_resize.js"></script>
+<script src="../../js/travel_plan/add_plan/time_picker.js"></script>
 <script src="../../js/travel_plan/add_plan/left_focus.js"></script>
 <script src="../../js/travel_plan/add_plan/input_onchange.js"></script>
