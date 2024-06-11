@@ -6,7 +6,8 @@
 .left-container {
     width: 40px;
 }
-.left-group input[type="radio"] + span {
+.left-group input[type="radio"] + span,
+.left-group button {
     width: 40px;
     height: 40px;
     border: 1px solid var(--bs-black-25);
@@ -17,15 +18,20 @@
     font-weight: var(--bs-font-bold);
     color: var(--bs-black-34);
     margin-bottom: 10px;
+    background-color: var(--bs-white);
 }
-.left-group:nth-child(1), .left-group:nth-child(3) {
+.left-group:nth-child(1) {
     font-size: var(--bs-font-25px);
 }
-.left-group:nth-child(2) {
+.page {
     font-size: var(--bs-font-23px);
 }
-.left-group input[type="radio"]:checked + span {
+#add_page {
+    font-size: var(--bs-font-25px);
+}
+.left-group input[type="radio"]:checked + span,
+.left-group > button:active {
     background-color: var(--bs-main-60);
     color: var(--bs-white);
-    border: none;
+    border: 1px solid var(--bs-main-60);
 }
