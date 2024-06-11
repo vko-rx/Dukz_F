@@ -1,32 +1,31 @@
-.container {
-    padding: 0 20px;
+.content-container {
+    display: flex;
+    column-gap: 20px;
 }
-.upload-container {
-    margin-top: 27px;
-    text-align: right;
+/* left-container */
+.left-container {
+    width: 40px;
 }
-#upload {
-    color: var(--bs-main-100);
-    font-size: var(--bs-font-12px);
+.left-group input[type="radio"] + span {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--bs-black-25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-weight: var(--bs-font-bold);
+    color: var(--bs-black-34);
+    margin-bottom: 10px;
 }
-
-.title-container {
-    color: var(--bs-black-87);
-    font-size: var(--bs-font-22px);
-    font-weight: var(--bs-font-semibold);
+.left-group:nth-child(1), .left-group:nth-child(3) {
+    font-size: var(--bs-font-25px);
 }
-#input-title {
-    border: none;
-    color: var(--bs-black-87);
-    font-size: var(--bs-font-22px);
-    font-weight: var(--bs-font-semibold);
+.left-group:nth-child(2) {
+    font-size: var(--bs-font-23px);
 }
-
-.input-content {
-    font-size: var(--bs-font-14px);
-    font-weight: var(--bs-font-reqular);
-    color: var(--bs-black-87);
-    width: 100%;
-    height: fit-content;
+.left-group input[type="radio"]:checked + span {
+    background-color: var(--bs-main-60);
+    color: var(--bs-white);
     border: none;
 }

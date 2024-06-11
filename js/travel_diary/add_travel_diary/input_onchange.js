@@ -1,5 +1,3 @@
-const subInputDiv = document.getElementsByClassName('sub-input-container')[0];
-
 const textDiv = document.getElementsByClassName('text-container')[0];
 const imageDiv = document.getElementsByClassName('image-container')[0];
 const alignDiv = document.getElementsByClassName('align-container')[0];
@@ -35,19 +33,6 @@ const align_onchange = () => {
 }
 
 const create_plan_onchange = () => {
-    subInputDiv.innerHTML = "";
 }
 
 const import_plan_onchange = () => {
-    subInputDiv.innerHTML = "";
-}
-
-const previewImage = (event, previewId) => {
-    const reader = new FileReader();
-    reader.onload = function() {
-        const preview = document.getElementById(previewId);
-        preview.src = reader.result;
-        preview.parentElement.style.display = 'block';
-    }
-    reader.readAsDataURL(event.target.files[0]);
-}

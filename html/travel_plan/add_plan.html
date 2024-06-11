@@ -6,23 +6,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duk'z</title>
     <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/travel_diary/write_travel.css">
     <link rel="stylesheet" href="../../css/trabel_plan/add_plan.css">
 </head>
 
 <body>
     <div class="container">
-        <div class="title-container">
+        <div class="title">
             <div class="upload-container">
                 <a href="#" id="upload">발행하기</a>
+            </div>일정을 만들어주세요!
+        </div>
+        
+        <div class="input-container" onchange="input_onchange()">
+            <label class="radio-group">
+                <input type="radio" name="input" value="text" checked>
+                <span>제목 만들기</span>
+            </label>
+            <label class="radio-group">
+                <input type="radio" name="input" value="make-plan">
+                <span>일정 만들기</span>
+            </label>
+            <label class="radio-group">
+                <input type="radio" name="input" value="bring-plan">
+                <span>일정 가져오기</span>
+            </label>
+        </div>
+        <div class="sub-input-container">
+            <div class="title-container" onchange="textOnChange()">
+                <label class="size-group">
+                    <input type="radio" name="sub-input-title" value="title" checked>
+                    <span>제목</span>
+                </label>
             </div>
-            일정을 만들어주세요!
+            <div class="make-plan-container hidden">
+                <label class='size-group'>
+                    <button class="image-btn">시간</button>
+                </label>
+                <label class='size-group'>
+                    <button class="image-btn">카드뉴스</button>
+                </label>
+            </div>
+            <div class="bring-plan-container hidden" onchange="alignOnChange()">
+                <label class='size-group'>
+                    <input type='radio' name='sub-bring-plann' value='left' checked>
+                    <span></span>
+                </label>
+            </div>
         </div>
         <div class="content-container">
-            <div class="edit-container">
-
+            <div class="left-container">
+                <label class="left-group">
+                    <input type="radio" name="font" value="t" checked>
+                    <span>T</span>
+                </label>
+                <label class="left-group">
+                    <input type="radio" name="font" value="1">
+                    <span>1</span>
+                </label>
+                <label class="left-group">
+                    <input type="radio" name="font" value="+">
+                    <span>+</span>
+                </label>
             </div>
             <div class="write-container">
-                <input type="text" id="input-title" placeholder="제목을 입력해주세요">
+                <textarea type="text" class="input-content title-txt" id="input-title" placeholder="제목을 입력해주세요"></textarea>
                 <textarea name="" class="input-content" placeholder="내용을 입력해주세요"></textarea>
             </div>
         </div>
@@ -32,3 +80,4 @@
 </html>
 
 <script src="../../js/travel_diary/textarea_resize.js"></script>
+<script src="../../js/travel_plan/add_plan/input_onchange.js"></script>

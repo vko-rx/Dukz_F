@@ -20,7 +20,8 @@
 /* input group */
 .input-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
+    column-gap: 8px;
     margin: 10px 20px;
 }
 .radio-group input[type="radio"] {
@@ -74,6 +75,7 @@
 }
 .image-btn:active {
     background-color: var(--bs-main-20);
+    font-weight: var(--bs-font-bold);
 }
 
 
