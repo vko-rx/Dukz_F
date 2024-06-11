@@ -17,12 +17,14 @@ const textOnchange = () => {
     titleDiv.classList.remove('hidden');
     makePlanDiv.classList.add('hidden');
     bringPlanDiv.classList.add('hidden');
+    titleFocus();
 }
 
 const makePlanOnchange = () => {
     makePlanDiv.classList.remove('hidden');
     titleDiv.classList.add('hidden');
     bringPlanDiv.classList.add('hidden');
+    titleUnFocus();
     
 }
 
@@ -30,4 +32,5 @@ const bringPlanOnchange = () => {
     bringPlanDiv.classList.remove('hidden');
     titleDiv.classList.add('hidden');
     makePlanDiv.classList.add('hidden');
+    titleUnFocus();
 }
