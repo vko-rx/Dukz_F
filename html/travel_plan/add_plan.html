@@ -55,23 +55,22 @@
             </div>
         </div>
         <div class="content-container">
-            <div class="left-container">
+            <div class="left-container" onchange="leftFocus()">
                 <label class="left-group">
-                    <input type="radio" name="font" value="t" checked>
+                    <input type="radio" name="left" value="t" checked>
                     <span>T</span>
                 </label>
                 <label class="left-group">
-                    <input type="radio" name="font" value="1">
+                    <input type="radio" name="left" value="1">
                     <span>1</span>
                 </label>
                 <label class="left-group">
-                    <input type="radio" name="font" value="+">
+                    <input type="radio" name="left" value="+">
                     <span>+</span>
                 </label>
             </div>
             <div class="write-container">
                 <textarea type="text" class="input-content title-txt" id="input-title" placeholder="제목을 입력해주세요"></textarea>
-                <textarea name="" class="input-content" placeholder="내용을 입력해주세요"></textarea>
             </div>
         </div>
     </div>
@@ -80,4 +79,5 @@
 </html>
 
 <script src="../../js/travel_diary/textarea_resize.js"></script>
+<script src="../../js/travel_plan/add_plan/left_focus.js"></script>
 <script src="../../js/travel_plan/add_plan/input_onchange.js"></script>

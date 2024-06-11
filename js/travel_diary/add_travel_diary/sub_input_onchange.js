@@ -32,6 +32,18 @@ const textOnChange = () => {
     alignOnChange()
 }
 
+
+const imageOnchange = (event) => {
+    const reader = new FileReader();
+    const image = document.createElement('img');
+    reader.onload = function () {
+        image.src = reader.result;
+    }
+    image.className = 'image-file';
+    containerDiv.appendChild(image);
+    reader.readAsDataURL(event.target.files[0]);
+}
+
 const alignOnChange = () => {
     const subInputValue = document.querySelector('input[name="sub-input-align"]:checked').value;
     const inputContainer = document.getElementsByClassName('input-content');

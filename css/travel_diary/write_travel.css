@@ -99,3 +99,10 @@
 .content {
     font-size: var(--bs-font-14px);
 }
+
+/* 사진 */
+.image-file {
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 10px;
+}
