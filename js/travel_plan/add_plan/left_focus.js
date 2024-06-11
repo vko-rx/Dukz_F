@@ -63,7 +63,6 @@ const addPage = () => {
     // write-container 일정 추가
     const dayPage = document.createElement('div');
     dayPage.className = `day-page page${newIndex}`
-    dayPage.innerHTML = `${newIndex}일차 일정`;
     newInput.checked = true;
     writeContainer.appendChild(dayPage);
     titleUnFocus();
