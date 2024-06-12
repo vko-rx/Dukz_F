@@ -15,7 +15,8 @@
         <div class="title">
             <div class="upload-container">
                 <a href="#" id="upload">발행하기</a>
-            </div>일정을 만들어주세요!
+            </div>
+            <span id="page-day">1</span>일차 일정을 만들어주세요!
         </div>
         
         <div class="input-container" onchange="input_onchange()">
@@ -55,22 +56,22 @@
             </div>
         </div>
         <div class="content-container">
-            <div class="left-container" onchange="leftFocus()">
-                <label class="left-group">
-                    <input type="radio" name="left" value="t" checked>
+            <div class="left-container">
+                <label class="left-group" onclick="titleFocus()">
+                    <input type="radio" name="left" value="t" id="title-radio" checked>
                     <span>T</span>
                 </label>
-                <label class="left-group">
-                    <input type="radio" name="left" value="1">
+                <label class="left-group page">
+                    <input type="radio" name="left" value="1" id="firstPage" onclick="pageFocus(1)">
                     <span>1</span>
                 </label>
                 <label class="left-group">
-                    <input type="radio" name="left" value="+">
-                    <span>+</span>
+                    <button id="add_page" onclick="addPage()">+</button>
                 </label>
             </div>
             <div class="write-container">
                 <textarea type="text" class="input-content title-txt" id="input-title" placeholder="제목을 입력해주세요"></textarea>
+                <div class="day-page page1 hidden"></div>
             </div>
         </div>
     </div>
