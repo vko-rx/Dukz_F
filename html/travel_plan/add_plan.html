@@ -18,7 +18,7 @@
             </div>
             <span id="page-day">1</span>일차 일정을 만들어주세요!
         </div>
-        
+
         <div class="input-container" onchange="input_onchange()">
             <label class="radio-group">
                 <input type="radio" name="input" value="text" id="make-title" checked>
@@ -70,7 +70,8 @@
                 </label>
             </div>
             <div class="write-container">
-                <textarea type="text" class="input-content title-txt" id="input-title" placeholder="제목을 입력해주세요"></textarea>
+                <textarea type="text" class="input-content title-txt" id="input-title"
+                    placeholder="제목을 입력해주세요"></textarea>
                 <div class="day-page page1 hidden"></div>
             </div>
         </div>
@@ -78,17 +79,21 @@
 
     <div id="myModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>시간 선택</h2>
+            <div class="time-title-container">
+                <span class="time-title">시간 선택</span>
+                <span class="close">&times;</span>
+            </div>
             <div class="time-picker">
-                <select id="hours"></select> :
-                <select id="minutes"></select>
                 <select id="ampm">
                     <option value="AM">AM</option>
                     <option value="PM">PM</option>
                 </select>
+                <select id="hours"></select>
+                <select id="minutes"></select>
             </div>
-            <button id="saveBtn">Save</button>
+            <div class="time-savebtn-div">
+                <button id="saveBtn">확인</button>
+            </div>
         </div>
 
     </div>

@@ -26,7 +26,7 @@ for (let i = 1; i <= 12; i++) {
     option.text = i;
     hoursSelect.appendChild(option);
 }
-for (let i = 0; i < 60; i++) {
+for (let i = 0; i < 60; i+=10) {
     let option = document.createElement('option');
     option.value = i < 10 ? '0' + i : i;
     option.text = i < 10 ? '0' + i : i;
@@ -37,6 +37,5 @@ saveBtn.onclick = function () {
     const selectedHour = hoursSelect.value;
     const selectedMinute = minutesSelect.value;
     const selectedAmpm = document.getElementById('ampm').value;
-    alert(`Time selected: ${selectedHour}:${selectedMinute} ${selectedAmpm}`);
-    modal.style.display = "none";
+    // 이 밑으로 서버 작업하면 됨
 }
