@@ -73,7 +73,7 @@ function submit(){
     const email = localStorage.getItem('email');
 
     axios
-    .post("http://52.78.117.62:3000/user/signup7", { 
+    .post("http://localhost:3000/user/signup7", { 
         email: email,
         genres: selectedGenres
       })
@@ -85,6 +85,26 @@ function submit(){
       })
       .catch((e) => {
         console.error("Error during registration:", e);
+        alert("에러가 발생했습니다.")
+      });
+
+    console.log("Selected Genre IDs:", selectedGenres);
+}
+
+function diaryGenre() {
+    axios
+    .post("http://localhost:3000/user/saveGenre", { 
+        genres: selectedGenres,
+        diaryId: localStorage.getItem('diaryId') // 이전에 저장한 다이어리 ID
+      })
+      .then((response) => {
+        console.log("Genre registration response:", response.data);
+        if (response.data.message === "Genre information saved successfully") {
+            location.href='step3_write.html'
+        }
+      })
+      .catch((e) => {
+        console.error("Error during genre registration:", e);
         alert("에러가 발생했습니다.")
       });
 
