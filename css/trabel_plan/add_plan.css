@@ -128,3 +128,9 @@
     color: var(--bs-main-100);
     font-size: var(--bs-font-14px);
 }
+
+
+.time-text {
+    font-size: var(--bs-font-12px);
+    margin-bottom: 4px;
+}

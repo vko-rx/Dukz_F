@@ -50,12 +50,12 @@ for (let i = 0; i < 60; i += 10) {
 
 
 saveBtn.onclick = () => {
-    let selectedHourStart = parseInt(startHoursSelect.value);
-    let selectedHourEnd = parseInt(endHoursSelect.value);
-    let selectedMinuteStart = startMinutesSelect.value;
-    let selectedMinuteEnd = endMinutesSelect.value;
-    let selectedAmpmStart = document.getElementsByClassName('ampm')[0].value;
-    let selectedAmpmEnd = document.getElementsByClassName('ampm')[1].value;
+    let HourStart = parseInt(startHoursSelect.value);
+    let HourEnd = parseInt(endHoursSelect.value);
+    let MinuteStart = startMinutesSelect.value;
+    let MinuteEnd = endMinutesSelect.value;
+    let AmpmStart = document.getElementsByClassName('ampm')[0].value;
+    let AmpmEnd = document.getElementsByClassName('ampm')[1].value;
 
     let nowPage;
 
@@ -68,14 +68,42 @@ saveBtn.onclick = () => {
 
     let timeDiv = document.createElement('div');
     timeDiv.className = 'time-text';
-    if (selectedAmpmStart == 'PM') selectedHourStart += 12;
-    if (selectedAmpmEnd == 'PM') selectedHourEnd += 12;
-    if (selectedHourStart.toString().length == 1) selectedHourStart = `0${selectedHourStart}`;
-    if (selectedHourEnd.toString().length == 1) selectedHourEnd = `0${selectedHourEnd}`;
+    if (AmpmStart == 'PM') HourStart += 12;
+    if (AmpmEnd == 'PM') HourEnd += 12;
+    if (HourStart.toString().length == 1) HourStart = `0${HourStart}`;
+    if (HourEnd.toString().length == 1) HourEnd = `0${HourEnd}`;
+
+    let startTotalMinutes = parseInt(HourStart) * 60 + parseInt(MinuteStart);
+    let endTotalMinutes = parseInt(HourEnd) * 60 + parseInt(MinuteEnd);
+
+    let timeTextElements = nowPage.querySelectorAll('.time-text');
+    let lastTimeText = timeTextElements[timeTextElements.length - 1];
+
+    if (lastTimeText) {
+        let lastTimes = lastTimeText.textContent.split("~");
+        let lastTimesSplit = lastTimes[1].trim().split(":");
 
 
-    timeDiv.innerHTML = `${selectedHourStart}:${selectedMinuteStart}~${selectedHourEnd}:${selectedMinuteEnd}`
+        let endHour = parseInt(lastTimesSplit[0], 10);
+        let endMinute = parseInt(lastTimesSplit[1], 10);
+
+        let endTime = endHour * 60 + endMinute;
+
+        if (startTotalMinutes < endTime) {
+            alert("시작 시간이 마지막으로 입력한 종료 시간보다 클 수 없습니다.");
+            return 0;
+        }
+    }
+
+    if (startTotalMinutes > endTotalMinutes) {
+        alert("시작 시간이 종료 시간보다 클 수 없습니다.");
+        return 0;
+    }
+
+
+
+    timeDiv.innerHTML = `${HourStart}:${MinuteStart}~${HourEnd}:${MinuteEnd}`
     nowPage.appendChild(timeDiv);
 
-        modal.style.display = 'none';
+    modal.style.display = 'none';
 }
