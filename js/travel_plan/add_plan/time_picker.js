@@ -68,6 +68,7 @@ saveBtn.onclick = () => {
 
     let timeDiv = document.createElement('div');
     timeDiv.className = 'time-text';
+
     if (AmpmStart == 'PM') HourStart += 12;
     if (AmpmEnd == 'PM') HourEnd += 12;
     if (HourStart.toString().length == 1) HourStart = `0${HourStart}`;
@@ -95,15 +96,19 @@ saveBtn.onclick = () => {
         }
     }
 
-    if (startTotalMinutes > endTotalMinutes) {
-        alert("시작 시간이 종료 시간보다 클 수 없습니다.");
+    if (startTotalMinutes >= endTotalMinutes) {
+        alert("시작 시간이 종료 시간보다 크거나 같을 수 없습니다.");
         return 0;
     }
 
-
+    if(HourEnd > 12) startHoursSelect.value = (parseInt(HourEnd) - 12).toString();
+    else startHoursSelect.value = parseInt(HourEnd).toString();
+    startMinutesSelect.value = MinuteEnd.toString();
+    document.getElementsByClassName('ampm')[0].value = AmpmEnd;
 
     timeDiv.innerHTML = `${HourStart}:${MinuteStart}~${HourEnd}:${MinuteEnd}`
     nowPage.appendChild(timeDiv);
 
     modal.style.display = 'none';
+
 }
