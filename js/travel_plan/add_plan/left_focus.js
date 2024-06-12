@@ -6,6 +6,10 @@ const titleFocus = () => {
     inputTitle.classList.remove('hidden');
     inputTitle.focus();
     document.getElementById('title-radio').checked = true;
+    document.getElementById('make-title').checked = true;
+    document.getElementsByClassName('title-container')[0].classList.remove('hidden');
+    document.getElementsByClassName('make-plan-container')[0].classList.add('hidden');
+    document.getElementsByClassName('bring-plan-container')[0].classList.add('hidden');
 
     for (let i = 0; i < writeContainer.children.length - 1; i++) {
         document.getElementsByClassName('day-page')[i].classList.add('hidden');

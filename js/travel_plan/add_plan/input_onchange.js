@@ -14,9 +14,6 @@ const input_onchange = () => {
 }
 
 const textOnchange = () => {
-    titleDiv.classList.remove('hidden');
-    makePlanDiv.classList.add('hidden');
-    bringPlanDiv.classList.add('hidden');
     titleFocus();
 }
 

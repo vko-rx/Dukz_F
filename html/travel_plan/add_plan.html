@@ -18,10 +18,10 @@
             </div>
             <span id="page-day">1</span>일차 일정을 만들어주세요!
         </div>
-        
+
         <div class="input-container" onchange="input_onchange()">
             <label class="radio-group">
-                <input type="radio" name="input" value="text" checked>
+                <input type="radio" name="input" value="text" id="make-title" checked>
                 <span>제목 만들기</span>
             </label>
             <label class="radio-group">
@@ -42,7 +42,7 @@
             </div>
             <div class="make-plan-container hidden">
                 <label class='size-group'>
-                    <button class="image-btn">시간</button>
+                    <button class="image-btn" id="open-time-modal">시간</button>
                 </label>
                 <label class='size-group'>
                     <button class="image-btn">카드뉴스</button>
@@ -70,15 +70,53 @@
                 </label>
             </div>
             <div class="write-container">
-                <textarea type="text" class="input-content title-txt" id="input-title" placeholder="제목을 입력해주세요"></textarea>
+                <textarea type="text" class="input-content title-txt" id="input-title"
+                    placeholder="제목을 입력해주세요"></textarea>
                 <div class="day-page page1 hidden"></div>
             </div>
         </div>
+    </div>
+
+    <div id="time-modal" class="modal">
+        <div class="time-modal-content">
+            <div class="time-title-container">
+                <span class="time-title">시간 선택</span>
+                <span class="close">&times;</span>
+            </div>
+            <div>
+                <span class="time-sub-text">시작 시간</span>
+                <div class="time-picker">
+                    <select class="ampm">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                    <select class="hours"></select>
+                    <select class="minutes"></select>
+                </div>
+            </div>
+            <div>
+                <span class="time-sub-text">종료 시간</span>
+                <div class="time-picker">
+                    <select class="ampm">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                    <select class="hours"></select>
+                    <select class="minutes"></select>
+                </div>
+            </div>
+
+            <div class="time-savebtn-div">
+                <button id="saveBtn">확인</button>
+            </div>
+        </div>
+
     </div>
 </body>
 
 </html>
 
 <script src="../../js/travel_diary/textarea_resize.js"></script>
+<script src="../../js/travel_plan/add_plan/time_picker.js"></script>
 <script src="../../js/travel_plan/add_plan/left_focus.js"></script>
 <script src="../../js/travel_plan/add_plan/input_onchange.js"></script>
