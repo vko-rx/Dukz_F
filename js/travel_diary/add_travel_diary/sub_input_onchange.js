@@ -126,7 +126,7 @@ const saveDiary = async () => {
             console.log('Image URLs:', imageUrls);
             
             alert('일지가 성공적으로 저장되었습니다.');
-            location.href='/trevel_diary/travel_diary.html'
+            location.href='../travel_diary.html'
         } else {
             console.error('Error saving diary:', response.data.message);
         }
