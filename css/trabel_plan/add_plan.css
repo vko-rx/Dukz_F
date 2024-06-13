@@ -139,7 +139,8 @@
 /* card-news-modal */
 #card-news-modal {
     padding-top: 100px; 
-    display: none;
+    /* display: none; */
+    display: block;
 }
 .time-image-container {
     background-color: var(--bs-black-25);
@@ -230,7 +231,7 @@
     margin-left: 3px;
 }
 .hashtag-div {
-    margin: 8px 3px 0 3px;
+    margin: 8px 3px 6px 3px;
 }
 .hashtag-container {
     display: flex;
@@ -250,4 +251,12 @@
 }
 .hashtag::placeholder {
     color: var(--bs-main-80) !important;
+}
+
+#cardSaveBtn {
+    font-size: var(--bs-font-14px);
+    font-weight: var(--bs-font-bold);
+    background-color: var(--bs-white);
+    color: var(--bs-main-100);
+    margin-right: 5px;
 }

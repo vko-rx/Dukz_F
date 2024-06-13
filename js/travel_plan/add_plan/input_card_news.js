@@ -1,4 +1,12 @@
+const placeInput = document.getElementsByClassName('place')[0];
+const pinImage = document.getElementById('pin-image');
+
+const yenImage = document.getElementById('yen-image');
+const yenInput = document.getElementById('yen-input');
+const yenTxt = document.getElementById('yen-txt');
+
 document.addEventListener('DOMContentLoaded', () => {
+
     const input = document.querySelector('.hashtag');
 
     input.addEventListener('input', () => {
@@ -8,25 +16,31 @@ document.addEventListener('DOMContentLoaded', () => {
             input.setSelectionRange(1, 1);
         }
     });
-
     input.addEventListener('keydown', (event) => {
         if (input.selectionStart === 1 && (event.key === 'Backspace' || event.key === 'Delete')) {
             event.preventDefault();
         }
     });
-
     input.addEventListener('focus', () => {
         if (input.value === '#') {
             input.setSelectionRange(1, 1);
         }
     });
 
-    const yenInput = document.getElementById('yen-input');
-    const yenTxt = document.getElementById('yen-txt');
+    placeInput.addEventListener('input', () => {
+        if(placeInput.value.length > 0) {
+            pinImage.src = "../../Image/icon/card_icon/pin_24px.png";
+        } else {
+            pinImage.src = "../../Image/icon/card_icon/pin_uninput.png";
+        }
+    })
+
     yenInput.addEventListener('input', () => {
         if(yenInput.value.length > 0) {
             yenTxt.style.display = 'block';
+            yenImage.src = "../../Image/icon/card_icon/yen_24px.png";
         } else {
+            yenImage.src = "../../Image/icon/card_icon/yen_uninput.png";
             yenTxt.style.display = 'none';
         }
     })
