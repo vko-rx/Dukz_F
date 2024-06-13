@@ -95,7 +95,7 @@ body {
 }
 
 .info-txt-container {
-    margin: 3px 15px 0 15px;
+    margin: 8px 15px 0 15px;
     font-size: var(--bs-font-12px);
     color: var(--bs-black-87);
     font-weight: var(--bs-font-regular);
@@ -112,12 +112,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.a-map {
-    color: var(--bs-blue-87);
-    font-weight: var(--bs-font-regular);
-    font-size: var(--bs-font-9px);
 }
 
 .sub-txt {
