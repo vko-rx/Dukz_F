@@ -73,14 +73,12 @@ const saveDiary = async () => {
     const diaryId = localStorage.getItem('diaryId');
     const contents = [];
 
-    // contentElements가 존재하는지 확인합니다.
     const contentElements = document.querySelectorAll('.input-content');
     if (!contentElements || contentElements.length === 0) {
         console.error('No input content elements found.');
-        return; // 요소가 없으면 함수를 종료합니다.
+        return; 
     }
 
-    // contentElements가 존재할 경우에만 아래 코드를 실행합니다.
     contentElements.forEach(element => {
         let contentType;
         let contentText = '';
@@ -96,7 +94,6 @@ const saveDiary = async () => {
             contentText = element.value;
         } else if (element.classList.contains('image-file')) {
             contentType = 'image';
-            // contentText를 설정하지 않음
         } else {
             contentType = 'unknown';
         }
@@ -121,8 +118,9 @@ const saveDiary = async () => {
         if (response.data.message) {
             const imageUrls = response.data.image_urls;
             console.log('Image URLs:', imageUrls);
-
+            
             alert('일지가 성공적으로 저장되었습니다.');
+            location.href='/trevel_diary/travel_diary.html'
         } else {
             console.error('Error saving diary:', response.data.message);
         }

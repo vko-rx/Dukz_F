@@ -95,18 +95,18 @@ function diaryGenre() {
     axios
     .post("http://localhost:3000/user/saveGenre", { 
         genres: selectedGenres,
-        diaryId: localStorage.getItem('diaryId') // 이전에 저장한 다이어리 ID
+        diaryId: localStorage.getItem('diaryId')
       })
       .then((response) => {
         console.log("Genre registration response:", response.data);
         if (response.data.message === "Genre information saved successfully") {
-            location.href='step3_write.html'
         }
       })
       .catch((e) => {
         console.error("Error during genre registration:", e);
         alert("에러가 발생했습니다.")
       });
+      location.href='step3_write.html'
 
     console.log("Selected Genre IDs:", selectedGenres);
 }
