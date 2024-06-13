@@ -23,7 +23,7 @@ function getName() {
     const usernick = document.getElementsByClassName('writer-nick');
   
     axios
-    .post("http://localhost:3000/user/getName", {
+    .post("http://52.78.117.62:3000/user/getName", {
         userid : userid
     })
     .then((response) => {
@@ -38,4 +38,29 @@ function getName() {
     });
 }
 
-getName();
+function getDiary() {
+    const diaryId = localStorage.getItem("diaryId");
+    const usernick = document.getElementsByClassName('writer-nick');
+  
+    axios
+    .post("http://52.78.117.62:3000/user/getDiary", {
+        diaryId : diaryId
+    })
+    .then((response) => {
+            const { recommendedDiaries, name } = response.data;
+
+            for (let i in usernick) {
+                usernick[i].innerHTML = name;
+            }
+
+            console.log("Recommended Diaries:", recommendedDiaries);
+            console.log("User Name:", name);
+    })
+    .catch((e) => {
+        console.log(e);
+    });
+}
+
+
+getDiary();
+// getName();
