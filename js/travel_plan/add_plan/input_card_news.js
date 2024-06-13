@@ -25,6 +25,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
+     // 이미지 선택 및 표시
+     const addImageBtn = document.querySelector('.add-image');
+     const imageInput = document.getElementById('image-input');
+ 
+     addImageBtn.addEventListener('click', () => {
+         imageInput.click();
+     });
+ 
+     imageInput.addEventListener('change', (event) => {
+         const file = event.target.files[0];
+         if (file) {
+             const reader = new FileReader();
+             reader.onload = (e) => {
+                 const img = document.createElement('img');
+                 img.src = e.target.result;
+                 img.classList.add('selected-image');
+                 document.querySelector('.time-image-container').appendChild(img);
+             };
+             reader.readAsDataURL(file);
+         }
+     });
+
 });
 
 const CardNewsmodal = document.getElementById("card-news-modal");
