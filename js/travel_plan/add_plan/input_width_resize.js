@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    const input = document.querySelector('.hashtag');
+    const input = document.querySelector('.hashtag, #yen-input');
 
     const hiddenDiv = document.createElement('div');
     hiddenDiv.style.position = 'absolute';
