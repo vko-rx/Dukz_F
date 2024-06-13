@@ -60,8 +60,8 @@
 .card-modal-content {
     background-color: var(--bs-white);
     margin: auto;
-    width: 80%;
-    max-width: 300px;
+    width: 90%;
+    max-width: 350px;
     border-radius: 10px;
 }
 .time-title-container {
@@ -139,7 +139,7 @@
 /* card-news-modal */
 #card-news-modal {
     padding-top: 100px; 
-    display: block;
+    display: none;
 }
 .time-image-container {
     background-color: var(--bs-black-25);
@@ -185,7 +185,7 @@
 }
 .info-txt {
     font-size: var(--bs-font-14px);
-    font-weight: var(--bs-font-regular);
+    font-weight: var(--bs-font-medium);
     margin-left: 8px;
     width: 120px;
     border: none !important;
@@ -205,6 +205,9 @@
     font-size: var(--bs-font-14px);
     font-weight: var(--bs-font-light);
 }
+#review::placeholder {
+    color: var(--bs-black-34);
+}
 #cardNewsLocation,
 #cardNewsTime,
 #cardNewsPrice {
@@ -216,7 +219,7 @@
 }
 #yen-input {
     font-size: var(--bs-font-14px);
-    font-weight: var(--bs-font-regular);
+    font-weight: var(--bs-font-medium);
     margin-left: 8px;
     border: none !important;
     padding: 0 0 !important;

@@ -57,15 +57,6 @@ saveBtn.onclick = () => {
     let AmpmStart = document.getElementsByClassName('ampm')[0].value;
     let AmpmEnd = document.getElementsByClassName('ampm')[1].value;
 
-    let nowPage;
-
-    for (let pageDiv of writeContainer.children) {
-        if (!pageDiv.classList.contains('hidden')) {
-            nowPage = pageDiv;
-            break;
-        }
-    }
-
     let timeDiv = document.createElement('div');
     timeDiv.className = 'time-text';
 

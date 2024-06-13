@@ -1,6 +1,6 @@
 const inputTitle = document.getElementById('input-title');
 const writeContainer = document.getElementsByClassName('write-container')[0];
-
+let nowPage;
 
 const titleFocus = () => {
     inputTitle.classList.remove('hidden');
@@ -21,6 +21,8 @@ const titleUnFocus = () => {
         document.getElementById('firstPage').checked = true;
         document.getElementsByClassName('day-page')[0].classList.remove('hidden');
     }
+   
+    nowPageChange();
 }
 
 const pageFocus = (pageNum) => {
@@ -33,6 +35,16 @@ const pageFocus = (pageNum) => {
             document.getElementsByClassName('day-page')[i].classList.add('hidden');
         } else {
             document.getElementsByClassName('day-page')[i].classList.remove('hidden');
+        }
+    }
+    nowPageChange();
+}
+
+const nowPageChange = () => {
+    for (let pageDiv of writeContainer.children) {
+        if (!pageDiv.classList.contains('hidden')) {
+            nowPage = pageDiv;
+            break;
         }
     }
 }

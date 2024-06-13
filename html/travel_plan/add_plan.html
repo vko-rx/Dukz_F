@@ -45,7 +45,7 @@
                     <button class="image-btn" id="open-time-modal">시간</button>
                 </label>
                 <label class='size-group'>
-                    <button class="image-btn">카드뉴스</button>
+                    <button class="image-btn" id="open-card-modal">카드뉴스</button>
                 </label>
             </div>
             <div class="bring-plan-container hidden" onchange="alignOnChange()">
@@ -123,7 +123,7 @@
             <div class="info-container">
                 <div class="line-container">
                     <div class="info-sub-container">
-                        <img class="info-img" src="../../Image/icon/card_icon/pin_24px.png">
+                        <img class="info-img" src="../../Image/icon/card_icon/pin_uninput.png">
                         <input type="text" class="info-txt place" placeholder="장소를 입력해주세요">
                     </div>
                     <div class="star-rating">
@@ -137,10 +137,10 @@
                 </div>
                 <div class="info-sub-container">
                     <img class="info-img" src="../../Image/icon/card_icon/time_24px.png">
-                    <span class="info-txt time">09:00~11:00</span>
+                    <span class="info-txt" id="time">09:00~11:00</span>
                 </div>
                 <div class="info-sub-container">
-                    <img class="info-img" src="../../Image/icon/card_icon/yen_24px.png">
+                    <img class="info-img" src="../../Image/icon/card_icon/yen_uninput.png">
                     <span class="yen">
                         <input type="number" class="input-content" id="yen-input" placeholder="금액을 입력해주세요">
                         <span id="yen-txt">円</span>
@@ -148,7 +148,7 @@
                 </div>
 
                 <div class="review-container">
-                    <textarea class="input-content" placeholder="후기를 입력해주세요"></textarea>
+                    <textarea class="input-content" id="review" placeholder="후기를 입력해주세요"></textarea>
                 </div>
                 <div class="card-bottom-container line-container">
                     <div class="hashtag-div">
@@ -166,9 +166,9 @@
 
 </html>
 
+<script src="../../js/travel_plan/add_plan/left_focus.js"></script>
 <script src="../../js/travel_plan/add_plan/input_width_resize.js"></script>
 <script src="../../js/travel_diary/textarea_resize.js"></script>
 <script src="../../js/travel_plan/add_plan/time_picker.js"></script>
 <script src="../../js/travel_plan/add_plan/input_card_news.js"></script>
-<script src="../../js/travel_plan/add_plan/left_focus.js"></script>
 <script src="../../js/travel_plan/add_plan/input_onchange.js"></script>
