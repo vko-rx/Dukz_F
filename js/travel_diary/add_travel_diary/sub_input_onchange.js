@@ -30,6 +30,12 @@ const textOnChange = () => {
 
     alignOnChange();
 };
+document.querySelectorAll('.text-container > .size-group input').forEach(input => {
+    input.addEventListener('click', function(event) {
+        event.stopPropagation();
+        textOnChange();
+    });
+});
 
 const imageOnChange = (event) => {
     const reader = new FileReader();
