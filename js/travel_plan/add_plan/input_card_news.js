@@ -7,26 +7,6 @@ const yenTxt = document.getElementById('yen-txt');
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const input = document.querySelector('.hashtag');
-
-    input.addEventListener('input', () => {
-        if (!input.value.startsWith('#')) {
-            input.value = '#' + input.value.replace(/^#+/, '');
-        } else if (input.value === '#') {
-            input.setSelectionRange(1, 1);
-        }
-    });
-    input.addEventListener('keydown', (event) => {
-        if (input.selectionStart === 1 && (event.key === 'Backspace' || event.key === 'Delete')) {
-            event.preventDefault();
-        }
-    });
-    input.addEventListener('focus', () => {
-        if (input.value === '#') {
-            input.setSelectionRange(1, 1);
-        }
-    });
-
     placeInput.addEventListener('input', () => {
         if(placeInput.value.length > 0) {
             pinImage.src = "../../Image/icon/card_icon/pin_24px.png";
@@ -62,11 +42,35 @@ openBtn.onclick = function () {
     var lastTimeText = timeTexts[timeTexts.length - 1].textContent;
     timeTxtSpan.innerHTML = lastTimeText;
 
-
-
     CardNewsmodal.style.display = "block";
 }
 
 closeModal.onclick = function () {
     CardNewsmodal.style.display = "none";
 }
+
+const startController = (starNum) => {
+    starNum = Number(starNum.match(/\d+/)[0]);
+    for (let i = 1; i <= starNum; i++) {
+        document.getElementById(`star${i}`).src = "../../Image/icon/star/fill.png"
+    }
+    for (let i = 5; i > starNum; i--) {
+        document.getElementById(`star${i}`).src = "../../Image/icon/star/un_fill.png"
+    }
+}
+
+const input = document.querySelector('input[name=basic]');
+let tagify = new Tagify(input);
+
+tagify.on('add', function() {
+    const lastTag = tagify.value[tagify.value.length - 1];
+    
+    // if (lastTag && lastTag.value.length > 5) {
+    //     alert("태그는 5글자 이하로 입력해주세요");
+    //     tagify.removeTag(lastTag.value);
+    // } 
+    if (tagify.value.length > 3) {
+        alert("태그는 3개까지 입력할 수 있습니다");
+        tagify.removeTag(lastTag.value);
+    }
+});

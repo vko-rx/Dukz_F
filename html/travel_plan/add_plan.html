@@ -5,9 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duk'z</title>
+    <!-- hashtag - tagify 라이브러리 -->
+    <script src="https://unpkg.com/@yaireo/tagify"></script>
+    <link href="https://unpkg.com/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/travel_diary/write_travel.css">
     <link rel="stylesheet" href="../../css/trabel_plan/add_plan.css">
+    
 </head>
 
 <body>
@@ -127,11 +131,11 @@
                         <input type="text" class="info-txt place" placeholder="장소를 입력해주세요">
                     </div>
                     <div class="star-rating">
-                        <img class="star" src="../../Image/icon/star/un_fill.png">
-                        <img class="star" src="../../Image/icon/star/un_fill.png">
-                        <img class="star" src="../../Image/icon/star/un_fill.png">
-                        <img class="star" src="../../Image/icon/star/un_fill.png">
-                        <img class="star" src="../../Image/icon/star/un_fill.png">
+                        <img onclick="startController(this.id)" class="star" id="star1" src="../../Image/icon/star/un_fill.png">
+                        <img onclick="startController(this.id)" class="star" id="star2" src="../../Image/icon/star/un_fill.png">
+                        <img onclick="startController(this.id)" class="star" id="star3" src="../../Image/icon/star/un_fill.png">
+                        <img onclick="startController(this.id)" class="star" id="star4" src="../../Image/icon/star/un_fill.png">
+                        <img onclick="startController(this.id)" class="star" id="star5" src="../../Image/icon/star/un_fill.png">
                     </div>
                     
                 </div>
@@ -150,10 +154,10 @@
                 <div class="review-container">
                     <textarea class="input-content" id="review" placeholder="후기를 입력해주세요"></textarea>
                 </div>
-                <div class="card-bottom-container line-container">
+                <div class="card-bottom-container">
                     <div class="hashtag-div">
                         <div class="hashtag-container">
-                            <input type="text" class="hashtag" placeholder="#해시태그">
+                            <input class="hashtag" name="basic" placeholder="해시태그">
                         </div>
                     </div>
                     <button id="cardSaveBtn">완료</button>

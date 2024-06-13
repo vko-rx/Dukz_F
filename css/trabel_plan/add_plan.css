@@ -230,8 +230,15 @@
     display: none;
     margin-left: 3px;
 }
-.hashtag-div {
+.card-bottom-container {
     margin: 8px 3px 6px 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+.hashtag-div {
+    display: flex;
+    width: 250px;
 }
 .hashtag-container {
     display: flex;
@@ -240,6 +247,11 @@
     font-size: var(--bs-font-12px);
     margin-right: 2px;
     color: var(--bs-main-80)
+}
+.hash {
+    font-size: var(--bs-font-12px) ;
+    font-weight: var(--bs-font-light) ;
+    color: var(--bs-main-80) ;
 }
 .hashtag {
     margin-right: 5px;
@@ -250,7 +262,7 @@
     padding: 0 0 !important;
 }
 .hashtag::placeholder {
-    color: var(--bs-main-80) !important;
+    color: var(--bs-main-40) !important;
 }
 
 #cardSaveBtn {
@@ -260,3 +272,4 @@
     color: var(--bs-main-100);
     margin-right: 5px;
 }
+
