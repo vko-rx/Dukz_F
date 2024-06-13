@@ -56,7 +56,8 @@
     background-color: rgb(0,0,0); 
     background-color: rgba(0,0,0,0.4); 
 }
-.time-modal-content {
+.time-modal-content,
+.card-modal-content {
     background-color: var(--bs-white);
     margin: auto;
     width: 80%;
@@ -133,4 +134,102 @@
 .time-text {
     font-size: var(--bs-font-12px);
     margin-bottom: 4px;
+}
+
+/* card-news-modal */
+#card-news-modal {
+    padding-top: 100px; 
+    display: block;
+}
+.time-image-container {
+    background-color: var(--bs-black-25);
+    text-align: center;
+    position: relative;
+    height: 225px;
+    border-radius: 8px 8px 0 0;
+}
+#card-close {
+    color: var(--bs-white);
+    font-size: 24px;
+    font-weight: var(--bs-font-medium);
+    position: absolute;
+    right: 14px;
+    top: 3px;
+}
+.add-image {
+    color: var(--bs-white);
+    font-size: 50px;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.info-container {
+    padding: 10px 10px;
+}
+.line-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.info-sub-container {
+    display: flex;
+    align-items: center;
+}
+.info-sub-container:not(.category-container) {
+    margin-top: 5px;
+}
+.info-img {
+    width: 24px;
+    height: 24px;
+}
+.info-txt {
+    font-size: var(--bs-font-14px);
+    font-weight: var(--bs-font-regular);
+    margin-left: 8px;
+    width: 120px !important;
+    border: none !important;
+    padding: 0 0 !important;
+}
+#place-name {
+    color: var(--bs-blue-87);
+}
+.star-rating {
+    display: flex;
+}
+.star {
+    width: 18px;
+}
+.review-container {
+    margin: 10px 3px 0 3px;
+    font-size: var(--bs-font-14px);
+    font-weight: var(--bs-font-light);
+}
+#cardNewsLocation,
+#cardNewsTime,
+#cardNewsPrice {
+    margin-left: 10px;
+    border: none;
+}
+.hashtag-div {
+    margin: 8px 3px 0 3px;
+}
+.hashtag-container {
+    display: flex;
+}
+.prefix {
+    font-size: var(--bs-font-12px);
+    margin-right: 2px;
+    color: var(--bs-main-80)
+}
+.hashtag {
+    margin-right: 5px;
+    font-size: var(--bs-font-12px) !important;
+    font-weight: var(--bs-font-light) !important;
+    color: var(--bs-main-80) !important;
+    border: none !important;
+    padding: 0 0 !important;
+}
+.hashtag::placeholder {
+    color: var(--bs-main-80) !important;
 }

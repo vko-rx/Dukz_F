@@ -77,6 +77,7 @@
         </div>
     </div>
 
+    <!-- time-picker-modal -->
     <div id="time-modal" class="modal">
         <div class="time-modal-content">
             <div class="time-title-container">
@@ -110,13 +111,61 @@
                 <button id="saveBtn">확인</button>
             </div>
         </div>
+    </div>
 
+    <!-- card-news-modal -->
+    <div id="card-news-modal" class="modal">
+        <div class="card-modal-content">
+            <div class="time-image-container">
+                <span class="close" id="card-close">&times;</span>
+                <span class="add-image">&#43;</span>
+            </div>
+            <div class="info-container">
+                <div class="line-container">
+                    <div class="info-sub-container">
+                        <img class="info-img place-img" src="../../Image/icon/card_icon/pin_24px.png">
+                        <input type="text" class="info-txt place" placeholder="장소를 입력해주세요">
+                    </div>
+                    <div class="star-rating">
+                        <img class="star" src="../../Image/icon/star/fill.png">
+                        <img class="star" src="../../Image/icon/star/fill.png">
+                        <img class="star" src="../../Image/icon/star/fill.png">
+                        <img class="star" src="../../Image/icon/star/fill.png">
+                        <img class="star" src="../../Image/icon/star/un_fill.png">
+                    </div>
+                    
+                </div>
+                <div class="info-sub-container">
+                    <img class="info-img time-img" src="../../Image/icon/card_icon/time_24px.png">
+                    <span class="info-txt time">09:00~11:00</span>
+                </div>
+                <div class="info-sub-container">
+                    <img class="info-img time-img" src="../../Image/icon/card_icon/yen_24px.png">
+                    <span class="info-txt yen">0円</span>
+                </div>
+
+                <div class="review-container">
+                    <textarea class="input-content" placeholder="후기를 입력해주세요"></textarea>
+                </div>
+                <div class="card-bottom-container line-container">
+                    <div class="hashtag-div">
+                        <div class="hashtag-container">
+                            <input type="text" class="hashtag" placeholder="#해시태그">
+                        </div>
+                    </div>
+                    <button id="cardSaveBtn">완료</button>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 </body>
 
 </html>
 
+<script src="../../js/travel_plan/add_plan/input_width_resize.js"></script>
 <script src="../../js/travel_diary/textarea_resize.js"></script>
 <script src="../../js/travel_plan/add_plan/time_picker.js"></script>
+<script src="../../js/travel_plan/add_plan/input_card_news.js"></script>
 <script src="../../js/travel_plan/add_plan/left_focus.js"></script>
 <script src="../../js/travel_plan/add_plan/input_onchange.js"></script>
