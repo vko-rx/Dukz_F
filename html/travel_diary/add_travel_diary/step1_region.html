@@ -6,22 +6,25 @@
     <title>Duk'z</title>
     <link rel="stylesheet" href="../../../css/style.css">
     <link rel="stylesheet" href="../../../css/travel_diary/add_travel.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="title">어느 지역인가요?</div>
         <select name="" id="region-select">
             <option value="" selected disabled hidden>지역 선택</option>
-            <option value="hokkaido">홋카이도 지방</option>
-            <option value="kyushu">규슈 지방</option>
-            <option value="sikoku">시코쿠 지방</option>
-            <option value="ganto">간토 지방</option>
-            <option value="jubu">주부 지방</option>
-            <option value="gansai">간사이 지방</option>
-            <option value="Chugoku">주고쿠 지방</option>
+            <option value="홋카이도 지방">홋카이도 지방</option>
+            <option value="규슈 지방">규슈 지방</option>
+            <option value="시코쿠 지방">시코쿠 지방</option>
+            <option value="간토 지방">간토 지방</option>
+            <option value="주부 지방">주부 지방</option>
+            <option value="간사이 지방">간사이 지방</option>
+            <option value="주고쿠 지방">주고쿠 지방</option>
         </select>
 
-        <button class="next-btn" onclick="location.href='step2_genre.html'">다음</button>
+        <button class="next-btn" onclick="saveRegion()">다음</button>
     </div>
 </body>
 </html>
+
+<script src="../../../js/travel_diary/add_travel_diary/region_select.js"></script>
