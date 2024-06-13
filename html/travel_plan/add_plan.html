@@ -123,6 +123,7 @@
             <div class="time-image-container">
                 <span class="close" id="card-close">&times;</span>
                 <span class="add-image">&#43;</span>
+                <input type="file" id="image-input" accept="image/*" style="display:none;">
             </div>
             <div class="info-container">
                 <div class="line-container">
@@ -137,7 +138,6 @@
                         <img onclick="startController(this.id)" class="star" id="star4" src="../../Image/icon/star/un_fill.png">
                         <img onclick="startController(this.id)" class="star" id="star5" src="../../Image/icon/star/un_fill.png">
                     </div>
-                    
                 </div>
                 <div class="info-sub-container">
                     <img class="info-img" src="../../Image/icon/card_icon/time_24px.png">
@@ -150,7 +150,6 @@
                         <span id="yen-txt">円</span>
                     </span>
                 </div>
-
                 <div class="review-container">
                     <textarea class="input-content" id="review" placeholder="후기를 입력해주세요"></textarea>
                 </div>
@@ -165,6 +164,7 @@
             </div>
         </div>
     </div>
+
     </div>
 </body>
 
