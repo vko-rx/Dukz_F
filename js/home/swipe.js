@@ -110,5 +110,58 @@ function getCardNews() {
     });
 }
 
+function getDiary() {
+  const userid = localStorage.getItem("userid");
+
+  axios
+    .post("http://localhost:3000/user/getRecommendedDiaries", {
+      userid: userid
+    })
+    .then((response) => {
+      const recommendedDiaries = response.data.recommendedDiaries;
+
+      console.log(recommendedDiaries);
+
+      if (Array.isArray(recommendedDiaries)) {
+        recommendedDiaries.forEach((diaryGroup, index) => {
+          const placeContainerClass = `.place-container.place-${["first", "second", "third"][index]}`;
+
+          const titleContent = diaryGroup.find(diary => diary.contentType === 'title');
+          const firstContent = diaryGroup.find(diary => diary.contentType === 'content');
+          const firstImage = diaryGroup.find(diary => diary.contentType === 'image');
+
+          if (titleContent) {
+            const titleElement = document.querySelector(`${placeContainerClass} .place-title`);
+            if (titleElement) {
+              titleElement.textContent = titleContent.content;
+            }
+          }
+
+          if (firstContent) {
+            const infoElement = document.querySelector(`${placeContainerClass} .place-info`);
+            if (infoElement) {
+              infoElement.textContent = firstContent.content;
+            }
+          }
+
+          if (firstImage) {
+            const imgElement = document.querySelector(`${placeContainerClass} .place-img`);
+            if (imgElement) {
+              imgElement.src = `http://localhost:3000${firstImage.imageSrc}`;
+            }
+          }
+        });
+      } else {
+        console.log("추천 일지 데이터가 올바르지 않습니다.");
+      }
+    })
+    .catch((e) => {
+      console.log(e);
+    });
+}
+
+
+
+getDiary();
 getName();
 getCardNews();
