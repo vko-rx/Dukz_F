@@ -25,28 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
-     // 이미지 선택 및 표시
-     const addImageBtn = document.querySelector('.add-image');
-     const imageInput = document.getElementById('image-input');
- 
-     addImageBtn.addEventListener('click', () => {
-         imageInput.click();
-     });
- 
-     imageInput.addEventListener('change', (event) => {
-         const file = event.target.files[0];
-         if (file) {
-             const reader = new FileReader();
-             reader.onload = (e) => {
-                 const img = document.createElement('img');
-                 img.src = e.target.result;
-                 img.classList.add('selected-image');
-                 document.querySelector('.time-image-container').appendChild(img);
-             };
-             reader.readAsDataURL(file);
-         }
-     });
-
 });
 
 const CardNewsmodal = document.getElementById("card-news-modal");
@@ -54,8 +32,29 @@ const closeModal = document.getElementsByClassName("close")[1];
 const openBtn = document.getElementById("open-card-modal");
 const timeTxtSpan= document.getElementById("time");
 
+// 이미지 선택 및 표시
+const addImage = document.querySelector('.card-image-container');
+const imageInput = document.getElementById('image-input');
 
-openBtn.onclick = function () {
+addImage.addEventListener('click', () => {
+    imageInput.click();
+});
+
+imageInput.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            img.classList.add('selected-image');
+            addImage.appendChild(img);
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+openBtn.onclick = () => {
     if (nowPage.querySelectorAll('.time-text').length === 0) {
         alert("시간을 먼저 입력해 주세요")
         return;
@@ -67,7 +66,7 @@ openBtn.onclick = function () {
     CardNewsmodal.style.display = "block";
 }
 
-closeModal.onclick = function () {
+closeModal.onclick = () => {
     CardNewsmodal.style.display = "none";
 }
 
@@ -96,3 +95,12 @@ tagify.on('add', function() {
         tagify.removeTag(lastTag.value);
     }
 });
+
+const cardSaveBtn = document.getElementById('cardSaveBtn');
+cardSaveBtn.onclick = () => {
+    console.log(tagify.value.length)
+    // if (
+    //     tagify.value.length &&
+
+    // )
+}
