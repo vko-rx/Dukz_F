@@ -1,3 +1,8 @@
+.container {
+    overflow: hidden;
+    padding: 0 0;
+    margin: 0 0;
+}
 .content-container {
     display: flex;
     column-gap: 20px;
@@ -35,10 +40,22 @@
     color: var(--bs-white);
     border: 1px solid var(--bs-main-60);
 }
+
+.write-container {
+    width: 100%;
+    margin-left: 10vw;
+    margin-bottom: 40px;
+}
 .day-page {
     text-align: left;
-    margin-top: -20px;
-    margin-left: 50px;
+    margin-top: -40px;
+    display: block;
+    width: 100%;
+}
+.time-text {
+    margin-top: 20px;
+    font-size: var(--bs-font-12px);
+    margin-bottom: -6px;
 }
 
 
@@ -131,18 +148,12 @@
 }
 
 
-.time-text {
-    font-size: var(--bs-font-12px);
-    margin-bottom: 4px;
-}
-
 /* card-news-modal */
 #card-news-modal {
     padding-top: 100px; 
-    /* display: none; */
-    display: block;
+    display: none;
 }
-.time-image-container {
+.card-image-container {
     background-color: var(--bs-black-25);
     text-align: center;
     position: relative;
@@ -151,19 +162,26 @@
     overflow: hidden;
 }
 
-.time-image-container img.selected-image {
+.card-image-container img.selected-image {
     width: 100%;
-    height: auto;
-    max-height: 100%;
+    height: 100%;
+    object-fit: cover; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover !important; 
 }
-
 #card-close {
     color: var(--bs-white);
     font-size: 24px;
     font-weight: var(--bs-font-medium);
     position: absolute;
-    right: 14px;
-    top: 3px;
+    right: 25px;
+    top: 100px;
+    z-index: 3;
+}
+#image-input {
+    background-size: cover;
 }
 .add-image {
     color: var(--bs-white);
@@ -194,7 +212,6 @@
 }
 .info-txt {
     font-size: var(--bs-font-14px);
-    font-weight: var(--bs-font-medium);
     margin-left: 8px;
     width: 120px;
     border: none !important;
@@ -228,7 +245,6 @@
 }
 #yen-input {
     font-size: var(--bs-font-14px);
-    font-weight: var(--bs-font-medium);
     margin-left: 8px;
     border: none !important;
     padding: 0 0 !important;
@@ -281,3 +297,26 @@
     margin-right: 5px;
 }
 
+/* card-news-div */
+.card-news-div {
+    margin-top: 10px;
+    width: 100%;
+    height: 125px;
+    border-radius: 10px;
+    border: 1px solid var(--bs-black-10);
+}
+.card-news-place-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 8px 4px 8px;
+}
+.card-news-place-txt {
+    display: inline-block;
+    font-size: var(--bs-font-14px);
+}
+.card-news-place-img {
+    background-size: cover;
+    width: 100%;
+    height: calc(100% - 36px);
+    border-radius: 0 0 10px 10px;
+}

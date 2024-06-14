@@ -5,10 +5,12 @@ const yenImage = document.getElementById('yen-image');
 const yenInput = document.getElementById('yen-input');
 const yenTxt = document.getElementById('yen-txt');
 
+const reviewInput = document.getElementById('review');
+
 document.addEventListener('DOMContentLoaded', () => {
 
     placeInput.addEventListener('input', () => {
-        if(placeInput.value.length > 0) {
+        if (placeInput.value.length > 0) {
             pinImage.src = "../../Image/icon/card_icon/pin_24px.png";
         } else {
             pinImage.src = "../../Image/icon/card_icon/pin_uninput.png";
@@ -16,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     yenInput.addEventListener('input', () => {
-        if(yenInput.value.length > 0) {
+        if (yenInput.value.length > 0) {
             yenTxt.style.display = 'block';
             yenImage.src = "../../Image/icon/card_icon/yen_24px.png";
         } else {
@@ -25,37 +27,38 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
-     // 이미지 선택 및 표시
-     const addImageBtn = document.querySelector('.add-image');
-     const imageInput = document.getElementById('image-input');
- 
-     addImageBtn.addEventListener('click', () => {
-         imageInput.click();
-     });
- 
-     imageInput.addEventListener('change', (event) => {
-         const file = event.target.files[0];
-         if (file) {
-             const reader = new FileReader();
-             reader.onload = (e) => {
-                 const img = document.createElement('img');
-                 img.src = e.target.result;
-                 img.classList.add('selected-image');
-                 document.querySelector('.time-image-container').appendChild(img);
-             };
-             reader.readAsDataURL(file);
-         }
-     });
-
 });
 
 const CardNewsmodal = document.getElementById("card-news-modal");
 const closeModal = document.getElementsByClassName("close")[1];
 const openBtn = document.getElementById("open-card-modal");
-const timeTxtSpan= document.getElementById("time");
+const timeTxtSpan = document.getElementById("time");
 
+// 이미지 선택 및 표시
+const addImage = document.querySelector('.card-image-container');
+const imageInput = document.getElementById('image-input');
 
-openBtn.onclick = function () {
+addImage.addEventListener('click', () => {
+    imageInput.click();
+});
+
+let cardNewsImgSrc;
+imageInput.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            const cardNewsImg = document.createElement('img');
+            cardNewsImgSrc = e.target.result;
+            cardNewsImg.src = e.target.result;
+            cardNewsImg.classList.add('selected-image');
+            addImage.appendChild(cardNewsImg);
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+openBtn.onclick = () => {
     if (nowPage.querySelectorAll('.time-text').length === 0) {
         alert("시간을 먼저 입력해 주세요")
         return;
@@ -67,7 +70,7 @@ openBtn.onclick = function () {
     CardNewsmodal.style.display = "block";
 }
 
-closeModal.onclick = function () {
+closeModal.onclick = () => {
     CardNewsmodal.style.display = "none";
 }
 
@@ -81,12 +84,12 @@ const startController = (starNum) => {
     }
 }
 
-const input = document.querySelector('input[name=basic]');
-let tagify = new Tagify(input);
+const inputHash = document.querySelector('input[name=basic]');
+let tagify = new Tagify(inputHash);
 
-tagify.on('add', function() {
+tagify.on('add', function () {
     const lastTag = tagify.value[tagify.value.length - 1];
-    
+
     // if (lastTag && lastTag.value.length > 5) {
     //     alert("태그는 5글자 이하로 입력해주세요");
     //     tagify.removeTag(lastTag.value);
@@ -96,3 +99,56 @@ tagify.on('add', function() {
         tagify.removeTag(lastTag.value);
     }
 });
+
+const cardSaveBtn = document.getElementById('cardSaveBtn');
+const firstStarImg = document.getElementById('star1');
+cardSaveBtn.onclick = () => {
+    // 유효성 검사
+    if (addImage.children.length <= 2) {
+        alert("이미지를 입력해주세요");
+        return;
+    } else if (!placeInput.value.length > 0) {
+        alert("장소를 입력해주세요");
+        return;
+    } else if (firstStarImg.src.includes('un')) {
+        alert("별점을 입력해주세요");
+        return;
+    } else if (!yenInput.value.length > 0) {
+        alert("금액을 입력해주세요");
+        return;
+    } else if (!reviewInput.value.length > 0) {
+        alert("후기를 입력해주세요")
+        return;
+    } else if (!tagify.value.length > 0) {
+        alert("해시태그를 하나 이상 입력해주세요")
+        return;
+    }
+
+    const cardDiv = document.createElement('div');
+    cardDiv.classList.add('card-news-div');
+
+    const placeContainer = document.createElement('div');
+    placeContainer.classList.add('card-news-place-container');
+
+    const placeText = document.createElement('div');
+    placeText.classList.add('card-news-place-txt');
+    placeText.textContent = placeInput.value;
+
+    const placeIcon = document.createElement('img');
+    placeIcon.classList.add('card-news-place-icon');
+    placeIcon.src = '../../Image/icon/map.png';
+
+    placeContainer.appendChild(placeText);
+    placeContainer.appendChild(placeIcon);
+
+    const placeImg = document.createElement('img');
+    placeImg.classList.add('card-news-place-img');
+    placeImg.src = cardNewsImgSrc;
+
+    cardDiv.appendChild(placeContainer);
+    cardDiv.appendChild(placeImg);
+
+    nowPage.appendChild(cardDiv);
+
+    CardNewsmodal.style.display = 'none';
+}
