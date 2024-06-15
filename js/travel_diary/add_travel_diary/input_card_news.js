@@ -36,7 +36,6 @@ const closeModal = document.getElementsByClassName("close")[0];
 const timeTxtSpan = document.getElementById("time");
 
 
-
 // 이미지 선택 및 표시
 const addImage = document.querySelector('.card-image-container');
 const imageInput = document.getElementById('image-input');
@@ -68,14 +67,16 @@ const cardOpen = () => {
 closeModal.onclick = () => {
     CardNewsmodal.style.display = "none";
 }
-
+let starNumArr = [false, false, false, false, false]
 const startController = (starNum) => {
     starNum = Number(starNum.match(/\d+/)[0]);
     for (let i = 1; i <= starNum; i++) {
         document.getElementById(`star${i}`).src = "../../../Image/icon/star/fill.png"
+        starNumArr[i-1] = true;
     }
     for (let i = 5; i > starNum; i--) {
         document.getElementById(`star${i}`).src = "../../../Image/icon/star/un_fill.png"
+        starNumArr[i-1] = false;
     }
 }
 
@@ -124,31 +125,58 @@ cardSaveBtn.onclick = () => {
         return;
     }
 
-    const cardDiv = document.createElement('div');
-    cardDiv.classList.add('card-news-div');
+    let starNumSrcArr = [];
+    for (let i of starNumArr) {
+        if (i) {
+            starNumSrcArr.push("../../../Image/icon/star/fill.png")
+        } else {
+            starNumSrcArr.push("../../../Image/icon/star/un_fill.png")
+        }
+    }
+    
 
-    const placeContainer = document.createElement('div');
-    placeContainer.classList.add('card-news-place-container');
+    const cardContainer = document.createElement('div');
+    cardContainer.className = 'card-container';
 
-    const placeText = document.createElement('div');
-    placeText.classList.add('card-news-place-txt');
-    placeText.textContent = placeInput.value;
+    // Inner HTML for the new card
+    cardContainer.innerHTML = `
+        <div class="place-title-container">
+            <div class="place-title">
+                <div class="place-name">${placeInput.value}</div>
+            </div>
+        </div>
+        <div class="tempDiv">
+            <img class="tempImg" src=${cardNewsImgSrc}>
+        </div>
+        <div class="info-container">
+            <div class="line-container">
+                <div class="info-sub-container category-container">
+                    <img class="info-img place-img" src="../../../Image/icon/card_icon/pin_24px.png">
+                    <a href="#" class="info-txt">${placeInput.value}</a>
+                </div>
+                <div class="star-rating">
+                    <img class="star" src=${starNumSrcArr[0]}>
+                    <img class="star" src=${starNumSrcArr[1]}>
+                    <img class="star" src=${starNumSrcArr[2]}>
+                    <img class="star" src=${starNumSrcArr[3]}>
+                    <img class="star" src=${starNumSrcArr[4]}>
+                </div>
+            </div>
+            <div class="info-sub-container">
+                <img class="info-img time-img" src="../../../Image/icon/card_icon/time_24px.png">
+                <span class="info-txt time">${timeTxtSpan.textContent}</span>
+            </div>
+            <div class="info-sub-container">
+                <img class="info-img time-img" src="../../../Image/icon/card_icon/yen_24px.png">
+                <span class="info-txt yen">${yenInput.value}円</span>
+            </div>
+            <div class="review-container">
+                ${reviewInput.value}
+            </div>
+        </div>
+    `;
 
-    const placeIcon = document.createElement('img');
-    placeIcon.classList.add('card-news-place-icon');
-    placeIcon.src = '../../../Image/icon/map.png';
-
-    placeContainer.appendChild(placeText);
-    placeContainer.appendChild(placeIcon);
-
-    const placeImg = document.createElement('img');
-    placeImg.classList.add('card-news-place-img');
-    placeImg.src = cardNewsImgSrc;
-
-    cardDiv.appendChild(placeContainer);
-    cardDiv.appendChild(placeImg);
-
-    nowPage.appendChild(cardDiv);
+    containerDiv.appendChild(cardContainer);
 
     CardNewsmodal.style.display = 'none';
 }

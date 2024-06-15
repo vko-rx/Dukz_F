@@ -34,8 +34,8 @@
                 <input type="radio" name="input" value="align">
                 <span>정렬</span>
             </label>
-            <label class="radio-group">
-                <input type="radio" name="input" value="create-plan">
+            <label class="radio-group" onclick="create_plan_onClick()">
+                <input type="button" name="input" value="create-plan">
                 <span>일정 만들기</span>
             </label>
             <label class="radio-group">
@@ -120,7 +120,7 @@
                     </div>
                     <div class="info-sub-container">
                         <img class="info-img" id="time-image" src="../../../Image/icon/card_icon/time_uninput.png">
-                        <div class="info-txt time" id="time">시간을 입력해주세요</div>
+                        <div class="info-txt" id="time">시간을 입력해주세요</div>
                     </div>
                     <div class="info-sub-container">
                         <img class="info-img" id="yen-image" src="../../../Image/icon/card_icon/yen_uninput.png">

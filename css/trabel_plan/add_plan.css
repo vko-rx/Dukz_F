@@ -52,6 +52,9 @@
     display: block;
     width: 100%;
 }
+#time {
+    color: var(--bs-black) !important;
+}
 .time-text {
     margin-top: 20px;
     font-size: var(--bs-font-12px);

@@ -1,5 +1,6 @@
 .container {
     text-align: center;
+    padding-bottom: 40px;
 }
 .title {
     margin: 20px 20px 0px 20px;
@@ -24,11 +25,11 @@
     column-gap: 8px;
     margin: 10px 20px;
 }
-.radio-group input[type="radio"] {
+.radio-group input {
     display: none;
 }
 
-.radio-group input[type="radio"] + span {
+.radio-group input + span {
     display: inline-block;
     padding: 2px 7px;
     border: 1px solid var(--bs-main-100);
@@ -40,7 +41,7 @@
     font-size: var(--bs-font-12px);
 }
 
-.radio-group input[type="radio"]:checked + span {
+.radio-group input:checked + span {
     background-color: var(--bs-main-100);
     color: var(--bs-white);
 }
@@ -119,6 +120,27 @@
     overflow: auto; 
     background-color: rgb(0,0,0); 
     background-color: rgba(0,0,0,0.4); 
+}
+
+/* 카드뉴스 */
+.card-container {
+    border: 1px solid var(--bs-black-10);
+    border-radius: 18px;
+    text-align: left;
+    margin: 15px 0;
+}
+.place-title {
+    padding-top: 16px;
+    padding-bottom: 14px;
+    text-align: center;
+}
+.place-name {
+    font-weight: var(--bs-font-semibold);
+    font-size: var(--bs-font-18px);
+}
+.tempImg {
+    width: 100%;
+    height: 200px;
 }
 
 /* card-news-modal */
@@ -204,7 +226,7 @@
 .star {
     width: 18px;
 }
-.time {
+#time {
     color: var(--bs-black-34);
 }
 .review-container {

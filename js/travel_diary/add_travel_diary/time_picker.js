@@ -1,5 +1,5 @@
 const modal = document.getElementById("time-modal");
-const span = document.getElementsByClassName("close")[0];
+const span = document.getElementsByClassName("close")[1];
 const saveBtn = document.getElementById("saveBtn");
 
 timeTxtSpan.onclick = function () {
