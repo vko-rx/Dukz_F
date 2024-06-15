@@ -6,10 +6,6 @@ const textOnChange = () => {
     let txtDiv = document.createElement('textarea');
 
     switch(subInputValue) {
-        case "title": 
-            txtDiv.className = 'title-txt input-content'; 
-            txtDiv.placeholder = '제목을 입력해주세요';
-            break;
         case "sub-title": 
             txtDiv.className = 'sub-title-txt input-content'; 
             txtDiv.placeholder = '부제목을 입력해주세요';

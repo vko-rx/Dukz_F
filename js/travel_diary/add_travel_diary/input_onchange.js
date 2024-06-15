@@ -9,7 +9,6 @@ const input_onchange = () => {
         case "text": text_onchange(); break;
         case "image": image_onchange(); break;
         case "align": align_onchange(); break;
-        case "create-plan": create_plan_onchange(); break;
         case "import-plan": import_plan_onchange(); break;
     }
 }
@@ -32,7 +31,8 @@ const align_onchange = () => {
     imageDiv.classList.add('hidden');
 }
 
-const create_plan_onchange = () => {
+const create_plan_onClick = () => {
+    cardOpen();
 }
 
 const import_plan_onchange = () => {

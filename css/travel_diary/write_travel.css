@@ -1,5 +1,6 @@
 .container {
     text-align: center;
+    padding-bottom: 40px;
 }
 .title {
     margin: 20px 20px 0px 20px;
@@ -24,11 +25,11 @@
     column-gap: 8px;
     margin: 10px 20px;
 }
-.radio-group input[type="radio"] {
+.radio-group input {
     display: none;
 }
 
-.radio-group input[type="radio"] + span {
+.radio-group input + span {
     display: inline-block;
     padding: 2px 7px;
     border: 1px solid var(--bs-main-100);
@@ -40,7 +41,7 @@
     font-size: var(--bs-font-12px);
 }
 
-.radio-group input[type="radio"]:checked + span {
+.radio-group input:checked + span {
     background-color: var(--bs-main-100);
     color: var(--bs-white);
 }
@@ -105,4 +106,273 @@
     width: 100%;
     margin: 10px 0;
     border-radius: 10px;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 200px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+/* 카드뉴스 */
+.card-container {
+    border: 1px solid var(--bs-black-10);
+    border-radius: 18px;
+    text-align: left;
+    margin: 15px 0;
+}
+.place-title {
+    padding-top: 16px;
+    padding-bottom: 14px;
+    text-align: center;
+}
+.place-name {
+    font-weight: var(--bs-font-semibold);
+    font-size: var(--bs-font-18px);
+}
+.tempImg {
+    width: 100%;
+    height: 200px;
+}
+
+/* card-news-modal */
+.card-modal-content {
+    background-color: var(--bs-white);
+    margin: auto;
+    width: 90%;
+    max-width: 350px;
+    border-radius: 10px;
+}
+#card-news-modal {
+    padding-top: 100px; 
+    display: none;
+}
+.card-image-container {
+    background-color: var(--bs-black-25);
+    text-align: center;
+    position: relative;
+    height: 225px;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+}
+
+.card-image-container img.selected-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover !important; 
+}
+#card-close {
+    color: var(--bs-white);
+    font-size: 24px;
+    font-weight: var(--bs-font-medium);
+    position: absolute;
+    right: 25px;
+    top: 100px;
+    z-index: 3;
+}
+#image-input {
+    background-size: cover;
+}
+.add-image {
+    color: var(--bs-white);
+    font-size: 50px;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.info-container {
+    padding: 10px 10px;
+}
+.line-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.info-sub-container {
+    display: flex;
+    align-items: center;
+}
+.info-sub-container:not(.category-container) {
+    margin-top: 5px;
+}
+.info-img {
+    width: 24px;
+    height: 24px;
+}
+.info-txt {
+    font-size: var(--bs-font-14px);
+    margin-left: 8px;
+    width: 120px;
+    border: none !important;
+    padding: 0 0 !important;
+    text-align: left;
+}
+.star-rating {
+    display: flex;
+}
+.star {
+    width: 18px;
+}
+#time {
+    color: var(--bs-black-34);
+}
+.review-container {
+    margin: 10px 3px 0 3px;
+    font-size: var(--bs-font-14px);
+    font-weight: var(--bs-font-light);
+}
+#review::placeholder {
+    color: var(--bs-black-34);
+}
+#cardNewsLocation,
+#cardNewsTime,
+#cardNewsPrice {
+    margin-left: 10px;
+    border: none;
+}
+.yen {
+    display: flex;
+}
+#yen-input {
+    font-size: var(--bs-font-14px);
+    margin-left: 8px;
+    border: none !important;
+    padding: 0 0 !important;
+    max-width: 120px;
+}
+#yen-txt {
+    display: none;
+    margin-left: 3px;
+}
+.card-bottom-container {
+    margin: 8px 3px 6px 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+.hashtag-div {
+    display: flex;
+    width: 250px;
+    text-align: left;
+}
+.hashtag-container {
+    display: flex;
+}
+.prefix {
+    font-size: var(--bs-font-12px);
+    margin-right: 2px;
+    color: var(--bs-main-80)
+}
+.hash {
+    font-size: var(--bs-font-12px) ;
+    font-weight: var(--bs-font-light) ;
+    color: var(--bs-main-80) ;
+}
+.hashtag {
+    margin-right: 5px;
+    font-size: var(--bs-font-12px) !important;
+    font-weight: var(--bs-font-light) !important;
+    color: var(--bs-main-80) !important;
+    border: none !important;
+    padding: 0 0 !important;
+}
+.hashtag::placeholder {
+    color: var(--bs-main-40) !important;
+}
+
+#cardSaveBtn {
+    font-size: var(--bs-font-14px);
+    font-weight: var(--bs-font-bold);
+    background-color: var(--bs-white);
+    color: var(--bs-main-100);
+    margin-right: 5px;
+}
+
+
+/* time-picker modal */
+.time-modal-content,
+.card-modal-content {
+    background-color: var(--bs-white);
+    margin: auto;
+    width: 90%;
+    max-width: 350px;
+    border-radius: 10px;
+}
+.time-title-container {
+    background-color: var(--bs-black-10);
+    text-align: center;
+    position: relative;
+    padding: 10px 14px;
+    border-radius: 8px 8px 0 0;
+}
+.time-title {
+    text-align: center;
+    font-size: var(--bs-font-16px);
+}
+.close {
+    color: var(--bs-black-87);
+    font-size: 26px;
+    font-weight: bold;
+    position: absolute;
+    right: 14px;
+    top: 3px;
+}
+.close:hover,
+.close:focus {
+    color:var(--bs-black);
+    text-decoration: none;
+    cursor: pointer;
+}
+.time-modal-content > div:nth-child(2) {
+    padding: 12px 20px 16px 20px;
+}
+.time-modal-content > div:nth-child(3) {
+    padding: 0 20px 14px 20px;
+}
+.time-sub-text {
+    font-size: var(--bs-font-14px);
+    margin: 5px;
+}
+.time-picker {
+    margin-top: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.time-picker select {
+    font-size: var(--bs-font-16px);
+    padding: 9px 12px;
+    border: 1px solid var(--bs-black-10);
+    border-radius: 3px;
+    background-color: var(--bs-white);
+    color: var(--bs-black-87);
+    width: 86px;
+    text-align: center;
+    margin: 0 6px;
+}
+.time-picker select:focus {
+    border-color: var(--bs-main-100);
+    outline: none;
+}
+.time-savebtn-div {
+    text-align: right;
+    padding: 0 20px 15px;
+}
+#saveBtn {
+    background-color: var(--bs-white);
+    color: var(--bs-main-100);
+    font-size: var(--bs-font-14px);
 }
