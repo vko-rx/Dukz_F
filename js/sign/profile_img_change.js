@@ -40,7 +40,6 @@ function uploadImage() {
             const imageUrl = response.data.image_url;
             console.log('Image URL:', imageUrl);
             resultElement.innerHTML = 'Image uploaded successfully. Image URL: ' + imageUrl;
-            displayUploadedImage(imageUrl);
             location.href = './input_birth.html';
         } else {
             console.error('Image upload failed:', response.data.message);
