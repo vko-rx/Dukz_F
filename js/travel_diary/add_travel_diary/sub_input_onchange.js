@@ -111,7 +111,7 @@ const saveDiary = async () => {
         formData.append('diaryId', diaryId);
         formData.append('contents', JSON.stringify(contents));
 
-        const response = await axios.post('http://52.78.117.62:3000/user/saveDiary', formData, {
+        const response = await axios.post('http://54.180.238.52:3000/user/saveDiary', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
@@ -135,7 +135,7 @@ const saveDiary = async () => {
 
 function displayUploadedImage(imageUrl) {
     const Img = document.createElement('img');
-    Img.src = `http://52.78.117.62:3000${imageUrl}`;
+    Img.src = `http://54.180.238.52:3000${imageUrl}`;
     containerDiv.appendChild(Img); 
 }
 

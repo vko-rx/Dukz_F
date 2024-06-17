@@ -15,40 +15,44 @@ function chkToNext() {
 }
 
 function displayUploadedImage(imageUrl) {
-    profileImg.src = `http://52.78.117.62:3000${imageUrl}`;
+    profileImg.src = `http://54.180.238.52:3000${imageUrl}`;
 }
 
 function uploadImage() {
-    const formData = new FormData(document.getElementById('uploadForm'));
+    const formData = new FormData();
     const email = localStorage.getItem('email');
-    formData.append('email', localStorage.getItem('email'));
+    const fileInput = document.getElementById('gallery-picker');
+    const file = fileInput.files[0];
+    
+    formData.append('email', email);
+    formData.append('profile_image', file);
 
-    axios.post('http://52.78.117.62:3000/user/signup5', formData, {
-        email : email,
+    axios.post('http://54.180.238.52:3000/user/signup5', formData, {
         headers: {
             'Content-Type': 'multipart/form-data',
         },
     })
     .then(response => {
         console.log('Image upload response:', response.data);
-
         const resultElement = document.getElementById('result');
 
         if (response.data.success) {
             const imageUrl = response.data.image_url;
             console.log('Image URL:', imageUrl);
-            document.getElementById('result').innerHTML = 'Image uploaded successfully. Image URL: ' + imageUrl;
-
+            resultElement.innerHTML = 'Image uploaded successfully. Image URL: ' + imageUrl;
             displayUploadedImage(imageUrl);
-
             location.href = './input_birth.html';
         } else {
             console.error('Image upload failed:', response.data.message);
-            document.getElementById('result').innerHTML = 'Image upload failed: ' + response.data.message;
             resultElement.innerHTML = 'Image upload failed: ' + response.data.message;
         }
     })
+    .catch(error => {
+        console.error('Error uploading image:', error);
+        document.getElementById('result').innerHTML = 'Error uploading image: ' + error.message;
+    });
 }
+
 
 function showSelectedImage() {
     const input = document.getElementById('gallery-picker');

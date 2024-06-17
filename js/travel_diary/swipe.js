@@ -23,7 +23,7 @@ function getName() {
     const usernick = document.getElementsByClassName('writer-nick');
   
     axios
-    .post("http://52.78.117.62:3000/user/getName", {
+    .post("http://54.180.238.52:3000/user/getName", {
         userid : userid
     })
     .then((response) => {
@@ -43,7 +43,7 @@ function getDiary() {
     const usernick = document.getElementsByClassName('writer-nick');
   
     axios
-    .post("http://52.78.117.62:3000/user/getDiary", {
+    .post("http://54.180.238.52:3000/user/getDiary", {
         diaryId : diaryId
     })
     .then((response) => {

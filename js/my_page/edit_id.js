@@ -3,7 +3,7 @@ function chkTxt() {
     const pw = document.getElementById('pw').value;
 
     // 서버에 비밀번호 확인 요청 보내기
-    axios.post("http://52.78.117.62:3000/user/passwordTest", { userid, pw })
+    axios.post("http://54.180.238.52:3000/user/passwordTest", { userid, pw })
       .then(response => {
         // 비밀번호가 일치하는 경우
         editChkTxt.style.color = '#5C5C5C';
@@ -28,7 +28,7 @@ function chktoCanEdit() {
         addDisabled(editBtn);
     } else { // 입력 후
       axios
-      .post("http://52.78.117.62:3000/user/checkDuplicate", {id})
+      .post("http://54.180.238.52:3000/user/checkDuplicate", {id})
           .then((response) => {
           if (response.data.isDuplicate) {
               editChkTxt.innerHTML = "이미 사용하고 있는 아이디입니다";
@@ -37,7 +37,7 @@ function chktoCanEdit() {
               editChkTxt.innerHTML = "사용 가능한 아이디입니다";
               editChkTxt.style.color = "#5C5C5C";
 
-              axios.post("http://52.78.117.62:3000/user/changeUserId", {userid, id})
+              axios.post("http://54.180.238.52:3000/user/changeUserId", {userid, id})
               .then(response => {
                 editComplite.innerHTML = '아이디가 성공적으로 수정되었습니다';
                 editComplite.style.color = '#5C5C5C';

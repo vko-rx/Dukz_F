@@ -3,7 +3,7 @@ function saveRegion() {
     const userid = localStorage.getItem('userid'); 
 
     axios
-    .post("http://52.78.117.62:3000/user/saveRegion", { 
+    .post("http://54.180.238.52:3000/user/saveRegion", { 
         regionName: regionName,
         userid: userid
       })
