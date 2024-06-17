@@ -152,3 +152,72 @@ cardSaveBtn.onclick = () => {
 
     CardNewsmodal.style.display = 'none';
 }
+
+function saveCardNews() {
+    const title = document.getElementsByClassName('info-txt place');
+    const usernick = document.getElementsByClassName('writer-nick');
+  
+    axios
+    .post("http://54.180.238.52:3000/user/getDiary", {
+        diaryId : diaryId
+    })
+    .then((response) => {
+            const { recommendedDiaries, name } = response.data;
+
+            for (let i in usernick) {
+                usernick[i].innerHTML = name;
+            }
+
+            console.log("Recommended Diaries:", recommendedDiaries);
+            console.log("User Name:", name);
+    })
+    .catch((e) => {
+        console.log(e);
+    });
+}
+
+const cardSaveBtn = document.getElementById('cardSaveBtn');
+
+cardSaveBtn.onclick = () => {
+    // 필드에서 사용자 입력 가져오기
+    const place = document.querySelector('.place').value.trim();
+    const openTime = document.getElementById('time').textContent.trim();
+    const price = document.getElementById('yen-input').value.trim();
+    const review = document.getElementById('review').value.trim();
+    const tags = tagify.value.map(tag => tag.value.trim()).join(','); // 태그는 콤마로 구분하여 문자열로 변환
+
+    // 이미지 파일 가져오기
+    const imageInput = document.getElementById('image-input');
+    const imageFile = imageInput.files[0];
+
+    // 필수 입력 체크
+    if (!place || !openTime || !price || !review || !tags || !imageFile) {
+        alert('모든 필드를 입력해주세요.');
+        return;
+    }
+
+    // FormData 객체 생성
+    const formData = new FormData();
+    formData.append('place', place);
+    formData.append('open_time', openTime);
+    formData.append('price', price);
+    formData.append('review', review);
+    formData.append('tags', tags);
+    formData.append('image', imageFile);
+
+    // 서버로 데이터 전송
+    fetch('/saveCardNews', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('카드 뉴스 저장 성공:', data);
+        alert('카드 뉴스가 성공적으로 저장되었습니다.');
+        // 필요한 추가 작업 수행 (예: 화면 갱신 등)
+    })
+    .catch(error => {
+        console.error('카드 뉴스 저장 오류:', error);
+        alert('카드 뉴스 저장 중 오류가 발생했습니다.');
+    });
+};

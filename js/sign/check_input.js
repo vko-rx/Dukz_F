@@ -17,7 +17,7 @@ function submitLogin() {
     var pw = document.getElementById("pw").value;
   
     axios
-    .post("http://52.78.117.62:3000/user/login", {
+    .post("http://54.180.238.52:3000/user/login", {
       userid: id,
       pw: pw,
     })
