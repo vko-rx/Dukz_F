@@ -199,12 +199,7 @@ function setStarRating(rating) {
 }
 
 // 시간 변환 함수 수정
-function convertTimeToString(hours, minutes, ampm) {
-    if (ampm === 'PM' && hours !== 12) {
-        hours += 12;
-    } else if (ampm === 'AM' && hours === 12) {
-        hours = 0;
-    }
+function convertTimeToString(hours, minutes) {
     return `${hours}:${minutes}`;
 }
 
@@ -216,8 +211,8 @@ function saveCardNews() {
     const userid = localStorage.getItem("userid");
     const hashtags = tagify.value.map(tag => tag.value);
 
-    let open_time = convertTimeToString(HourStart, MinuteStart, AmpmStart);
-    let close_time = convertTimeToString(HourEnd, MinuteEnd, AmpmEnd);
+    let open_time = convertTimeToString(HourStart, MinuteStart);
+    let close_time = convertTimeToString(HourEnd, MinuteEnd);
 
     console.log(open_time)
     console.log(close_time)
