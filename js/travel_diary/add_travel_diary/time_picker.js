@@ -46,15 +46,20 @@ for (let i = 0; i < 60; i += 10) {
     startMinutesSelect.appendChild(startOption);
     endMinutesSelect.appendChild(endOption);
 }
-
+let HourStart;
+let HourEnd;
+let MinuteStart;
+let MinuteEnd;
+let AmpmStart;
+let AmpmEnd;
 
 saveBtn.onclick = () => {
-    let HourStart = parseInt(startHoursSelect.value);
-    let HourEnd = parseInt(endHoursSelect.value);
-    let MinuteStart = startMinutesSelect.value;
-    let MinuteEnd = endMinutesSelect.value;
-    let AmpmStart = document.getElementsByClassName('ampm')[0].value;
-    let AmpmEnd = document.getElementsByClassName('ampm')[1].value;
+    HourStart = parseInt(startHoursSelect.value);
+    HourEnd = parseInt(endHoursSelect.value);
+    MinuteStart = startMinutesSelect.value;
+    MinuteEnd = endMinutesSelect.value;
+    AmpmStart = document.getElementsByClassName('ampm')[0].value;
+    AmpmEnd = document.getElementsByClassName('ampm')[1].value;
 
     if (AmpmStart == 'PM') HourStart += 12;
     if (AmpmEnd == 'PM') HourEnd += 12;

@@ -211,18 +211,15 @@ function convertTimeToString(hours, minutes, ampm) {
 // 카드 뉴스 저장 버튼 클릭 시 서버로 데이터 전송
 function saveCardNews() {
     const place = document.getElementById("place").value;
-    const HourStart = parseInt(document.getElementsByClassName('hours')[0].value);
-    const MinuteStart = document.getElementsByClassName('minutes')[0].value;
-    const AmpmStart = document.getElementsByClassName('ampm')[0].value;
-    const HourEnd = parseInt(document.getElementsByClassName('hours')[1].value);
-    const MinuteEnd = document.getElementsByClassName('minutes')[1].value;
-    const AmpmEnd = document.getElementsByClassName('ampm')[1].value;
     const price = document.getElementById("yen-input").value;
     const review = document.getElementById("review").value;
     const userid = localStorage.getItem("userid");
 
     let open_time = convertTimeToString(HourStart, MinuteStart, AmpmStart);
     let close_time = convertTimeToString(HourEnd, MinuteEnd, AmpmEnd);
+
+    console.log(open_time)
+    console.log(close_time)
 
     // Append additional fields to FormData
     formData.append('place', place);
