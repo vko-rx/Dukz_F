@@ -236,6 +236,7 @@ function saveCardNews() {
         console.log("Card news saved:", response.data);
         alert("카드 뉴스가 성공적으로 저장되었습니다.");
         console.log("Saved Card News ID:", response.data.cardNewsId); // Log the cardNewsId here
+        resetModalContent();
     })
     .catch((error) => {
         console.error("Error saving card news:", error);
@@ -246,4 +247,30 @@ function saveCardNews() {
 document.getElementById('cardSaveBtn').addEventListener('click', saveCardNews);
 
 
-document.getElementById('cardSaveBtn').addEventListener('click', saveCardNews);
+function resetModalContent() {
+    placeInput.value = '';
+    pinImage.src = "../../../Image/icon/card_icon/pin_uninput.png";
+
+    const selectedImages = document.querySelectorAll('.selected-image');
+    selectedImages.forEach(image => image.remove());
+    cardNewsImgSrc = null;
+
+    timeTxtSpan.textContent = "시간을 입력해주세요";
+    timeTxtSpan.style.color = 'var(--bs-black-34)';
+    timeImage.src = "../../../Image/icon/card_icon/time_uninput.png";
+
+    yenInput.value = '';
+    yenInput.style.width = '120px';
+    yenTxt.style.display = 'none';
+    yenImage.src = "../../../Image/icon/card_icon/yen_uninput.png";
+
+    reviewInput.value = '';
+
+    for (let i = 1; i <= 5; i++) {
+        document.getElementById(`star${i}`).src = "../../../Image/icon/star/un_fill.png";
+    }
+    starNumArr = [false, false, false, false, false];
+
+    // Reset hashtags
+    tagify.removeAllTags();
+}
