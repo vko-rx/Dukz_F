@@ -214,6 +214,7 @@ function saveCardNews() {
     const price = document.getElementById("yen-input").value;
     const review = document.getElementById("review").value;
     const userid = localStorage.getItem("userid");
+    const hashtags = tagify.value.map(tag => tag.value);
 
     let open_time = convertTimeToString(HourStart, MinuteStart, AmpmStart);
     let close_time = convertTimeToString(HourEnd, MinuteEnd, AmpmEnd);
@@ -229,6 +230,7 @@ function saveCardNews() {
     formData.append('card_review', review);
     formData.append('userid', userid);
     formData.append('star', selectedStarRating);
+    formData.append('hashtags', JSON.stringify(hashtags));
 
     axios.post("http://54.180.238.52:3000/user/saveCardNews", formData, {
         headers: {
