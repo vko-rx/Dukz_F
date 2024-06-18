@@ -1,4 +1,5 @@
-function bookmarkChk(obj) {
+function bookmarkChk(event, obj) {
+    event.stopPropagation();
     if (obj.src.includes('un_fill')) {
         obj.src = "../../Image/icon/bookmark/fill.png";
         // 카드뉴스를 북마크에 추가

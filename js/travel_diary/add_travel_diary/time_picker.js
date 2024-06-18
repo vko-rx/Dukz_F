@@ -18,9 +18,11 @@ window.onclick = function (event) {
 
 const startHoursSelect = document.getElementsByClassName('hours')[0];
 const startMinutesSelect = document.getElementsByClassName('minutes')[0];
+const startAmPmSelect = document.getElementsByClassName('ampm')[0];
 
 const endHoursSelect = document.getElementsByClassName('hours')[1];
 const endMinutesSelect = document.getElementsByClassName('minutes')[1];
+const endAmPmSelect = document.getElementsByClassName('ampm')[1];
 
 for (let i = 1; i <= 12; i++) {
     let startOption = document.createElement('option');
@@ -59,8 +61,8 @@ saveBtn.onclick = () => {
     HourEnd = parseInt(endHoursSelect.value);
     MinuteStart = startMinutesSelect.value;
     MinuteEnd = endMinutesSelect.value;
-    AmpmStart = document.getElementsByClassName('ampm')[0].value;
-    AmpmEnd = document.getElementsByClassName('ampm')[1].value;
+    AmpmStart = startAmPmSelect.value;
+    AmpmEnd = endAmPmSelect.value;
 
     if (AmpmStart == 'PM') HourStart += 12;
     if (AmpmEnd == 'PM') HourEnd += 12;
@@ -75,10 +77,12 @@ saveBtn.onclick = () => {
         return 0;
     }
 
-    if(HourEnd > 12) startHoursSelect.value = (parseInt(HourEnd) - 12).toString();
-    else startHoursSelect.value = parseInt(HourEnd).toString();
-    startMinutesSelect.value = MinuteEnd.toString();
-    document.getElementsByClassName('ampm')[0].value = AmpmEnd;
+    startHoursSelect.value = '1';
+    startMinutesSelect.value = '00';
+    endHoursSelect.value = '1';
+    endMinutesSelect.value = '00';
+    startAmPmSelect.value = 'AM';
+    endAmPmSelect.value = 'AM';
 
     timeTxtSpan.innerHTML = `${HourStart}:${MinuteStart}~${HourEnd}:${MinuteEnd}`
 

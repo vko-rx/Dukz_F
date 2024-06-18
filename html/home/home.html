@@ -17,8 +17,10 @@
 
     <div class="container">
         <div class="top-container">
-            <img class="top-heart" src="../../Image/icon/heart/un_fill.png" onclick="location.href='../my_page/show_heart.html'">
-            <img class="top-bookmark" src="../../Image/icon/bookmark/un_fill.png" onclick="location.href='../my_page/show_bookmark.html'">
+            <img class="top-heart" src="../../Image/icon/heart/un_fill.png"
+                onclick="location.href='../my_page/show_heart.html'">
+            <img class="top-bookmark" src="../../Image/icon/bookmark/un_fill.png"
+                onclick="location.href='../my_page/show_bookmark.html'">
         </div>
         <div class="hot-container">
             <div class="main-txt-container">
@@ -29,36 +31,37 @@
             </div>
             <div class="swiper swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide first" >
+                    <div class="swiper-slide first" onclick="openCardModal('1')">
                         <div class="hot-slide-container">
                             <div class="main-content-container">
-                                <img class="profile-img" src="../../Image/temp/genre_1.png" id="profileImage">
+                                <img class="profile-img" src="../../Image/temp/genre_1.png" id="profileImage1">
                                 <div class="main-content-txt-container">
-                                    <div class="nick-txt"  id="nickname">농놀</div>
-                                    <div class="title-txt"  id="cardNewsTitle">슬램덩크 성지순례 갔다 옴</div>
-                                    <div class="date-txt" id="cardNewsDate">2024.01.02</div>
+                                    <div class="nick-txt" id="nickname1">농놀</div>
+                                    <div class="title-txt" id="cardNewsTitle1">슬램덩크 성지순례 갔다 옴</div>
+                                    <div class="date-txt" id="cardNewsDate1">2024.01.02</div>
                                 </div>
-                                <div class="bookmark-img"><img class="bookmark-img-tag" src="../../Image/icon/bookmark/un_fill.png" onclick="bookmarkChk(this)">
+                                <div class="bookmark-img"><img class="bookmark-img-tag"
+                                        src="../../Image/icon/bookmark/un_fill.png" onclick="bookmarkChk(event, this)">
                                 </div>
                             </div>
                             <div class="main-content-info-container">
                                 <div class="info-img-container">
-                                    <img class="info-img" src="../../Image/temp/genre_1.png" id="cardNewsImage">
+                                    <img class="info-img" src="../../Image/temp/genre_1.png" id="cardNewsImage1">
                                 </div>
                                 <div class="info-txt-container">
                                     <div class="line-container">
                                         <div class="pin-container info-txt">
                                             <img class="sub-img" src="../../Image/icon/card_icon/pin.png">
-                                            <span class="sub-txt" id="cardNewsLocation">가마쿠라, 에노시마</span>
+                                            <span class="sub-txt" id="cardNewsLocation1">가마쿠라, 에노시마</span>
                                         </div>
                                     </div>
                                     <div class="time-container info-txt">
                                         <img class="sub-img" src="../../Image/icon/card_icon/time.png">
-                                        <span class="sub-txt" id="cardNewsTime">12:00~21:00</span>
+                                        <span class="sub-txt" id="cardNewsTime1">12:00~21:00</span>
                                     </div>
                                     <div class="money-container info-txt">
                                         <img class="sub-img" src="../../Image/icon/card_icon/yen.png">
-                                        <span class="sub-txt" id="cardNewsPrice">110円~</span>
+                                        <span class="sub-txt" id="cardNewsPrice1">110円~</span>
                                     </div>
                                 </div>
                                 <div class="hashtag-container">
@@ -70,7 +73,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide second">
+                    <div class="swiper-slide second" onclick="openCardModal('2')">
                         <div class="hot-slide-container">
                             <div class="main-content-container">
                                 <!-- 이미지, 글 등은 서버에서 수정 -->
@@ -80,7 +83,8 @@
                                     <div class="title-txt" id="cardNewsTitle2">슬램덩크 성지순례 갔다 옴</div>
                                     <div class="date-txt" id="cardNewsDate2">2024.01.02</div>
                                 </div>
-                                <div class="bookmark-img"><img class="bookmark-img-tag" src="../../Image/icon/bookmark/un_fill.png" onclick="bookmarkChk(this)">
+                                <div class="bookmark-img"><img class="bookmark-img-tag"
+                                        src="../../Image/icon/bookmark/un_fill.png" onclick="bookmarkChk(event, this)">
                                 </div>
                             </div>
                             <div class="main-content-info-container">
@@ -112,7 +116,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide third">
+                    <div class="swiper-slide third" onclick="openCardModal('3')">
                         <div class="hot-slide-container">
                             <div class="main-content-container">
                                 <!-- 이미지, 글 등은 서버에서 수정 -->
@@ -122,7 +126,8 @@
                                     <div class="title-txt" id="cardNewsTitle3">슬램덩크 성지순례 갔다 옴</div>
                                     <div class="date-txt" id="cardNewsDate3">2024.01.02</div>
                                 </div>
-                                <div class="bookmark-img"><img class="bookmark-img-tag" src="../../Image/icon/bookmark/un_fill.png" onclick="bookmarkChk(this)">
+                                <div class="bookmark-img"><img class="bookmark-img-tag"
+                                        src="../../Image/icon/bookmark/un_fill.png" onclick="bookmarkChk(event, this)">
                                 </div>
                             </div>
                             <div class="main-content-info-container">
@@ -157,13 +162,13 @@
                 <div class="swiper-pagination"></div>
 
             </div>
-
         </div>
         <div class="hot-place-container">
             <div class="title-txt-container">
                 요즘 핫한 장소를 추천해<br>드릴게요!
             </div>
-            <div class="place-container place-first" onclick="getDiaryId('first_diary_id'); location.href='../travel_diary/travel_diary_content.html'">
+            <div class="place-container place-first"
+                onclick="getDiaryId('first_diary_id'); location.href='../travel_diary/travel_diary_content.html'">
                 <img class="place-img" src="../../Image/temp/place_1.png">
                 <div class="place-txt-container">
                     <div class="line-container">
@@ -183,7 +188,8 @@
                     </div>
                 </div>
             </div>
-            <div class="place-container place-second" onclick="getDiaryId('second_diary_id'); location.href='../travel_diary/travel_diary_content.html'">
+            <div class="place-container place-second"
+                onclick="getDiaryId('second_diary_id'); location.href='../travel_diary/travel_diary_content.html'">
                 <img class="place-img" src="../../Image/temp/Rectangle 31 (1).png">
                 <div class="place-txt-container">
                     <div class="line-container">
@@ -201,7 +207,8 @@
                     </div>
                 </div>
             </div>
-            <div class="place-container place-third" onclick="getDiaryId('third_diary_id'); location.href='../travel_diary/travel_diary_content.html'">
+            <div class="place-container place-third"
+                onclick="getDiaryId('third_diary_id'); location.href='../travel_diary/travel_diary_content.html'">
                 <img class="place-img" src="../../Image/temp/Rectangle 31 (2).png">
                 <div class="place-txt-container">
                     <div class="line-container">
@@ -228,7 +235,7 @@
             </div>
             <div class="swiper-container swiper2">
                 <div class="swiper-wrapper wrapper-2">
-                    <div class="swiper-slide plan-slide plan-add">
+                    <div class="swiper-slide plan-slide plan-add" onclick="location.href='../travel_plan/add_plan.html'">
                         <img src="../../Image/contents/plan_add.png">
                     </div>
                     <div class="swiper-slide plan-slide">
@@ -254,7 +261,8 @@
             <img class="nav-img" src="../../Image/navbar/selected/home.png">
             <div class="nav-text selected">홈</div>
         </div>
-        <div class="travel-diary-container nav-sub-container" onclick="location.href='../travel_diary/travel_diary.html'">
+        <div class="travel-diary-container nav-sub-container"
+            onclick="location.href='../travel_diary/travel_diary.html'">
             <img class="nav-img" src="../../Image/navbar/un_selected/travel_diary.png">
             <div class="nav-text">여행일지</div>
         </div>
@@ -267,9 +275,58 @@
             <div class="nav-text">마이페이지</div>
         </div>
     </div>
+
+
+    <!-- card-news-modal -->
+    <div id="card-news-modal" class="modal">
+        <div class="card-modal-content">
+            <span class="close" id="card-close">&times;</span>
+            <div class="card-image-container">
+                <img id="card-image" src="../../Image/dukduk/nothing.png">
+            </div>
+            <div class="modal-info-container">
+                <div class="line-container">
+                    <div class="info-sub-container">
+                        <img class="modal-info-img" id="pin-image" src="../../../Image/icon/card_icon/pin_24px.png">
+                        <div class="modal-info-txt">여기 장소</div>
+                    </div>
+                    <div class="star-rating">
+                        <img class="star" id="star1" src="../../../Image/icon/star/un_fill.png">
+                        <img class="star" id="star2" src="../../../Image/icon/star/un_fill.png">
+                        <img class="star" id="star3" src="../../../Image/icon/star/un_fill.png">
+                        <img class="star" id="star4" src="../../../Image/icon/star/un_fill.png">
+                        <img class="star" id="star5" src="../../../Image/icon/star/un_fill.png">
+                    </div>
+                </div>
+                <div class="info-sub-container">
+                    <img class="modal-info-img" id="time-image" src="../../../Image/icon/card_icon/time_24px.png">
+                    <div class="modal-info-txt" id="modal-time">여기 시간</div>
+                </div>
+                <div class="info-sub-container">
+                    <img class="modal-info-img" id="yen-image" src="../../../Image/icon/card_icon/yen_24px.png">
+                    <div class="modal-info-txt" id="modal-yen">여기원円</div>
+                </div>
+                <div class="review-container">
+                    <div class="input-content" id="review">
+                        후기: <span id="review-span">후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기</span>
+                    </div>
+                </div>
+                <div class="card-bottom-container">
+                    <div class="modal-hashtag-div">
+                        <div class="modal-hashtag-container">
+                        </div>
+                    </div>
+                    <div class="bookmark-img"><img id="modal-bookmark" src="../../Image/icon/bookmark/un_fill.png"
+                            onclick="bookmarkChk(event, this)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
 
 <script src="../../js/home/swipe.js"></script>
+<script src="../../js/home/card_news_modal.js"></script>
 <script src="../../js/home/book_mark.js"></script>
