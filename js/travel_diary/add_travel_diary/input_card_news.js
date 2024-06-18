@@ -214,8 +214,8 @@ function saveCardNews() {
     let open_time = convertTimeToString(HourStart, MinuteStart);
     let close_time = convertTimeToString(HourEnd, MinuteEnd);
 
-    console.log(open_time)
-    console.log(close_time)
+    console.log(open_time);
+    console.log(close_time);
 
     // Append additional fields to FormData
     formData.append('place', place);
@@ -235,11 +235,15 @@ function saveCardNews() {
     .then((response) => {
         console.log("Card news saved:", response.data);
         alert("카드 뉴스가 성공적으로 저장되었습니다.");
+        console.log("Saved Card News ID:", response.data.cardNewsId); // Log the cardNewsId here
     })
     .catch((error) => {
         console.error("Error saving card news:", error);
         alert("카드 뉴스 저장 중 에러가 발생했습니다.");
     });
 }
+
+document.getElementById('cardSaveBtn').addEventListener('click', saveCardNews);
+
 
 document.getElementById('cardSaveBtn').addEventListener('click', saveCardNews);
