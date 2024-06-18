@@ -46,6 +46,7 @@ for (let i = 0; i < 60; i += 10) {
     startMinutesSelect.appendChild(startOption);
     endMinutesSelect.appendChild(endOption);
 }
+
 let HourStart;
 let HourEnd;
 let MinuteStart;
