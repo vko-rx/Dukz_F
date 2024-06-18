@@ -57,8 +57,11 @@ imageInput.addEventListener('change', (event) => {
             addImage.appendChild(cardNewsImg);
         };
         reader.readAsDataURL(file);
+
+        formData.set('images', file); 
     }
 });
+
 
 const cardOpen = () => {
     CardNewsmodal.style.display = "block";
@@ -67,6 +70,7 @@ const cardOpen = () => {
 closeModal.onclick = () => {
     CardNewsmodal.style.display = "none";
 }
+
 let starNumArr = [false, false, false, false, false]
 const startController = (starNum) => {
     starNum = Number(starNum.match(/\d+/)[0]);
@@ -134,7 +138,6 @@ cardSaveBtn.onclick = () => {
         }
     }
     
-
     const cardContainer = document.createElement('div');
     cardContainer.className = 'card-container';
 
@@ -180,3 +183,69 @@ cardSaveBtn.onclick = () => {
 
     CardNewsmodal.style.display = 'none';
 }
+
+// 별점 설정 함수
+let selectedStarRating = 0;
+function setStarRating(rating) {
+    for (let i = 1; i <= 5; i++) {
+        const starImg = document.getElementById(`star${i}`);
+        starImg.src = "../../../Image/icon/star/un_fill.png";
+    }
+    for (let i = 1; i <= rating; i++) {
+        const starImg = document.getElementById(`star${i}`);
+        starImg.src = "../../../Image/icon/star/fill.png";
+    }
+    selectedStarRating = rating;
+}
+
+// 시간 변환 함수 수정
+function convertTimeToString(hours, minutes, ampm) {
+    if (ampm === 'PM' && hours !== 12) {
+        hours += 12;
+    } else if (ampm === 'AM' && hours === 12) {
+        hours = 0;
+    }
+    return `${hours}:${minutes}`;
+}
+
+// 카드 뉴스 저장 버튼 클릭 시 서버로 데이터 전송
+function saveCardNews() {
+    const place = document.getElementById("place").value;
+    const HourStart = parseInt(document.getElementsByClassName('hours')[0].value);
+    const MinuteStart = document.getElementsByClassName('minutes')[0].value;
+    const AmpmStart = document.getElementsByClassName('ampm')[0].value;
+    const HourEnd = parseInt(document.getElementsByClassName('hours')[1].value);
+    const MinuteEnd = document.getElementsByClassName('minutes')[1].value;
+    const AmpmEnd = document.getElementsByClassName('ampm')[1].value;
+    const price = document.getElementById("yen-input").value;
+    const review = document.getElementById("review").value;
+    const userid = localStorage.getItem("userid");
+
+    let open_time = convertTimeToString(HourStart, MinuteStart, AmpmStart);
+    let close_time = convertTimeToString(HourEnd, MinuteEnd, AmpmEnd);
+
+    // Append additional fields to FormData
+    formData.append('place', place);
+    formData.append('open_time', open_time);
+    formData.append('close_time', close_time);
+    formData.append('price', price);
+    formData.append('card_review', review);
+    formData.append('userid', userid);
+    formData.append('star', selectedStarRating);
+
+    axios.post("http://54.180.238.52:3000/user/saveCardNews", formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        }
+    })
+    .then((response) => {
+        console.log("Card news saved:", response.data);
+        alert("카드 뉴스가 성공적으로 저장되었습니다.");
+    })
+    .catch((error) => {
+        console.error("Error saving card news:", error);
+        alert("카드 뉴스 저장 중 에러가 발생했습니다.");
+    });
+}
+
+document.getElementById('cardSaveBtn').addEventListener('click', saveCardNews);

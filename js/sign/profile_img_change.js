@@ -25,7 +25,7 @@ function uploadImage() {
     const file = fileInput.files[0];
     
     formData.append('email', email);
-    formData.append('profile_image', file);
+    formData.append('images', file);
 
     axios.post('http://54.180.238.52:3000/user/signup5', formData, {
         headers: {
