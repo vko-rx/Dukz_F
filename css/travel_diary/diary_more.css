@@ -24,10 +24,10 @@
 .place-container:active {
     background-color: var(--bs-main-20);
 }
-
-.place-img {
+.place-img { 
     width: 90px;
     height: 90px;
+    object-fit: cover;
     border-radius: 8px;
 }
 
@@ -53,6 +53,7 @@
     font-size: var(--bs-font-12-5px);
     font-weight: var(--bs-font-light);
     color: var(--bs-black-64);
+    height: 36px;
     margin-top: 6px;
     text-overflow: ellipsis;
     display: -webkit-box;
