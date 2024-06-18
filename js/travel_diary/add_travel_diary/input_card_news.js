@@ -72,17 +72,25 @@ closeModal.onclick = () => {
 }
 
 let starNumArr = [false, false, false, false, false]
-const startController = (starNum) => {
-    starNum = Number(starNum.match(/\d+/)[0]);
-    for (let i = 1; i <= starNum; i++) {
-        document.getElementById(`star${i}`).src = "../../../Image/icon/star/fill.png"
-        starNumArr[i-1] = true;
-    }
-    for (let i = 5; i > starNum; i--) {
-        document.getElementById(`star${i}`).src = "../../../Image/icon/star/un_fill.png"
+
+// 별점 설정 함수
+let selectedStarRating = 0;
+function setStarRating(rating) {
+    for (let i = 1; i <= 5; i++) {
+        const starImg = document.getElementById(`star${i}`);
+        starImg.src = "../../../Image/icon/star/un_fill.png";
         starNumArr[i-1] = false;
     }
+    for (let i = 1; i <= rating; i++) {
+        const starImg = document.getElementById(`star${i}`);
+        starImg.src = "../../../Image/icon/star/fill.png";
+        starNumArr[i-1] = true;
+    }
+    selectedStarRating = rating;
+    
+    console.log(starNumArr);
 }
+
 
 const inputHash = document.querySelector('input[name=basic]');
 let tagify = new Tagify(inputHash);
@@ -137,6 +145,8 @@ cardSaveBtn.onclick = () => {
             starNumSrcArr.push("../../../Image/icon/star/un_fill.png")
         }
     }
+    console.log(starNumArr);
+    console.log(starNumSrcArr)
     
     const cardContainer = document.createElement('div');
     cardContainer.className = 'card-container';
@@ -183,21 +193,6 @@ cardSaveBtn.onclick = () => {
 
     CardNewsmodal.style.display = 'none';
 }
-
-// 별점 설정 함수
-let selectedStarRating = 0;
-function setStarRating(rating) {
-    for (let i = 1; i <= 5; i++) {
-        const starImg = document.getElementById(`star${i}`);
-        starImg.src = "../../../Image/icon/star/un_fill.png";
-    }
-    for (let i = 1; i <= rating; i++) {
-        const starImg = document.getElementById(`star${i}`);
-        starImg.src = "../../../Image/icon/star/fill.png";
-    }
-    selectedStarRating = rating;
-}
-
 // 시간 변환 함수 수정
 function convertTimeToString(hours, minutes) {
     return `${hours}:${minutes}`;
@@ -271,6 +266,5 @@ function resetModalContent() {
     }
     starNumArr = [false, false, false, false, false];
 
-    // Reset hashtags
     tagify.removeAllTags();
 }
