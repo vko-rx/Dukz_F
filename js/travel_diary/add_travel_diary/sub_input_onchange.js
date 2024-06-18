@@ -97,7 +97,7 @@ const saveDiary = async () => {
         } else if (element.classList.contains('image-file')) {
             contentType = 'image';
         } else {
-            contentType = 'unknown';
+            return;
         }
 
         contents.push({
