@@ -17,3 +17,4 @@ new Swiper('.card-img-swiper', {
     },
     centeredSlides: true, // 1번 슬라이드가 가운데 보이기
 });
+// getName();

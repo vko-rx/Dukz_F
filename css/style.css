@@ -55,6 +55,8 @@
     --bs-font-16px: 16px;
     --bs-font-18px: 18px;
     --bs-font-22px: 22px;
+    --bs-font-23px: 23px;
+    --bs-font-25px: 25px;
     --bs-font-60px: 60px;
 
     /* swipe custom */
@@ -169,6 +171,24 @@ input[type=radio]:checked + label {
     border: 0.8px solid var(--bs-main-100);
 }
 
+select {
+    width: calc(100% - 40px);
+    margin: 0 20px;
+    padding: 10px 15px;
+    border: 0.5px var(--bs-black-34) solid;
+    border-radius: 5px;
+    color: var(--bs-black-34);
+}
+select:focus {
+    color: var(--bs-black);
+}
+
+textarea {
+    resize: none;
+}
+textarea:focus { 
+    outline:none; 
+}
 
 /* containers */
 .back-container {
@@ -255,9 +275,10 @@ input[type=radio]:checked + label {
 
 /* function */
 .hidden {
-    width: 0 !important;
-    height: 0 !important;
-    margin: 0 0 !important;
-    padding: 0 0 !important;
+    width: 0px !important;
+    height: 0px !important;
+    margin: 0px 0px !important;
+    padding: 0px 0px !important;
+    overflow: hidden;
     visibility: hidden;
 }

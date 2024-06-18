@@ -37,23 +37,17 @@ body {
 }
 
 .place-title {
-    padding: 5px 0;
+    padding: 10px 0;
 }
 .place-name {
     font-size: var(--bs-font-18px);
     font-weight: var(--bs-font-light);
     width: 100%;
 }
-.place-map-container {
-    font-size: var(--bs-font-10px);
-    color: var(--bs-blue-100);
-    width: 100%;
-    text-align: center;
-}
 .bookmark-img {
     position: absolute;
     right: 15px;
-    top: 15px;
+    top: 10px;
 }
 .tempImg {
     width: 100%;
@@ -84,6 +78,9 @@ body {
     font-weight: var(--bs-font-regular);
     margin-left: 8px;
 }
+#place-name {
+    color: var(--bs-blue-87);
+}
 .review-container {
     margin: 2px 3px 0 3px;
     font-size: var(--bs-font-14px);
@@ -92,8 +89,12 @@ body {
 
 
 /* content-txt */
+.sub-title-txt {
+    font-size: var(--bs-font-18px);
+    margin: 5px 0;
+}
 .content-txt {
-    margin: 20px 0;
+    margin: 5px 0;
     font-size: 14px;
     font-weight: var(--bs-font-light);
 }
@@ -102,6 +103,7 @@ body {
 .content-img {
     width: calc(100%);
     border-radius: 10px;
+    margin: 5px 0;
 }
 
 /* date */

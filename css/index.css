@@ -5,8 +5,7 @@ body {
     align-items: center;
     text-align: center;
 }
-.title {
-    font-size: var(--bs-font-60px);
-    font-weight: var(--bs-font-bold);
-    color: var(--bs-white);
+.title > img {
+    height: 40px;
+    margin-bottom: 80px;
 }

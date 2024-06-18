@@ -15,37 +15,43 @@ function chkToNext() {
 }
 
 function displayUploadedImage(imageUrl) {
-    profileImg.src = `http://13.208.214.110:3000${imageUrl}`;
+    profileImg.src = `http://54.180.238.52:3000${imageUrl}`;
 }
 
 function uploadImage() {
-    const formData = new FormData(document.getElementById('uploadForm'));
-    formData.append('userid', localStorage.getItem('userid'));
+    const formData = new FormData();
+    const email = localStorage.getItem('email');
+    const fileInput = document.getElementById('gallery-picker');
+    const file = fileInput.files[0];
+    
+    formData.append('email', email);
+    formData.append('images', file);
 
-    axios.post('http://13.208.214.110:3000/user/changeUserImage', formData, {
+    axios.post('http://54.180.238.52:3000/user/signup5', formData, {
         headers: {
             'Content-Type': 'multipart/form-data',
         },
     })
     .then(response => {
         console.log('Image upload response:', response.data);
-
         const resultElement = document.getElementById('result');
 
         if (response.data.success) {
             const imageUrl = response.data.image_url;
-            
-            displayUploadedImage(imageUrl);
-            
+            console.log('Image URL:', imageUrl);
+            resultElement.innerHTML = 'Image uploaded successfully. Image URL: ' + imageUrl;
+            location.href = './input_birth.html';
         } else {
             console.error('Image upload failed:', response.data.message);
             resultElement.innerHTML = 'Image upload failed: ' + response.data.message;
         }
     })
     .catch(error => {
-        console.error('Error during image upload:', error);
+        console.error('Error uploading image:', error);
+        document.getElementById('result').innerHTML = 'Error uploading image: ' + error.message;
     });
 }
+
 
 function showSelectedImage() {
     const input = document.getElementById('gallery-picker');

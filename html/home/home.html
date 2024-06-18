@@ -19,7 +19,6 @@
         <div class="top-container">
             <img class="top-heart" src="../../Image/icon/heart/un_fill.png" onclick="location.href='../my_page/show_heart.html'">
             <img class="top-bookmark" src="../../Image/icon/bookmark/un_fill.png" onclick="location.href='../my_page/show_bookmark.html'">
-            <img class="top-search" src="../../Image/icon/search.png">
         </div>
         <div class="hot-container">
             <div class="main-txt-container">
@@ -52,7 +51,6 @@
                                             <img class="sub-img" src="../../Image/icon/card_icon/pin.png">
                                             <span class="sub-txt" id="cardNewsLocation">가마쿠라, 에노시마</span>
                                         </div>
-                                        <a class="a-map" href="#">구글맵</a>
                                     </div>
                                     <div class="time-container info-txt">
                                         <img class="sub-img" src="../../Image/icon/card_icon/time.png">
@@ -95,7 +93,6 @@
                                             <img class="sub-img" src="../../Image/icon/card_icon/pin.png">
                                             <span class="sub-txt" id="cardNewsLocation2">가마쿠라, 에노시마</span>
                                         </div>
-                                        <a class="a-map" href="#">구글맵</a>
                                     </div>
                                     <div class="time-container info-txt">
                                         <img class="sub-img" src="../../Image/icon/card_icon/time.png">
@@ -133,12 +130,9 @@
                                     <img class="info-img" src="../../Image/temp/genre_1.png" id="cardNewsImage3">
                                 </div>
                                 <div class="info-txt-container">
-                                    <div class="line-container">
-                                        <div class="pin-container info-txt">
-                                            <img class="sub-img" src="../../Image/icon/card_icon/pin.png">
-                                            <span class="sub-txt" id="cardNewsLocation3">가마쿠라, 에노시마</span>
-                                        </div>
-                                        <a class="a-map" href="#">구글맵</a>
+                                    <div class="pin-container info-txt">
+                                        <img class="sub-img" src="../../Image/icon/card_icon/pin.png">
+                                        <span class="sub-txt" id="cardNewsLocation3">가마쿠라, 에노시마</span>
                                     </div>
                                     <div class="time-container info-txt">
                                         <img class="sub-img" src="../../Image/icon/card_icon/time.png">
@@ -169,7 +163,7 @@
             <div class="title-txt-container">
                 요즘 핫한 장소를 추천해<br>드릴게요!
             </div>
-            <div class="place-container place-first" onclick="location.href='../travel_diary/travel_diary_content.html'">
+            <div class="place-container place-first" onclick="getDiaryId('first_diary_id'); location.href='../travel_diary/travel_diary_content.html'">
                 <img class="place-img" src="../../Image/temp/place_1.png">
                 <div class="place-txt-container">
                     <div class="line-container">
@@ -189,7 +183,7 @@
                     </div>
                 </div>
             </div>
-            <div class="place-container place-second">
+            <div class="place-container place-second" onclick="getDiaryId('second_diary_id'); location.href='../travel_diary/travel_diary_content.html'">
                 <img class="place-img" src="../../Image/temp/Rectangle 31 (1).png">
                 <div class="place-txt-container">
                     <div class="line-container">
@@ -207,7 +201,7 @@
                     </div>
                 </div>
             </div>
-            <div class="place-container place-third">
+            <div class="place-container place-third" onclick="getDiaryId('third_diary_id'); location.href='../travel_diary/travel_diary_content.html'">
                 <img class="place-img" src="../../Image/temp/Rectangle 31 (2).png">
                 <div class="place-txt-container">
                     <div class="line-container">
