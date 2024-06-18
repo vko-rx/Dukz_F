@@ -235,3 +235,128 @@ body {
     color: var(--bs-white);
     font-weight: var(--bs-font-semibold);
 }
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 9999; 
+    padding-top: 200px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+/* card-news-modal */
+.card-modal-content {
+    background-color: var(--bs-white);
+    margin: auto;
+    width: 90%;
+    max-width: 350px;
+    border-radius: 10px;
+}
+#card-news-modal {
+    display: none;
+    padding-top: 100px; 
+}
+.card-image-container {
+    background-color: var(--bs-black-25);
+    text-align: center;
+    position: relative;
+    height: 225px;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+}
+
+.card-image-container img.selected-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover !important; 
+}
+#card-image {
+    width: 100%;
+    height: 100%;
+}
+#card-close {
+    color: var(--bs-white);
+    font-size: 24px;
+    font-weight: var(--bs-font-medium);
+    position: absolute;
+    right: 25px;
+    top: 100px;
+    z-index: 3;
+}
+#image-input {
+    background-size: cover;
+}
+.add-image {
+    color: var(--bs-white);
+    font-size: 50px;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.modal-info-container {
+    padding: 10px 10px;
+}
+.line-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.info-sub-container {
+    display: flex;
+    align-items: center;
+}
+.info-sub-container:not(.category-container) {
+    margin-top: 5px;
+}
+.modal-info-img {
+    width: 24px;
+    height: 24px;
+}
+.modal-info-txt {
+    font-size: var(--bs-font-14px);
+    margin-left: 8px;
+    width: 120px;
+    border: none !important;
+    padding: 0 0 !important;
+    text-align: left;
+}
+.star-rating {
+    display: flex;
+}
+.star {
+    width: 18px;
+}
+.review-container {
+    margin: 10px 3px 0 3px;
+    font-size: var(--bs-font-14px);
+    font-weight: var(--bs-font-light);
+}
+.card-bottom-container {
+    margin: 14px 3px 6px 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+.modal-hashtag-div {
+    display: flex;
+    width: 250px;
+    text-align: left;
+}
+.modal-hashtag-container {
+    display: flex;
+    color: var(--bs-main-100);
+    font-size: var(--bs-font-12px);
+}
+.modal-hashtag-container > span {
+    margin-right: 5px;
+}
