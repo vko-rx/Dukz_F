@@ -97,14 +97,14 @@
                     <div class="line-container">
                         <div class="info-sub-container">
                             <img class="info-img" id="pin-image" src="../../../Image/icon/card_icon/pin_uninput.png">
-                            <input type="text" class="info-txt place" placeholder="장소를 입력해주세요">
+                            <input type="text" class="info-txt place" id="place" placeholder="장소를 입력해주세요">
                         </div>
                         <div class="star-rating">
-                            <img onclick="startController(this.id)" class="star" id="star1" src="../../../Image/icon/star/un_fill.png">
-                            <img onclick="startController(this.id)" class="star" id="star2" src="../../../Image/icon/star/un_fill.png">
-                            <img onclick="startController(this.id)" class="star" id="star3" src="../../../Image/icon/star/un_fill.png">
-                            <img onclick="startController(this.id)" class="star" id="star4" src="../../../Image/icon/star/un_fill.png">
-                            <img onclick="startController(this.id)" class="star" id="star5" src="../../../Image/icon/star/un_fill.png">
+                            <img onclick="setStarRating(1)" class="star" id="star1" src="../../../Image/icon/star/un_fill.png">
+                            <img onclick="setStarRating(2)" class="star" id="star2" src="../../../Image/icon/star/un_fill.png">
+                            <img onclick="setStarRating(3)" class="star" id="star3" src="../../../Image/icon/star/un_fill.png">
+                            <img onclick="setStarRating(4)" class="star" id="star4" src="../../../Image/icon/star/un_fill.png">
+                            <img onclick="setStarRating(5)" class="star" id="star5" src="../../../Image/icon/star/un_fill.png">
                         </div>
                     </div>
                     <div class="info-sub-container">
@@ -127,7 +127,7 @@
                                 <input class="hashtag" name="basic" placeholder="해시태그">
                             </div>
                         </div>
-                        <button id="cardSaveBtn">완료</button>
+                        <button id="cardSaveBtn" onclick="saveCardNews()">완료</button>
                     </div>
                 </div>
             </div>

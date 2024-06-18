@@ -153,31 +153,6 @@ cardSaveBtn.onclick = () => {
     CardNewsmodal.style.display = 'none';
 }
 
-function saveCardNews() {
-    const title = document.getElementsByClassName('info-txt place');
-    const usernick = document.getElementsByClassName('writer-nick');
-  
-    axios
-    .post("http://54.180.238.52:3000/user/getDiary", {
-        diaryId : diaryId
-    })
-    .then((response) => {
-            const { recommendedDiaries, name } = response.data;
-
-            for (let i in usernick) {
-                usernick[i].innerHTML = name;
-            }
-
-            console.log("Recommended Diaries:", recommendedDiaries);
-            console.log("User Name:", name);
-    })
-    .catch((e) => {
-        console.log(e);
-    });
-}
-
-const cardSaveBtn = document.getElementById('cardSaveBtn');
-
 cardSaveBtn.onclick = () => {
     // 필드에서 사용자 입력 가져오기
     const place = document.querySelector('.place').value.trim();
