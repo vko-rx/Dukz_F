@@ -75,6 +75,19 @@ const saveDiary = async () => {
     const diaryId = localStorage.getItem('diaryId');
     const contents = [];
 
+    // 유효성 검사
+    console.log(containerDiv.children);
+    console.log(document.getElementsByClassName('content-txt')[0])
+    if (document.getElementsByClassName('title-txt')[0].value == '') {
+        alert('제목을 입력해주세요');
+    } else if (document.getElementsByClassName('content-txt')[0] == undefined
+                || document.getElementsByClassName('content-txt')[0].value == '') {
+        alert('하나 이상의 본문을 입력해주세요');
+    } else if (document.getElementsByClassName('card-container')[0] == undefined) {
+        alert('하나 이상의 일정을 입력해 주세요');
+    }
+
+
     const contentElements = document.querySelectorAll('.input-content');
     if (!contentElements || contentElements.length === 0) {
         console.error('No input content elements found.');

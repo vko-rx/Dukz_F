@@ -58,7 +58,7 @@ imageInput.addEventListener('change', (event) => {
         };
         reader.readAsDataURL(file);
 
-        formData.set('images', file); 
+        formData.set('images', file);
     }
 });
 
@@ -72,17 +72,23 @@ closeModal.onclick = () => {
 }
 
 let starNumArr = [false, false, false, false, false]
-const startController = (starNum) => {
-    starNum = Number(starNum.match(/\d+/)[0]);
-    for (let i = 1; i <= starNum; i++) {
-        document.getElementById(`star${i}`).src = "../../../Image/icon/star/fill.png"
-        starNumArr[i-1] = true;
+
+// 별점 설정 함수
+let selectedStarRating = 0;
+function setStarRating(rating) {
+    for (let i = 1; i <= 5; i++) {
+        const starImg = document.getElementById(`star${i}`);
+        starImg.src = "../../../Image/icon/star/un_fill.png";
+        starNumArr[i - 1] = false;
     }
-    for (let i = 5; i > starNum; i--) {
-        document.getElementById(`star${i}`).src = "../../../Image/icon/star/un_fill.png"
-        starNumArr[i-1] = false;
+    for (let i = 1; i <= rating; i++) {
+        const starImg = document.getElementById(`star${i}`);
+        starImg.src = "../../../Image/icon/star/fill.png";
+        starNumArr[i - 1] = true;
     }
+    selectedStarRating = rating;
 }
+
 
 const inputHash = document.querySelector('input[name=basic]');
 let tagify = new Tagify(inputHash);
@@ -102,6 +108,7 @@ tagify.on('add', function () {
 
 const cardSaveBtn = document.getElementById('cardSaveBtn');
 const firstStarImg = document.getElementById('star1');
+let starNumSrcArr = [];
 
 cardSaveBtn.onclick = () => {
 
@@ -129,7 +136,6 @@ cardSaveBtn.onclick = () => {
         return;
     }
 
-    let starNumSrcArr = [];
     for (let i of starNumArr) {
         if (i) {
             starNumSrcArr.push("../../../Image/icon/star/fill.png")
@@ -137,11 +143,17 @@ cardSaveBtn.onclick = () => {
             starNumSrcArr.push("../../../Image/icon/star/un_fill.png")
         }
     }
-    
+    console.log(starNumArr);
+    console.log(starNumSrcArr)
+
+
+    CardNewsmodal.style.display = 'none';
+}
+
+const addCardNews = () => {
     const cardContainer = document.createElement('div');
     cardContainer.className = 'card-container';
 
-    // Inner HTML for the new card
     cardContainer.innerHTML = `
         <div class="place-title-container">
             <div class="place-title">
@@ -180,24 +192,7 @@ cardSaveBtn.onclick = () => {
     `;
 
     containerDiv.appendChild(cardContainer);
-
-    CardNewsmodal.style.display = 'none';
 }
-
-// 별점 설정 함수
-let selectedStarRating = 0;
-function setStarRating(rating) {
-    for (let i = 1; i <= 5; i++) {
-        const starImg = document.getElementById(`star${i}`);
-        starImg.src = "../../../Image/icon/star/un_fill.png";
-    }
-    for (let i = 1; i <= rating; i++) {
-        const starImg = document.getElementById(`star${i}`);
-        starImg.src = "../../../Image/icon/star/fill.png";
-    }
-    selectedStarRating = rating;
-}
-
 // 시간 변환 함수 수정
 function convertTimeToString(hours, minutes) {
     return `${hours}:${minutes}`;
@@ -232,16 +227,17 @@ function saveCardNews() {
             'Content-Type': 'multipart/form-data'
         }
     })
-    .then((response) => {
-        console.log("Card news saved:", response.data);
-        alert("카드 뉴스가 성공적으로 저장되었습니다.");
-        console.log("Saved Card News ID:", response.data.cardNewsId); // Log the cardNewsId here
-        resetModalContent();
-    })
-    .catch((error) => {
-        console.error("Error saving card news:", error);
-        alert("카드 뉴스 저장 중 에러가 발생했습니다.");
-    });
+        .then((response) => {
+            console.log("Card news saved:", response.data);
+            // alert("카드 뉴스가 성공적으로 저장되었습니다.");
+            console.log("Saved Card News ID:", response.data.cardNewsId); // Log the cardNewsId here
+            addCardNews();
+            resetModalContent();
+        })
+        .catch((error) => {
+            console.error("Error saving card news:", error);
+            alert("카드 뉴스 저장 중 에러가 발생했습니다.");
+        });
 }
 
 document.getElementById('cardSaveBtn').addEventListener('click', saveCardNews);
@@ -271,6 +267,5 @@ function resetModalContent() {
     }
     starNumArr = [false, false, false, false, false];
 
-    // Reset hashtags
     tagify.removeAllTags();
 }
