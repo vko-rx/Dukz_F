@@ -12,7 +12,7 @@ function getName() {
     const usernick = document.getElementsByClassName('user-nick');
   
     axios
-    .post("http://localhost:3000/user/getName", {
+    .post("http://54.180.238.52:3000/user/getName", {
         userid
     })
     .then((response) => {

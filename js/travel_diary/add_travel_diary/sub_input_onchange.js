@@ -48,6 +48,7 @@ const imageOnChange = (event) => {
     reader.readAsDataURL(event.target.files[0]);
 };
 
+
 const alignOnChange = () => {
     const subInputValue = document.querySelector('input[name="sub-input-align"]:checked').value;
     const inputContainer = document.getElementsByClassName('input-content');
@@ -96,27 +97,19 @@ const saveDiary = async () => {
         } else if (element.classList.contains('image-file')) {
             contentType = 'image';
         } else {
-            contentType = 'unknown';
+            return;
         }
 
-        if (contentType !== 'unknown') {
-            contents.push({
-                contentType: contentType,
-                contentText: contentText,
-                align: element.style.textAlign || 'left'
-            });
-        }
+        contents.push({
+            contentType: contentType,
+            contentText: contentText,
+            align: element.style.textAlign || 'left'
+        });
     });
 
     try {
         formData.append('diaryId', diaryId);
         formData.append('contents', JSON.stringify(contents));
-
-        // 디버깅을 위한 로그 추가
-        console.log('Form Data:');
-        for (let pair of formData.entries()) {
-            console.log(`${pair[0]}: ${pair[1]}`);
-        }
 
         const response = await axios.post('http://54.180.238.52:3000/user/saveDiary', formData, {
             headers: {
@@ -138,6 +131,7 @@ const saveDiary = async () => {
         alert('일지 저장 중 오류가 발생했습니다.');
     }
 };
+
 
 function displayUploadedImage(imageUrl) {
     const Img = document.createElement('img');
