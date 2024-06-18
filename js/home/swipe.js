@@ -174,7 +174,7 @@ axios
 }
 
 function getDiaryId(diaryId) {
-localStorage.setItem('diaryId', diaryId);
+  localStorage.setItem('diaryId', diaryId);
 }
 
 getDiary();
